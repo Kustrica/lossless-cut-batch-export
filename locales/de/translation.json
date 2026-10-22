@@ -1124,5 +1124,12 @@
   "Batch export mode": "Stapelexportmodus",
   "Batch export finished": "Stapelexport abgeschlossen",
   "Exporting batch item {{current}} of {{total}}": "Exportiere Stapeldatei {{current}} von {{total}}",
-  "Reset all to defaults": "Alle auf Standard zurücksetzen"
+  "Reset all to defaults": "Alle auf Standard zurücksetzen",
+  "Could not find any damaged metadata to repair in this file.": "In dieser Datei wurden keine beschädigten Metadaten zum Reparieren gefunden.",
+  "Repair and open": "Reparieren und öffnen",
+  "Repairing file": "Datei wird repariert",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Diese Datei hat beschädigte Metadaten (Header) und kann nicht geöffnet werden. Originaldatei reparieren? Nur der beschädigte Header-Block wird geändert; Video und Audio bleiben unberührt.",
+  "Don't ask again": "Nicht mehr fragen",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Dateien mit beschädigten MP4/MOV-Metadaten (Header) beim Öffnen automatisch ohne Nachfrage reparieren",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Die Datei kann nicht repariert werden, da sie schreibgeschützt ist, von einem anderen Programm verwendet wird oder Sie keine Berechtigung zum Ändern haben."
 }

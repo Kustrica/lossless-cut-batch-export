@@ -1128,5 +1128,12 @@
   "Batch export mode": "Režim dávkového exportu",
   "Batch export finished": "Dávkový export dokončen",
   "Exporting batch item {{current}} of {{total}}": "Exportování položky dávky {{current}} z {{total}}",
-  "Reset all to defaults": "Obnovit vše na výchozí"
+  "Reset all to defaults": "Obnovit vše na výchozí",
+  "Could not find any damaged metadata to repair in this file.": "V tomto souboru nebyla nalezena žádná poškozená metadata k opravě.",
+  "Repair and open": "Opravit a otevřít",
+  "Repairing file": "Opravuji soubor",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Tento soubor má poškozená metadata (hlavičku) a nelze jej otevřít. Opravit původní soubor? Změní se pouze poškozený blok hlavičky; video a zvuk zůstanou nedotčeny.",
+  "Don't ask again": "Příště se neptat",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Automaticky opravovat soubory MP4/MOV s poškozenými metadaty (hlavičkou) při otevření, bez dotazu",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Soubor nelze opravit, protože je jen pro čtení, používá jej jiný program, nebo nemáte oprávnění jej měnit."
 }

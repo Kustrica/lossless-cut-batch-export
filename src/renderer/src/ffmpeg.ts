@@ -12,7 +12,7 @@ import { isExecaError } from './util';
 import { isDurationValid } from './segments';
 import type { FFprobeChapter, FFprobeFormat, FFprobeProbeResult, FFprobeStream } from '../../common/ffprobe';
 import { parseSrt, parseSrtToSegments } from './edlFormats';
-import { UnsupportedFileError, UserFacingError } from '../errors';
+import { DamagedMetadataError, UnsupportedFileError, UserFacingError } from '../errors';
 import mainApi from './mainApi';
 import { parseFfprobeDuration } from '../../common/util';
 
@@ -354,7 +354,12 @@ export async function readFileFfprobeMeta(filePath: string) {
     return { format, streams, chapters };
   } catch (err) {
     if (isExecaError(err) && err.code == null && err.exitCode != null) {
-      throw new UnsupportedFileError('Unsupported file', { cause: err });
+      const stderr = err.stderr instanceof Uint8Array ? new TextDecoder().decode(err.stderr) : String(err.stderr ?? '');
+      const reason = stderr.split(/\r?\n/).map((line) => line.trim()).findLast((line) => line.length > 0);
+      if (stderr.includes('The \'keys\' atom with the invalid key count')) {
+        throw new DamagedMetadataError('Damaged metadata', { cause: err, reason });
+      }
+      throw new UnsupportedFileError('Unsupported file', { cause: err, reason });
     }
     throw err;
   }

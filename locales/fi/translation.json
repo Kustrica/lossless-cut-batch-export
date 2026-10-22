@@ -598,5 +598,12 @@
   "Batch export mode": "Nippuviennin tila",
   "Batch export finished": "Nippuvienti valmis",
   "Exporting batch item {{current}} of {{total}}": "Viedään nipun tiedostoa {{current}}/{{total}}",
-  "Reset all to defaults": "Palauta kaikki oletuksiin"
+  "Reset all to defaults": "Palauta kaikki oletuksiin",
+  "Could not find any damaged metadata to repair in this file.": "Tiedostosta ei löytynyt korjattavia vioittuneita metatietoja.",
+  "Repair and open": "Korjaa ja avaa",
+  "Repairing file": "Korjataan tiedostoa",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Tämän tiedoston metatiedot (otsake) ovat vioittuneet, eikä sitä voi avata. Korjataanko alkuperäinen tiedosto? Vain vioittunut otsakelohko muutetaan; videoon ja ääneen ei kosketa.",
+  "Don't ask again": "Älä kysy uudelleen",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Korjaa MP4/MOV-tiedostot, joiden metatiedot (otsake) ovat vioittuneet, automaattisesti avattaessa kysymättä",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Tiedostoa ei voi korjata, koska se on vain luku -tilassa, toisen ohjelman käytössä tai sinulla ei ole oikeutta muokata sitä."
 }

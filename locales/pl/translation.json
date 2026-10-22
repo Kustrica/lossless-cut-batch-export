@@ -977,5 +977,12 @@
   "Batch export mode": "Tryb eksportu wsadowego",
   "Batch export finished": "Eksport wsadowy zakończony",
   "Exporting batch item {{current}} of {{total}}": "Eksportowanie pliku wsadowego {{current}} z {{total}}",
-  "Reset all to defaults": "Przywróć wszystko do domyślnych"
+  "Reset all to defaults": "Przywróć wszystko do domyślnych",
+  "Could not find any damaged metadata to repair in this file.": "Nie znaleziono w tym pliku uszkodzonych metadanych do naprawienia.",
+  "Repair and open": "Napraw i otwórz",
+  "Repairing file": "Naprawianie pliku",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Ten plik ma uszkodzone metadane (nagłówek) i nie można go otworzyć. Naprawić oryginalny plik? Zmieniony zostanie tylko uszkodzony blok nagłówka; obraz i dźwięk pozostaną nietknięte.",
+  "Don't ask again": "Nie pytaj ponownie",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Automatycznie naprawiaj przy otwieraniu, bez pytania, pliki MP4/MOV z uszkodzonymi metadanymi (nagłówkiem)",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Nie można naprawić pliku, ponieważ jest tylko do odczytu, jest używany przez inny program lub nie masz uprawnień do jego modyfikacji."
 }

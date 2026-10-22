@@ -905,5 +905,12 @@
   "Batch export mode": "Mode d'exportation par lots",
   "Batch export finished": "Exportation par lots terminée",
   "Exporting batch item {{current}} of {{total}}": "Exportation de l'élément {{current}} sur {{total}} du lot",
-  "Reset all to defaults": "Tout réinitialiser par défaut"
+  "Reset all to defaults": "Tout réinitialiser par défaut",
+  "Could not find any damaged metadata to repair in this file.": "Aucune métadonnée endommagée à réparer n'a été trouvée dans ce fichier.",
+  "Repair and open": "Réparer et ouvrir",
+  "Repairing file": "Réparation du fichier",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Ce fichier contient des métadonnées (en-tête) endommagées et ne peut pas être ouvert. Réparer le fichier original ? Seul le bloc d'en-tête endommagé est modifié ; la vidéo et l'audio ne sont pas touchés.",
+  "Don't ask again": "Ne plus demander",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Réparer automatiquement à l'ouverture, sans demander, les fichiers MP4/MOV dont les métadonnées (en-tête) sont endommagées",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Impossible de réparer le fichier, car il est en lecture seule, utilisé par un autre programme, ou vous n'avez pas l'autorisation de le modifier."
 }

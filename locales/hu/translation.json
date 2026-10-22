@@ -960,5 +960,12 @@
   "Batch export mode": "Kötegelt exportálási mód",
   "Batch export finished": "Kötegelt exportálás kész",
   "Exporting batch item {{current}} of {{total}}": "Kötegelem exportálása: {{current}} / {{total}}",
-  "Reset all to defaults": "Minden visszaállítása alapértelmezettre"
+  "Reset all to defaults": "Minden visszaállítása alapértelmezettre",
+  "Could not find any damaged metadata to repair in this file.": "Ebben a fájlban nem található javítható sérült metaadat.",
+  "Repair and open": "Javítás és megnyitás",
+  "Repairing file": "Fájl javítása",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "A fájl metaadatai (fejléce) sérültek, ezért nem nyitható meg. Javítod az eredeti fájlt? Csak a sérült fejlécblokk módosul; a videó és a hang érintetlen marad.",
+  "Don't ask again": "Ne kérdezze többé",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Sérült metaadatú (fejlécű) MP4/MOV fájlok automatikus javítása megnyitáskor, kérdés nélkül",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "A fájl nem javítható, mert csak olvasható, egy másik program használja, vagy nincs jogosultságod a módosításához."
 }

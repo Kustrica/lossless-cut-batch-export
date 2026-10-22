@@ -8,5 +8,12 @@
   "Reset all to defaults": "إعادة تعيين الكل إلى الافتراضي",
   "Merge cuts": "دمج المقاطع",
   "Merge & Separate": "دمج وفصل",
-  "Separate files": "ملفات منفصلة"
+  "Separate files": "ملفات منفصلة",
+  "Could not find any damaged metadata to repair in this file.": "تعذر العثور على أي بيانات وصفية تالفة لإصلاحها في هذا الملف.",
+  "Repair and open": "إصلاح وفتح",
+  "Repairing file": "جارٍ إصلاح الملف",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "يحتوي هذا الملف على بيانات وصفية (ترويسة) تالفة ولا يمكن فتحه. هل تريد إصلاح الملف الأصلي؟ سيتم تغيير كتلة الترويسة التالفة فقط؛ ولن يتم المساس بالفيديو والصوت.",
+  "Don't ask again": "لا تسأل مرة أخرى",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "إصلاح الملفات ذات البيانات الوصفية (الترويسة) التالفة في MP4/MOV تلقائيًا عند الفتح، دون سؤال",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "تعذر إصلاح الملف لأنه للقراءة فقط، أو قيد الاستخدام من قبل برنامج آخر، أو ليس لديك إذن بتعديله."
 }

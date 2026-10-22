@@ -135,6 +135,58 @@ export function useDialog() {
     });
   }), [showGenericDialog, t]);
 
+  const confirmDialogWithCheckbox = useCallback(({ title = t('Please confirm'), description, confirmButtonText = t('Confirm'), cancelButtonText = t('Cancel'), checkboxLabel, focusConfirm = false }: {
+    title?: ReactNode,
+    description?: string,
+    confirmButtonText?: string,
+    cancelButtonText?: string,
+    checkboxLabel: string,
+    focusConfirm?: boolean,
+  }) => new Promise<{ confirmed: boolean, checked: boolean }>((resolve) => {
+    function ConfirmDialogWithCheckbox() {
+      const { onOpenChange } = useGenericDialogContext();
+      const confirmRef = useRef<HTMLButtonElement>(null);
+      const [checked, setChecked] = useState(false);
+
+      const handleConfirmClick = useCallback<MouseEventHandler<HTMLButtonElement>>((e) => {
+        e.preventDefault();
+        resolve({ confirmed: true, checked });
+        onOpenChange(false);
+      }, [checked, onOpenChange]);
+
+      const handleOpenAutoFocus = useCallback((e: Event) => {
+        if (focusConfirm && confirmRef.current) {
+          e.preventDefault();
+          confirmRef.current.focus();
+        }
+      }, []);
+
+      return (
+        <AlertDialog.Content aria-describedby={description} style={{ width: '40vw' }} onOpenAutoFocus={handleOpenAutoFocus}>
+          <AlertDialog.Title>{title}</AlertDialog.Title>
+
+          {description && <AlertDialog.Description>{description}</AlertDialog.Description>}
+
+          <Checkbox label={checkboxLabel} checked={checked} onCheckedChange={(v) => setChecked(v === true)} style={{ marginTop: '1em' }} />
+
+          <Dialog.ButtonRow>
+            <AlertDialog.Cancel asChild>
+              <DialogButton>{cancelButtonText}</DialogButton>
+            </AlertDialog.Cancel>
+
+            <DialogButton primary onClick={handleConfirmClick} ref={confirmRef}>{confirmButtonText}</DialogButton>
+          </Dialog.ButtonRow>
+        </AlertDialog.Content>
+      );
+    }
+
+    showGenericDialog({
+      isAlert: true,
+      render: () => <ConfirmDialogWithCheckbox />,
+      onClose: () => resolve({ confirmed: false, checked: false }),
+    });
+  }), [showGenericDialog, t]);
+
   const openExportFinishedDialog = useCallback(async ({ filePath, children, width }: {
     filePath: string,
     children: ReactNode,
@@ -437,6 +489,7 @@ export function useDialog() {
     closeGenericDialog,
     showGenericDialog,
     confirmDialog,
+    confirmDialogWithCheckbox,
     openExportFinishedDialog,
     openCutFinishedDialog,
     openConcatFinishedDialog,

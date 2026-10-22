@@ -1,0 +1,24 @@
+diff --git a/locales/ru/translation.json b/locales/ru/translation.json
+index 332f3d40..f3ae2b6f 100644
+--- a/locales/ru/translation.json
++++ b/locales/ru/translation.json
+@@ -51,8 +51,8 @@
+   "Fast: Full quality remux (no audio), likely to fail": "Быстро: Полный ремукс высокого качества (без аудио), вероятно, завершится ошибкой",
+   "This is where working files, exported files, project files (CSV) are stored.": "Здесь хранятся рабочие экспортированные файлы проекта (CSV).",
+   "Cut mode is:": "Режим обрезки:",
+-  "Separate files": "Отдельные файлы",
+-  "Merge cuts": "Объединить разрезы",
++  "Separate files": "Каждый кусок отдельным файлом",
++  "Merge cuts": "Склеить в один файл",
+   "Export to separate files": "Экспорт в отдельные файлы",
+   "Auto merge segments to one file after export": "Автоматически объединять сегменты в один файл после экспорта",
+   "Working dir unset": "Рабочая папка не установлена",
+@@ -374,7 +374,7 @@
+   "You do not have permission to access this file": "У вас нет прав доступа к этому файлу",
+   "Load segments from the new file, but keep the current media": "Загрузить сегменты из нового файла, но сохранить текущие медиафайлы",
+   "Failed to export project": "Не удалось экспортировать проект",
+-  "Merge & Separate": "Объединение и разделение",
++  "Merge & Separate": "Склеить и сохранить куски отдельно",
+   "This template will result in invalid file names": "Этот шаблон приведет к недопустимым именам файлов",
+   "Resulting segment file names": "Имена файлов результирующих сегментов",
+   "Output name(s):": "Выходное имя(s):",

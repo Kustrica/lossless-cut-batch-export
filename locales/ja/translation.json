@@ -1106,5 +1106,12 @@
   "Batch export mode": "一括出力方法",
   "Batch export finished": "一括出力完了",
   "Exporting batch item {{current}} of {{total}}": "一括出力中 {{current}} / {{total}}",
-  "Reset all to defaults": "すべて初期設定に戻す"
+  "Reset all to defaults": "すべて初期設定に戻す",
+  "Could not find any damaged metadata to repair in this file.": "このファイルには修復可能な破損したメタデータが見つかりませんでした。",
+  "Repair and open": "修復して開く",
+  "Repairing file": "ファイルを修復中",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "このファイルはメタデータ（ヘッダー）が破損しているため開けません。元のファイルを修復しますか？変更されるのは破損したヘッダーブロックのみで、映像と音声には触れません。",
+  "Don't ask again": "今後確認しない",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "メタデータ（ヘッダー）が破損した MP4/MOV ファイルを開くときに確認せずに自動で修復する",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "ファイルが読み取り専用、他のプログラムで使用中、または変更する権限がないため、修復できません。"
 }

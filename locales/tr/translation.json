@@ -1095,5 +1095,12 @@
   "Batch export mode": "Toplu dışa aktarma modu",
   "Batch export finished": "Toplu dışa aktarma tamamlandı",
   "Exporting batch item {{current}} of {{total}}": "Toplu öğe dışa aktarılıyor: {{current}} / {{total}}",
-  "Reset all to defaults": "Tümünü varsayılana sıfırla"
+  "Reset all to defaults": "Tümünü varsayılana sıfırla",
+  "Could not find any damaged metadata to repair in this file.": "Bu dosyada onarılacak hasarlı meta veri bulunamadı.",
+  "Repair and open": "Onar ve aç",
+  "Repairing file": "Dosya onarılıyor",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Bu dosyanın meta verileri (başlığı) hasarlı olduğu için açılamıyor. Orijinal dosya onarılsın mı? Yalnızca hasarlı başlık bloğu değiştirilir; video ve sese dokunulmaz.",
+  "Don't ask again": "Bir daha sorma",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Meta verileri (başlığı) hasarlı MP4/MOV dosyalarını açarken sormadan otomatik olarak onar",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Dosya salt okunur olduğu, başka bir program tarafından kullanıldığı veya değiştirme izniniz olmadığı için onarılamıyor."
 }

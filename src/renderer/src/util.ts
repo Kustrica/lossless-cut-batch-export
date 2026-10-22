@@ -14,6 +14,7 @@ import type { EnableImportChapters, Html5ifyMode } from '../../common/types';
 import { UserFacingError } from '../errors';
 import type { FFprobeFormat } from '../../common/ffprobe';
 import { dirname, parse as parsePath, join, extname, isAbsolute, resolve, basename } from './util/path';
+import { repairDamagedMetadataInFileHandle } from './util/mp4Repair';
 
 const { stat, lstat, readdir, utimes, unlink, open, access, constants: { R_OK, W_OK } } = window.require('node:fs/promises');
 const remote = window.require('@electron/remote');
@@ -114,6 +115,38 @@ export async function getPathReadAccessError(pathIn: string) {
   } catch (err) {
     return err instanceof Error && 'code' in err && typeof err.code === 'string' ? err.code : undefined;
   }
+}
+
+/**
+ * Repair a file with damaged metadata in place (see util/mp4Repair.ts).
+ * Only the type (4 bytes) of each damaged metadata box header is changed, media data is not touched.
+ */
+export async function repairDamagedMetadataInPlace(filePath: string) {
+  const isWriteAccessError = (err: unknown) => err instanceof Error && 'code' in err && typeof err.code === 'string' && ['EPERM', 'EACCES', 'EBUSY', 'EROFS'].includes(err.code);
+
+  let positions: number[];
+  let atimeMs: number;
+  let mtimeMs: number;
+  try {
+    const fileHandle = await open(filePath, 'r+');
+    try {
+      ({ atimeMs, mtimeMs } = await fileHandle.stat());
+      positions = await repairDamagedMetadataInFileHandle(fileHandle);
+    } finally {
+      await fileHandle.close();
+    }
+  } catch (err) {
+    if (isWriteAccessError(err)) {
+      console.error('Failed to repair file', err);
+      throw new UserFacingError(i18n.t('Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.'));
+    }
+    throw err;
+  }
+
+  if (positions.length === 0) throw new UserFacingError(i18n.t('Could not find any damaged metadata to repair in this file.'));
+  // keep the original timestamps (must be done after closing, because Windows updates the modified time when closing)
+  await utimes(filePath, atimeMs / 1000, mtimeMs / 1000).catch((err: unknown) => console.warn('Failed to restore file times', err));
+  console.log('Repaired damaged metadata in place', filePath, positions);
 }
 
 // export const testFailFsOperation = isDev;

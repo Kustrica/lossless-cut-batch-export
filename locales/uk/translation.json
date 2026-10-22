@@ -963,5 +963,12 @@
   "Batch export mode": "Режим пакетного експорту",
   "Batch export finished": "Пакетний експорт завершено",
   "Exporting batch item {{current}} of {{total}}": "Експорт файлу {{current}} з {{total}}",
-  "Reset all to defaults": "Скинути все до типових"
+  "Reset all to defaults": "Скинути все до типових",
+  "Could not find any damaged metadata to repair in this file.": "У цьому файлі не знайдено пошкоджених метаданих, які можна виправити.",
+  "Repair and open": "Виправити й відкрити",
+  "Repairing file": "Виправлення файлу",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Метадані (заголовок) цього файлу пошкоджені, тому його не вдається відкрити. Виправити оригінальний файл? Буде змінено лише пошкоджений блок заголовка, відео й звук не зачіпаються.",
+  "Don't ask again": "Більше не питати",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Автоматично виправляти під час відкриття файли MP4/MOV з пошкодженими метаданими (заголовком), не питаючи",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Не вдалося виправити файл: він доступний лише для читання, використовується іншою програмою або у вас немає прав на його зміну."
 }

@@ -51,8 +51,8 @@
   "Fast: Full quality remux (no audio), likely to fail": "Быстро: Полный ремукс высокого качества (без аудио), вероятно, завершится ошибкой",
   "This is where working files, exported files, project files (CSV) are stored.": "Здесь хранятся рабочие экспортированные файлы проекта (CSV).",
   "Cut mode is:": "Режим обрезки:",
-  "Separate files": "Отдельные файлы",
-  "Merge cuts": "Объединить разрезы",
+  "Separate files": "Каждый кусок отдельным файлом",
+  "Merge cuts": "Склеить в один файл",
   "Export to separate files": "Экспорт в отдельные файлы",
   "Auto merge segments to one file after export": "Автоматически объединять сегменты в один файл после экспорта",
   "Working dir unset": "Рабочая папка не установлена",
@@ -374,7 +374,7 @@
   "You do not have permission to access this file": "У вас нет прав доступа к этому файлу",
   "Load segments from the new file, but keep the current media": "Загрузить сегменты из нового файла, но сохранить текущие медиафайлы",
   "Failed to export project": "Не удалось экспортировать проект",
-  "Merge & Separate": "Объединение и разделение",
+  "Merge & Separate": "Склеить и сохранить куски отдельно",
   "This template will result in invalid file names": "Этот шаблон приведет к недопустимым именам файлов",
   "Resulting segment file names": "Имена файлов результирующих сегментов",
   "Output name(s):": "Выходное имя(s):",
@@ -1118,5 +1118,12 @@
   "Batch export mode": "Режим пакетного экспорта",
   "Batch export finished": "Пакетный экспорт завершён",
   "Exporting batch item {{current}} of {{total}}": "Экспорт файла {{current}} из {{total}}",
-  "Reset all to defaults": "Сбросить всё по умолчанию"
+  "Reset all to defaults": "Сбросить всё по умолчанию",
+  "Could not find any damaged metadata to repair in this file.": "В этом файле не найдено повреждённых метаданных, которые можно исправить.",
+  "Repair and open": "Исправить и открыть",
+  "Repairing file": "Исправление файла",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "В этом файле повреждены метаданные (заголовок), поэтому его не удаётся открыть. Исправить исходный файл? Будет изменён только повреждённый блок заголовка, видео и звук не затрагиваются.",
+  "Don't ask again": "Больше не спрашивать",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Автоматически исправлять при открытии файлы MP4/MOV с повреждёнными метаданными (заголовком), не спрашивая",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Не удалось исправить файл: он доступен только для чтения, используется другой программой или у вас нет прав на его изменение."
 }

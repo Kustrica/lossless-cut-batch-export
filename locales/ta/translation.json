@@ -811,5 +811,12 @@
   "Batch export mode": "தொகுதி ஏற்றுமதி முறை",
   "Batch export finished": "தொகுதி ஏற்றுமதி முடிந்தது",
   "Exporting batch item {{current}} of {{total}}": "தொகுதி உருப்படி {{current}} / {{total}} ஏற்றுமதி செய்யப்படுகிறது",
-  "Reset all to defaults": "அனைத்தையும் இயல்புநிலைக்கு மீட்டமை"
+  "Reset all to defaults": "அனைத்தையும் இயல்புநிலைக்கு மீட்டமை",
+  "Could not find any damaged metadata to repair in this file.": "இந்தக் கோப்பில் சரிசெய்ய வேண்டிய சேதமடைந்த மீதரவு எதுவும் கண்டறியப்படவில்லை.",
+  "Repair and open": "சரிசெய்து திற",
+  "Repairing file": "கோப்பு சரிசெய்யப்படுகிறது",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "இந்தக் கோப்பின் மீதரவு (தலைப்பு) சேதமடைந்துள்ளதால் அதைத் திறக்க முடியாது. அசல் கோப்பைச் சரிசெய்யவா? சேதமடைந்த தலைப்புத் தொகுதி மட்டுமே மாற்றப்படும்; காணொளி மற்றும் ஒலி தொடப்படாது.",
+  "Don't ask again": "மீண்டும் கேட்க வேண்டாம்",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "சேதமடைந்த MP4/MOV மீதரவு (தலைப்பு) கொண்ட கோப்புகளைத் திறக்கும்போது கேட்காமல் தானாகச் சரிசெய்",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "கோப்பு படிக்க மட்டும் என்பதால், வேறொரு நிரலால் பயன்படுத்தப்படுவதால், அல்லது அதை மாற்ற உங்களுக்கு அனுமதி இல்லாததால் அதைச் சரிசெய்ய முடியவில்லை."
 }

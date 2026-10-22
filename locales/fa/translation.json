@@ -7,5 +7,12 @@
   "Reset all to defaults": "بازنشانی همه به پیش‌فرض",
   "Merge cuts": "ادغام برش‌ها",
   "Merge & Separate": "ادغام و جداسازی",
-  "Separate files": "فایل‌های جداگانه"
+  "Separate files": "فایل‌های جداگانه",
+  "Could not find any damaged metadata to repair in this file.": "هیچ فراداده آسیب‌دیده‌ای برای تعمیر در این فایل یافت نشد.",
+  "Repair and open": "تعمیر و باز کردن",
+  "Repairing file": "در حال تعمیر فایل",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "فراداده (سرآیند) این فایل آسیب دیده است و باز نمی‌شود. فایل اصلی تعمیر شود؟ فقط بلوک سرآیند آسیب‌دیده تغییر می‌کند؛ ویدیو و صدا دست نمی‌خورند.",
+  "Don't ask again": "دیگر نپرس",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "تعمیر خودکار فایل‌های MP4/MOV با فراداده (سرآیند) آسیب‌دیده هنگام باز کردن، بدون پرسیدن",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "تعمیر فایل ممکن نیست، زیرا فقط‌خواندنی است، توسط برنامه دیگری در حال استفاده است، یا اجازه تغییر آن را ندارید."
 }

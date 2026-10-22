@@ -116,5 +116,12 @@
   "Reset all to defaults": "Lähtesta kõik vaikeväärtustele",
   "Merge cuts": "Ühenda lõigud",
   "Merge & Separate": "Ühenda ja eralda",
-  "Separate files": "Eraldi failid"
+  "Separate files": "Eraldi failid",
+  "Could not find any damaged metadata to repair in this file.": "Selles failis ei leitud parandamiseks kahjustatud metaandmeid.",
+  "Repair and open": "Paranda ja ava",
+  "Repairing file": "Faili parandamine",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Selle faili metaandmed (päis) on kahjustatud ja seda ei saa avada. Kas parandada algne fail? Muudetakse ainult kahjustatud päiseplokki; videot ja heli ei puudutata.",
+  "Don't ask again": "Ära enam küsi",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Paranda kahjustatud MP4/MOV metaandmetega (päisega) failid avamisel automaatselt, küsimata",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Faili ei saa parandada, sest see on kirjutuskaitstud, teise programmi poolt kasutusel või sul pole selle muutmiseks õigusi."
 }

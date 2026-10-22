@@ -11,5 +11,12 @@
   "Reset all to defaults": "Restarigi ĉion al defaŭltoj",
   "Merge cuts": "Kunfandi tranĉaĵojn",
   "Merge & Separate": "Kunfandi kaj apartigi",
-  "Separate files": "Apartaj dosieroj"
+  "Separate files": "Apartaj dosieroj",
+  "Could not find any damaged metadata to repair in this file.": "Ne eblis trovi difektitajn metadatumojn por ripari en ĉi tiu dosiero.",
+  "Repair and open": "Ripari kaj malfermi",
+  "Repairing file": "Riparante dosieron",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Ĉi tiu dosiero havas difektitajn metadatumojn (kapon) kaj ne malfermeblas. Ĉu ripari la originalan dosieron? Nur la difektita kapa bloko ŝanĝiĝas; video kaj sono ne estas tuŝataj.",
+  "Don't ask again": "Ne plu demandi",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Aŭtomate ripari dosierojn kun difektitaj MP4/MOV-metadatumoj (kapo) dum malfermo, sen demandi",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Ne eblas ripari la dosieron, ĉar ĝi estas nurlega, uzata de alia programo, aŭ vi ne rajtas modifi ĝin."
 }

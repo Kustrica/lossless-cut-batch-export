@@ -901,5 +901,12 @@
   "Batch export mode": "Mode ekspor batch",
   "Batch export finished": "Ekspor batch selesai",
   "Exporting batch item {{current}} of {{total}}": "Mengekspor item batch {{current}} dari {{total}}",
-  "Reset all to defaults": "Atur ulang semua ke bawaan"
+  "Reset all to defaults": "Atur ulang semua ke bawaan",
+  "Could not find any damaged metadata to repair in this file.": "Tidak ditemukan metadata rusak yang dapat diperbaiki dalam berkas ini.",
+  "Repair and open": "Perbaiki dan buka",
+  "Repairing file": "Memperbaiki berkas",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Berkas ini memiliki metadata (header) yang rusak dan tidak dapat dibuka. Perbaiki berkas asli? Hanya blok header yang rusak yang diubah; video dan audio tidak disentuh.",
+  "Don't ask again": "Jangan tanya lagi",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Perbaiki berkas MP4/MOV dengan metadata (header) rusak secara otomatis saat dibuka, tanpa bertanya",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Tidak dapat memperbaiki berkas karena berkas hanya-baca, sedang digunakan program lain, atau Anda tidak memiliki izin untuk mengubahnya."
 }

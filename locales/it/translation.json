@@ -1086,5 +1086,12 @@
   "Batch export mode": "Modalità esportazione batch",
   "Batch export finished": "Esportazione batch completata",
   "Exporting batch item {{current}} of {{total}}": "Esportazione elemento batch {{current}} di {{total}}",
-  "Reset all to defaults": "Ripristina tutto ai valori predefiniti"
+  "Reset all to defaults": "Ripristina tutto ai valori predefiniti",
+  "Could not find any damaged metadata to repair in this file.": "Nessun metadato danneggiato da riparare trovato in questo file.",
+  "Repair and open": "Ripara e apri",
+  "Repairing file": "Riparazione del file",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Questo file ha metadati (intestazione) danneggiati e non può essere aperto. Riparare il file originale? Viene modificato solo il blocco di intestazione danneggiato; video e audio non vengono toccati.",
+  "Don't ask again": "Non chiedere più",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Ripara automaticamente all'apertura, senza chiedere, i file MP4/MOV con metadati (intestazione) danneggiati",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Impossibile riparare il file perché è di sola lettura, è in uso da un altro programma o non hai i permessi per modificarlo."
 }

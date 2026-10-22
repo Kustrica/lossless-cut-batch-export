@@ -115,6 +115,7 @@ export const configSchema = z.object({
   captureFrameQuality: z.number(),
   captureFrameFileNameFormat: z.enum(['timestamp', 'index']),
   enableNativeHevc: z.boolean(),
+  autoRepairDamagedMp4Metadata: z.boolean(),
   enableUpdateCheck: z.boolean(),
   cleanupChoices: z.object({
     trashTmpFiles: z.boolean(), askForCleanup: z.boolean(), closeFile: z.boolean(), cleanupAfterExport: z.boolean().or(z.undefined()).exactOptional(),

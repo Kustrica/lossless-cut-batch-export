@@ -1021,5 +1021,12 @@
   "Batch export mode": "批次匯出模式",
   "Batch export finished": "批次匯出完成",
   "Exporting batch item {{current}} of {{total}}": "正在匯出批次項目 {{current}}/{{total}}",
-  "Reset all to defaults": "全部重設為預設值"
+  "Reset all to defaults": "全部重設為預設值",
+  "Could not find any damaged metadata to repair in this file.": "在此檔案中找不到可修復的損壞中繼資料。",
+  "Repair and open": "修復並開啟",
+  "Repairing file": "正在修復檔案",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "此檔案的中繼資料（檔頭）已損壞，無法開啟。要修復原始檔案嗎？只會變更損壞的檔頭區塊，視訊和音訊不會被改動。",
+  "Don't ask again": "不再詢問",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "開啟時自動修復中繼資料（檔頭）損壞的 MP4/MOV 檔案，不再詢問",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "無法修復該檔案，因為它是唯讀的、正被其他程式使用，或您沒有修改它的權限。"
 }

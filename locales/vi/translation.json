@@ -856,5 +856,12 @@
   "Batch export mode": "Chế độ xuất hàng loạt",
   "Batch export finished": "Đã xuất hàng loạt xong",
   "Exporting batch item {{current}} of {{total}}": "Đang xuất mục {{current}} / {{total}}",
-  "Reset all to defaults": "Đặt lại tất cả về mặc định"
+  "Reset all to defaults": "Đặt lại tất cả về mặc định",
+  "Could not find any damaged metadata to repair in this file.": "Không tìm thấy siêu dữ liệu bị hỏng nào để sửa trong tệp này.",
+  "Repair and open": "Sửa và mở",
+  "Repairing file": "Đang sửa tệp",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Tệp này có siêu dữ liệu (phần đầu) bị hỏng và không thể mở. Sửa tệp gốc? Chỉ khối phần đầu bị hỏng được thay đổi; video và âm thanh không bị động đến.",
+  "Don't ask again": "Không hỏi lại",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Tự động sửa các tệp MP4/MOV có siêu dữ liệu (phần đầu) bị hỏng khi mở, không cần hỏi",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Không thể sửa tệp vì tệp chỉ đọc, đang được chương trình khác sử dụng, hoặc bạn không có quyền sửa đổi tệp."
 }

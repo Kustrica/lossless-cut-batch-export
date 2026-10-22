@@ -7,5 +7,12 @@
   "Reset all to defaults": "Врати све на подразумевано",
   "Merge cuts": "Спој исечке",
   "Merge & Separate": "Спој и раздвоји",
-  "Separate files": "Засебне датотеке"
+  "Separate files": "Засебне датотеке",
+  "Could not find any damaged metadata to repair in this file.": "У овој датотеци нису пронађени оштећени метаподаци за поправку.",
+  "Repair and open": "Поправи и отвори",
+  "Repairing file": "Поправљање датотеке",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Ова датотека има оштећене метаподатке (заглавље) и не може да се отвори. Поправити оригиналну датотеку? Мења се само оштећени блок заглавља; видео и звук остају нетакнути.",
+  "Don't ask again": "Не питај поново",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Аутоматски поправљај MP4/MOV датотеке са оштећеним метаподацима (заглављем) при отварању, без питања",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Датотека не може да се поправи јер је само за читање, користи је други програм или немате дозволу да је мењате."
 }

@@ -177,6 +177,8 @@ export default function useUserSettingsRoot() {
   useEffect(() => safeSetConfig({ captureFrameFileNameFormat }), [captureFrameFileNameFormat]);
   const [enableNativeHevc, setEnableNativeHevc] = useState(safeGetConfigInitial('enableNativeHevc'));
   useEffect(() => safeSetConfig({ enableNativeHevc }), [enableNativeHevc]);
+  const [autoRepairDamagedMp4Metadata, setAutoRepairDamagedMp4Metadata] = useState(safeGetConfigInitial('autoRepairDamagedMp4Metadata'));
+  useEffect(() => safeSetConfig({ autoRepairDamagedMp4Metadata }), [autoRepairDamagedMp4Metadata]);
   const [enableUpdateCheck, setEnableUpdateCheck] = useState(safeGetConfigInitial('enableUpdateCheck'));
   useEffect(() => safeSetConfig({ enableUpdateCheck }), [enableUpdateCheck]);
   const [cleanupChoices, setCleanupChoices] = useState(safeGetConfigInitial('cleanupChoices'));
@@ -318,6 +320,7 @@ export default function useUserSettingsRoot() {
     captureFrameQuality,
     captureFrameFileNameFormat,
     enableNativeHevc,
+    autoRepairDamagedMp4Metadata,
     enableUpdateCheck,
     cleanupChoices,
     allowMultipleInstances,
@@ -402,6 +405,7 @@ export default function useUserSettingsRoot() {
     setCaptureFrameQuality,
     setCaptureFrameFileNameFormat,
     setEnableNativeHevc,
+    setAutoRepairDamagedMp4Metadata,
     setEnableUpdateCheck,
     setCleanupChoices,
     setAllowMultipleInstances,

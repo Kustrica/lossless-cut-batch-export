@@ -1149,5 +1149,12 @@
   "Batch export mode": "批量导出模式",
   "Batch export finished": "批量导出完成",
   "Exporting batch item {{current}} of {{total}}": "正在导出批处理项 {{current}}/{{total}}",
-  "Reset all to defaults": "全部重置为默认值"
+  "Reset all to defaults": "全部重置为默认值",
+  "Could not find any damaged metadata to repair in this file.": "在此文件中未找到可修复的损坏元数据。",
+  "Repair and open": "修复并打开",
+  "Repairing file": "正在修复文件",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "此文件的元数据（文件头）已损坏，无法打开。要修复原始文件吗？只会更改损坏的文件头块，视频和音频不会被改动。",
+  "Don't ask again": "不再询问",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "打开时自动修复元数据（文件头）损坏的 MP4/MOV 文件，不再询问",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "无法修复该文件，因为它是只读的、正被其他程序使用，或者您没有修改它的权限。"
 }

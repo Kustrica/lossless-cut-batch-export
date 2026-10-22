@@ -670,5 +670,12 @@
   "Batch export mode": "Modus voor batch-export",
   "Batch export finished": "Batch-export voltooid",
   "Exporting batch item {{current}} of {{total}}": "Batch-item {{current}} van {{total}} exporteren",
-  "Reset all to defaults": "Alles herstellen naar standaard"
+  "Reset all to defaults": "Alles herstellen naar standaard",
+  "Could not find any damaged metadata to repair in this file.": "Er zijn geen beschadigde metadata gevonden om te herstellen in dit bestand.",
+  "Repair and open": "Herstellen en openen",
+  "Repairing file": "Bestand herstellen",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Dit bestand heeft beschadigde metadata (header) en kan niet worden geopend. Het originele bestand herstellen? Alleen het beschadigde headerblok wordt gewijzigd; video en audio blijven onaangeroerd.",
+  "Don't ask again": "Niet meer vragen",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Bestanden met beschadigde MP4/MOV-metadata (header) bij het openen automatisch herstellen, zonder te vragen",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Kan het bestand niet herstellen, omdat het alleen-lezen is, door een ander programma wordt gebruikt of je geen toestemming hebt om het te wijzigen."
 }

@@ -1,0 +1,768 @@
+diff --git a/locales/ar/translation.json b/locales/ar/translation.json
+index 1a8b2284..495797c6 100644
+--- a/locales/ar/translation.json
++++ b/locales/ar/translation.json
+@@ -8,5 +8,9 @@
+   "Reset all to defaults": "إعادة تعيين الكل إلى الافتراضي",
+   "Merge cuts": "دمج المقاطع",
+   "Merge & Separate": "دمج وفصل",
+-  "Separate files": "ملفات منفصلة"
++  "Separate files": "ملفات منفصلة",
++  "Could not find any damaged metadata to repair in this file.": "تعذر العثور على أي بيانات وصفية تالفة لإصلاحها في هذا الملف.",
++  "Repair and open": "إصلاح وفتح",
++  "Repairing file": "جارٍ إصلاح الملف",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "يحتوي هذا الملف على بيانات وصفية تالفة ولا يمكن فتحه. هل تريد إنشاء نسخة مُصلحة من الملف وفتحها بدلاً منه؟ لن يتم تعديل الملف الأصلي."
+ }
+\ No newline at end of file
+diff --git a/locales/cs/translation.json b/locales/cs/translation.json
+index 165585e7..e227e416 100644
+--- a/locales/cs/translation.json
++++ b/locales/cs/translation.json
+@@ -1128,5 +1128,9 @@
+   "Batch export mode": "Režim dávkového exportu",
+   "Batch export finished": "Dávkový export dokončen",
+   "Exporting batch item {{current}} of {{total}}": "Exportování položky dávky {{current}} z {{total}}",
+-  "Reset all to defaults": "Obnovit vše na výchozí"
++  "Reset all to defaults": "Obnovit vše na výchozí",
++  "Could not find any damaged metadata to repair in this file.": "V tomto souboru nebyla nalezena žádná poškozená metadata k opravě.",
++  "Repair and open": "Opravit a otevřít",
++  "Repairing file": "Opravuji soubor",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Tento soubor má poškozená metadata a nelze jej otevřít. Chcete vytvořit opravenou kopii souboru a otevřít ji místo něj? Původní soubor nebude změněn."
+ }
+diff --git a/locales/de/translation.json b/locales/de/translation.json
+index 00d7f8a2..32be864e 100644
+--- a/locales/de/translation.json
++++ b/locales/de/translation.json
+@@ -1124,5 +1124,9 @@
+   "Batch export mode": "Stapelexportmodus",
+   "Batch export finished": "Stapelexport abgeschlossen",
+   "Exporting batch item {{current}} of {{total}}": "Exportiere Stapeldatei {{current}} von {{total}}",
+-  "Reset all to defaults": "Alle auf Standard zurücksetzen"
++  "Reset all to defaults": "Alle auf Standard zurücksetzen",
++  "Could not find any damaged metadata to repair in this file.": "In dieser Datei wurden keine beschädigten Metadaten zum Reparieren gefunden.",
++  "Repair and open": "Reparieren und öffnen",
++  "Repairing file": "Datei wird repariert",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Diese Datei hat beschädigte Metadaten und kann nicht geöffnet werden. Möchten Sie stattdessen eine reparierte Kopie der Datei erstellen und öffnen? Die Originaldatei wird nicht verändert."
+ }
+diff --git a/locales/en/translation.json b/locales/en/translation.json
+index 3cfbac53..301fdc9b 100644
+--- a/locales/en/translation.json
++++ b/locales/en/translation.json
+@@ -158,6 +158,7 @@
+   "Copy to clipboard": "Copy to clipboard",
+   "Copy to YouTube description/comment:": "Copy to YouTube description/comment:",
+   "Copyright": "Copyright",
++  "Could not find any damaged metadata to repair in this file.": "Could not find any damaged metadata to repair in this file.",
+   "Could not open media due to error {{errorCode}}": "Could not open media due to error {{errorCode}}",
+   "Create byte sized segments": "Create byte sized segments",
+   "Create chapters from merged segments? (slow)": "Create chapters from merged segments (slow)",
+@@ -643,6 +644,8 @@
+   "Remove segment": "Remove segment",
+   "Remove selected segments": "Remove selected segments",
+   "Reorder segments by start time": "Reorder segments by start time",
++  "Repair and open": "Repair and open",
++  "Repairing file": "Repairing file",
+   "Replace": "Replace",
+   "Report": "Report",
+   "Report an error": "Report an error",
+@@ -813,6 +816,7 @@
+   "This experimental feature will re-encode the part of the video from the cutpoint until the next keyframe in order to attempt to make a 100% accurate cut. Only works on some files. I've had success with some h264 files, and only a few h265 files. See more here: {{url}}": "This experimental feature will re-encode the part of the video from the cutpoint until the next keyframe in order to attempt to make a 100% accurate cut. Only works on some files. I've had success with some h264 files, and only a few h265 files. See more here: {{url}}",
+   "This file contains an audio track that FFmpeg is unable to mux into the MP4 format, so MOV has been auto-selected as the default output format.": "This file contains an audio track that FFmpeg is unable to mux into the MP4 format, so MOV has been auto-selected as the default output format.",
+   "This file does not have a valid duration. This may cause issues. You can try to fix the file's duration from the File menu": "This file does not have a valid duration. This may cause issues. You can try to fix the file's duration from the File menu",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.",
+   "This file has embedded chapters. Do you want to import the chapters as cut-segments?": "This file has embedded chapters. Do you want to import the chapters as cut-segments?",
+   "This gives you an overview of the export and allows you to customise more parameters before exporting, like changing the output file name.": "This gives you an overview of the export and allows you to customise more parameters before exporting, like changing the output file name.",
+   "This is hardcoded by FFmpeg and cannot be changed.": "This is hardcoded by FFmpeg and cannot be changed.",
+diff --git a/locales/eo/translation.json b/locales/eo/translation.json
+index 636a4e6d..8c992b2f 100644
+--- a/locales/eo/translation.json
++++ b/locales/eo/translation.json
+@@ -11,5 +11,9 @@
+   "Reset all to defaults": "Restarigi ĉion al defaŭltoj",
+   "Merge cuts": "Kunfandi tranĉaĵojn",
+   "Merge & Separate": "Kunfandi kaj apartigi",
+-  "Separate files": "Apartaj dosieroj"
++  "Separate files": "Apartaj dosieroj",
++  "Could not find any damaged metadata to repair in this file.": "Ne eblis trovi difektitajn metadatumojn por ripari en ĉi tiu dosiero.",
++  "Repair and open": "Ripari kaj malfermi",
++  "Repairing file": "Riparante dosieron",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Ĉi tiu dosiero havas difektitajn metadatumojn kaj ne malfermeblas. Ĉu vi volas krei riparitan kopion de la dosiero kaj malfermi ĝin anstataŭe? La originala dosiero ne estos ŝanĝita."
+ }
+diff --git a/locales/es/translation.json b/locales/es/translation.json
+index 2cfb339f..f56f0055 100644
+--- a/locales/es/translation.json
++++ b/locales/es/translation.json
+@@ -915,5 +915,9 @@
+   "Batch export mode": "Modo de exportación por lotes",
+   "Batch export finished": "Exportación por lotes finalizada",
+   "Exporting batch item {{current}} of {{total}}": "Exportando elemento {{current}} de {{total}} del lote",
+-  "Reset all to defaults": "Restablecer todo a los valores predeterminados"
++  "Reset all to defaults": "Restablecer todo a los valores predeterminados",
++  "Could not find any damaged metadata to repair in this file.": "No se encontraron metadatos dañados que reparar en este archivo.",
++  "Repair and open": "Reparar y abrir",
++  "Repairing file": "Reparando archivo",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Este archivo tiene metadatos dañados y no se puede abrir. ¿Quieres crear una copia reparada del archivo y abrirla en su lugar? El archivo original no se modificará."
+ }
+diff --git a/locales/et/translation.json b/locales/et/translation.json
+index 0f4e5613..e203cc97 100644
+--- a/locales/et/translation.json
++++ b/locales/et/translation.json
+@@ -116,5 +116,9 @@
+   "Reset all to defaults": "Lähtesta kõik vaikeväärtustele",
+   "Merge cuts": "Ühenda lõigud",
+   "Merge & Separate": "Ühenda ja eralda",
+-  "Separate files": "Eraldi failid"
++  "Separate files": "Eraldi failid",
++  "Could not find any damaged metadata to repair in this file.": "Selles failis ei leitud parandamiseks kahjustatud metaandmeid.",
++  "Repair and open": "Paranda ja ava",
++  "Repairing file": "Faili parandamine",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Selle faili metaandmed on kahjustatud ja seda ei saa avada. Kas soovid luua failist parandatud koopia ja avada selle? Algset faili ei muudeta."
+ }
+\ No newline at end of file
+diff --git a/locales/fa/translation.json b/locales/fa/translation.json
+index f02f6d5f..7da86248 100644
+--- a/locales/fa/translation.json
++++ b/locales/fa/translation.json
+@@ -7,5 +7,9 @@
+   "Reset all to defaults": "بازنشانی همه به پیش‌فرض",
+   "Merge cuts": "ادغام برش‌ها",
+   "Merge & Separate": "ادغام و جداسازی",
+-  "Separate files": "فایل‌های جداگانه"
++  "Separate files": "فایل‌های جداگانه",
++  "Could not find any damaged metadata to repair in this file.": "هیچ فراداده آسیب‌دیده‌ای برای تعمیر در این فایل یافت نشد.",
++  "Repair and open": "تعمیر و باز کردن",
++  "Repairing file": "در حال تعمیر فایل",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "این فایل فراداده آسیب‌دیده دارد و باز نمی‌شود. آیا می‌خواهید یک نسخه تعمیرشده از فایل بسازید و آن را به جای آن باز کنید؟ فایل اصلی تغییر نخواهد کرد."
+ }
+\ No newline at end of file
+diff --git a/locales/fi/translation.json b/locales/fi/translation.json
+index 9df42274..8aa3a51b 100644
+--- a/locales/fi/translation.json
++++ b/locales/fi/translation.json
+@@ -598,5 +598,9 @@
+   "Batch export mode": "Nippuviennin tila",
+   "Batch export finished": "Nippuvienti valmis",
+   "Exporting batch item {{current}} of {{total}}": "Viedään nipun tiedostoa {{current}}/{{total}}",
+-  "Reset all to defaults": "Palauta kaikki oletuksiin"
++  "Reset all to defaults": "Palauta kaikki oletuksiin",
++  "Could not find any damaged metadata to repair in this file.": "Tiedostosta ei löytynyt korjattavia vioittuneita metatietoja.",
++  "Repair and open": "Korjaa ja avaa",
++  "Repairing file": "Korjataan tiedostoa",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Tämän tiedoston metatiedot ovat vioittuneet, eikä sitä voi avata. Haluatko luoda tiedostosta korjatun kopion ja avata sen? Alkuperäistä tiedostoa ei muuteta."
+ }
+diff --git a/locales/fr/translation.json b/locales/fr/translation.json
+index 6c5eed14..dabb239d 100644
+--- a/locales/fr/translation.json
++++ b/locales/fr/translation.json
+@@ -905,5 +905,9 @@
+   "Batch export mode": "Mode d'exportation par lots",
+   "Batch export finished": "Exportation par lots terminée",
+   "Exporting batch item {{current}} of {{total}}": "Exportation de l'élément {{current}} sur {{total}} du lot",
+-  "Reset all to defaults": "Tout réinitialiser par défaut"
++  "Reset all to defaults": "Tout réinitialiser par défaut",
++  "Could not find any damaged metadata to repair in this file.": "Aucune métadonnée endommagée à réparer n'a été trouvée dans ce fichier.",
++  "Repair and open": "Réparer et ouvrir",
++  "Repairing file": "Réparation du fichier",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Ce fichier contient des métadonnées endommagées et ne peut pas être ouvert. Voulez-vous créer une copie réparée du fichier et l'ouvrir à la place ? Le fichier original ne sera pas modifié."
+ }
+diff --git a/locales/he/translation.json b/locales/he/translation.json
+index 64db3acd..45ad43df 100644
+--- a/locales/he/translation.json
++++ b/locales/he/translation.json
+@@ -912,5 +912,9 @@
+   "Batch export mode": "מצב ייצוא מרובה",
+   "Batch export finished": "הייצוא המרובה הסתיים",
+   "Exporting batch item {{current}} of {{total}}": "מייצא קובץ {{current}} מתוך {{total}}",
+-  "Reset all to defaults": "אפס הכול לברירת המחדל"
++  "Reset all to defaults": "אפס הכול לברירת המחדל",
++  "Could not find any damaged metadata to repair in this file.": "לא נמצאו בקובץ זה מטא־נתונים פגומים לתיקון.",
++  "Repair and open": "תיקון ופתיחה",
++  "Repairing file": "הקובץ בתיקון",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "לקובץ זה יש מטא־נתונים פגומים ולא ניתן לפתוח אותו. ליצור עותק מתוקן של הקובץ ולפתוח אותו במקום? הקובץ המקורי לא ישתנה."
+ }
+diff --git a/locales/hu/translation.json b/locales/hu/translation.json
+index 3d09ca1a..3b147c5e 100644
+--- a/locales/hu/translation.json
++++ b/locales/hu/translation.json
+@@ -960,5 +960,9 @@
+   "Batch export mode": "Kötegelt exportálási mód",
+   "Batch export finished": "Kötegelt exportálás kész",
+   "Exporting batch item {{current}} of {{total}}": "Kötegelem exportálása: {{current}} / {{total}}",
+-  "Reset all to defaults": "Minden visszaállítása alapértelmezettre"
++  "Reset all to defaults": "Minden visszaállítása alapértelmezettre",
++  "Could not find any damaged metadata to repair in this file.": "Ebben a fájlban nem található javítható sérült metaadat.",
++  "Repair and open": "Javítás és megnyitás",
++  "Repairing file": "Fájl javítása",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "A fájl metaadatai sérültek, ezért nem nyitható meg. Szeretnéd létrehozni a fájl javított másolatát, és azt megnyitni helyette? Az eredeti fájl nem módosul."
+ }
+diff --git a/locales/id/translation.json b/locales/id/translation.json
+index fd409b00..f7df9555 100644
+--- a/locales/id/translation.json
++++ b/locales/id/translation.json
+@@ -901,5 +901,9 @@
+   "Batch export mode": "Mode ekspor batch",
+   "Batch export finished": "Ekspor batch selesai",
+   "Exporting batch item {{current}} of {{total}}": "Mengekspor item batch {{current}} dari {{total}}",
+-  "Reset all to defaults": "Atur ulang semua ke bawaan"
++  "Reset all to defaults": "Atur ulang semua ke bawaan",
++  "Could not find any damaged metadata to repair in this file.": "Tidak ditemukan metadata rusak yang dapat diperbaiki dalam berkas ini.",
++  "Repair and open": "Perbaiki dan buka",
++  "Repairing file": "Memperbaiki berkas",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Berkas ini memiliki metadata yang rusak dan tidak dapat dibuka. Apakah Anda ingin membuat salinan berkas yang telah diperbaiki dan membukanya? Berkas asli tidak akan diubah."
+ }
+diff --git a/locales/it/translation.json b/locales/it/translation.json
+index adbc6eb8..49c4d9ef 100644
+--- a/locales/it/translation.json
++++ b/locales/it/translation.json
+@@ -1086,5 +1086,9 @@
+   "Batch export mode": "Modalità esportazione batch",
+   "Batch export finished": "Esportazione batch completata",
+   "Exporting batch item {{current}} of {{total}}": "Esportazione elemento batch {{current}} di {{total}}",
+-  "Reset all to defaults": "Ripristina tutto ai valori predefiniti"
++  "Reset all to defaults": "Ripristina tutto ai valori predefiniti",
++  "Could not find any damaged metadata to repair in this file.": "Nessun metadato danneggiato da riparare trovato in questo file.",
++  "Repair and open": "Ripara e apri",
++  "Repairing file": "Riparazione del file",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Questo file ha metadati danneggiati e non può essere aperto. Vuoi creare una copia riparata del file e aprirla al suo posto? Il file originale non verrà modificato."
+ }
+diff --git a/locales/ja/translation.json b/locales/ja/translation.json
+index bfcda7b2..f2495637 100644
+--- a/locales/ja/translation.json
++++ b/locales/ja/translation.json
+@@ -1106,5 +1106,9 @@
+   "Batch export mode": "一括出力方法",
+   "Batch export finished": "一括出力完了",
+   "Exporting batch item {{current}} of {{total}}": "一括出力中 {{current}} / {{total}}",
+-  "Reset all to defaults": "すべて初期設定に戻す"
++  "Reset all to defaults": "すべて初期設定に戻す",
++  "Could not find any damaged metadata to repair in this file.": "このファイルには修復可能な破損したメタデータが見つかりませんでした。",
++  "Repair and open": "修復して開く",
++  "Repairing file": "ファイルを修復中",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "このファイルはメタデータが破損しているため開けません。ファイルの修復済みコピーを作成して、代わりにそれを開きますか？元のファイルは変更されません。"
+ }
+diff --git a/locales/ko/translation.json b/locales/ko/translation.json
+index 798bd5a9..55153dd0 100644
+--- a/locales/ko/translation.json
++++ b/locales/ko/translation.json
+@@ -1103,5 +1103,9 @@
+   "Batch export mode": "일괄 내보내기 방식",
+   "Batch export finished": "일괄 내보내기 마침",
+   "Exporting batch item {{current}} of {{total}}": "일괄 처리 항목 {{current}}/{{total}} 내보내는 중",
+-  "Reset all to defaults": "모두 기본값으로 재설정"
++  "Reset all to defaults": "모두 기본값으로 재설정",
++  "Could not find any damaged metadata to repair in this file.": "이 파일에서 복구할 손상된 메타데이터를 찾을 수 없습니다.",
++  "Repair and open": "복구 후 열기",
++  "Repairing file": "파일 복구 중",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "이 파일은 메타데이터가 손상되어 열 수 없습니다. 파일의 복구된 사본을 만들어 대신 여시겠습니까? 원본 파일은 수정되지 않습니다."
+ }
+diff --git a/locales/lt/translation.json b/locales/lt/translation.json
+index fac4eedf..b69fe436 100644
+--- a/locales/lt/translation.json
++++ b/locales/lt/translation.json
+@@ -617,5 +617,9 @@
+   "Batch export mode": "Paketo eksportavimo režimas",
+   "Batch export finished": "Paketo eksportavimas baigtas",
+   "Exporting batch item {{current}} of {{total}}": "Eksportuojamas paketo elementas {{current}} iš {{total}}",
+-  "Reset all to defaults": "Atstatyti viską į numatytuosius"
++  "Reset all to defaults": "Atstatyti viską į numatytuosius",
++  "Could not find any damaged metadata to repair in this file.": "Šiame faile nerasta sugadintų metaduomenų, kuriuos būtų galima pataisyti.",
++  "Repair and open": "Pataisyti ir atverti",
++  "Repairing file": "Taisomas failas",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Šio failo metaduomenys sugadinti, todėl jo atverti negalima. Ar norite sukurti pataisytą failo kopiją ir atverti ją? Originalus failas nebus pakeistas."
+ }
+diff --git a/locales/nb_NO/translation.json b/locales/nb_NO/translation.json
+index 5a63903d..691d97d2 100644
+--- a/locales/nb_NO/translation.json
++++ b/locales/nb_NO/translation.json
+@@ -393,5 +393,9 @@
+   "Batch export mode": "Modus for satsvis eksport",
+   "Batch export finished": "Satsvis eksport fullført",
+   "Exporting batch item {{current}} of {{total}}": "Eksporterer fil {{current}} av {{total}}",
+-  "Reset all to defaults": "Tilbakestill alt til standard"
++  "Reset all to defaults": "Tilbakestill alt til standard",
++  "Could not find any damaged metadata to repair in this file.": "Fant ingen skadde metadata å reparere i denne filen.",
++  "Repair and open": "Reparer og åpne",
++  "Repairing file": "Reparerer fil",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Denne filen har skadde metadata og kan ikke åpnes. Vil du lage en reparert kopi av filen og åpne den i stedet? Originalfilen blir ikke endret."
+ }
+diff --git a/locales/nl/translation.json b/locales/nl/translation.json
+index 42ea306e..a4623463 100644
+--- a/locales/nl/translation.json
++++ b/locales/nl/translation.json
+@@ -670,5 +670,9 @@
+   "Batch export mode": "Modus voor batch-export",
+   "Batch export finished": "Batch-export voltooid",
+   "Exporting batch item {{current}} of {{total}}": "Batch-item {{current}} van {{total}} exporteren",
+-  "Reset all to defaults": "Alles herstellen naar standaard"
++  "Reset all to defaults": "Alles herstellen naar standaard",
++  "Could not find any damaged metadata to repair in this file.": "Er zijn geen beschadigde metadata gevonden om te herstellen in dit bestand.",
++  "Repair and open": "Herstellen en openen",
++  "Repairing file": "Bestand herstellen",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Dit bestand heeft beschadigde metadata en kan niet worden geopend. Wil je een herstelde kopie van het bestand maken en die in plaats daarvan openen? Het originele bestand wordt niet gewijzigd."
+ }
+diff --git a/locales/nn/translation.json b/locales/nn/translation.json
+index 953a7467..c48f299a 100644
+--- a/locales/nn/translation.json
++++ b/locales/nn/translation.json
+@@ -381,5 +381,9 @@
+   "Batch export mode": "Modus for satsvis utføring",
+   "Batch export finished": "Satsvis utføring fullført",
+   "Exporting batch item {{current}} of {{total}}": "Fører ut fil {{current}} av {{total}}",
+-  "Reset all to defaults": "Still attende alt til standard"
++  "Reset all to defaults": "Still attende alt til standard",
++  "Could not find any damaged metadata to repair in this file.": "Fann ingen skadde metadata å reparere i denne fila.",
++  "Repair and open": "Reparer og opne",
++  "Repairing file": "Reparerer fil",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Denne fila har skadde metadata og kan ikkje opnast. Vil du lage ein reparert kopi av fila og opne han i staden? Originalfila vert ikkje endra."
+ }
+diff --git a/locales/pl/translation.json b/locales/pl/translation.json
+index f6d66c08..ab19f872 100644
+--- a/locales/pl/translation.json
++++ b/locales/pl/translation.json
+@@ -977,5 +977,9 @@
+   "Batch export mode": "Tryb eksportu wsadowego",
+   "Batch export finished": "Eksport wsadowy zakończony",
+   "Exporting batch item {{current}} of {{total}}": "Eksportowanie pliku wsadowego {{current}} z {{total}}",
+-  "Reset all to defaults": "Przywróć wszystko do domyślnych"
++  "Reset all to defaults": "Przywróć wszystko do domyślnych",
++  "Could not find any damaged metadata to repair in this file.": "Nie znaleziono w tym pliku uszkodzonych metadanych do naprawienia.",
++  "Repair and open": "Napraw i otwórz",
++  "Repairing file": "Naprawianie pliku",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Ten plik ma uszkodzone metadane i nie można go otworzyć. Czy chcesz utworzyć naprawioną kopię pliku i otworzyć ją zamiast niego? Oryginalny plik nie zostanie zmieniony."
+ }
+diff --git a/locales/pt/translation.json b/locales/pt/translation.json
+index 50b4f995..1897929d 100644
+--- a/locales/pt/translation.json
++++ b/locales/pt/translation.json
+@@ -991,5 +991,9 @@
+   "Batch export mode": "Modo de exportação em lote",
+   "Batch export finished": "Exportação em lote concluída",
+   "Exporting batch item {{current}} of {{total}}": "A exportar item {{current}} de {{total}} do lote",
+-  "Reset all to defaults": "Repor tudo para as predefinições"
++  "Reset all to defaults": "Repor tudo para as predefinições",
++  "Could not find any damaged metadata to repair in this file.": "Não foram encontrados metadados danificados para reparar neste ficheiro.",
++  "Repair and open": "Reparar e abrir",
++  "Repairing file": "A reparar ficheiro",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Este ficheiro tem metadados danificados e não pode ser aberto. Pretende criar uma cópia reparada do ficheiro e abri-la em vez dele? O ficheiro original não será alterado."
+ }
+diff --git a/locales/pt_BR/translation.json b/locales/pt_BR/translation.json
+index f3baedf0..864e84ee 100644
+--- a/locales/pt_BR/translation.json
++++ b/locales/pt_BR/translation.json
+@@ -1080,5 +1080,9 @@
+   "Batch export mode": "Modo de exportação em lote",
+   "Batch export finished": "Exportação em lote concluída",
+   "Exporting batch item {{current}} of {{total}}": "Exportando item {{current}} de {{total}} do lote",
+-  "Reset all to defaults": "Redefinir tudo para o padrão"
++  "Reset all to defaults": "Redefinir tudo para o padrão",
++  "Could not find any damaged metadata to repair in this file.": "Não foram encontrados metadados danificados para reparar neste arquivo.",
++  "Repair and open": "Reparar e abrir",
++  "Repairing file": "Reparando arquivo",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Este arquivo tem metadados danificados e não pode ser aberto. Deseja criar uma cópia reparada do arquivo e abri-la no lugar dele? O arquivo original não será modificado."
+ }
+diff --git a/locales/ro/translation.json b/locales/ro/translation.json
+index 115beac3..961edf92 100644
+--- a/locales/ro/translation.json
++++ b/locales/ro/translation.json
+@@ -886,5 +886,9 @@
+   "Batch export mode": "Modul de exportare în lot",
+   "Batch export finished": "Exportarea în lot a fost finalizată",
+   "Exporting batch item {{current}} of {{total}}": "Se exportă elementul {{current}} din {{total}}",
+-  "Reset all to defaults": "Resetează totul la valorile implicite"
++  "Reset all to defaults": "Resetează totul la valorile implicite",
++  "Could not find any damaged metadata to repair in this file.": "Nu s-au găsit metadate deteriorate de reparat în acest fișier.",
++  "Repair and open": "Repară și deschide",
++  "Repairing file": "Se repară fișierul",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Acest fișier are metadate deteriorate și nu poate fi deschis. Doriți să creați o copie reparată a fișierului și să o deschideți în locul lui? Fișierul original nu va fi modificat."
+ }
+diff --git a/locales/ru/translation.json b/locales/ru/translation.json
+index 332f3d40..9665535f 100644
+--- a/locales/ru/translation.json
++++ b/locales/ru/translation.json
+@@ -51,8 +51,8 @@
+   "Fast: Full quality remux (no audio), likely to fail": "Быстро: Полный ремукс высокого качества (без аудио), вероятно, завершится ошибкой",
+   "This is where working files, exported files, project files (CSV) are stored.": "Здесь хранятся рабочие экспортированные файлы проекта (CSV).",
+   "Cut mode is:": "Режим обрезки:",
+-  "Separate files": "Отдельные файлы",
+-  "Merge cuts": "Объединить разрезы",
++  "Separate files": "Каждый кусок отдельным файлом",
++  "Merge cuts": "Склеить в один файл",
+   "Export to separate files": "Экспорт в отдельные файлы",
+   "Auto merge segments to one file after export": "Автоматически объединять сегменты в один файл после экспорта",
+   "Working dir unset": "Рабочая папка не установлена",
+@@ -374,7 +374,7 @@
+   "You do not have permission to access this file": "У вас нет прав доступа к этому файлу",
+   "Load segments from the new file, but keep the current media": "Загрузить сегменты из нового файла, но сохранить текущие медиафайлы",
+   "Failed to export project": "Не удалось экспортировать проект",
+-  "Merge & Separate": "Объединение и разделение",
++  "Merge & Separate": "Склеить и сохранить куски отдельно",
+   "This template will result in invalid file names": "Этот шаблон приведет к недопустимым именам файлов",
+   "Resulting segment file names": "Имена файлов результирующих сегментов",
+   "Output name(s):": "Выходное имя(s):",
+@@ -1118,5 +1118,9 @@
+   "Batch export mode": "Режим пакетного экспорта",
+   "Batch export finished": "Пакетный экспорт завершён",
+   "Exporting batch item {{current}} of {{total}}": "Экспорт файла {{current}} из {{total}}",
+-  "Reset all to defaults": "Сбросить всё по умолчанию"
++  "Reset all to defaults": "Сбросить всё по умолчанию",
++  "Could not find any damaged metadata to repair in this file.": "В этом файле не найдено повреждённых метаданных, которые можно исправить.",
++  "Repair and open": "Исправить и открыть",
++  "Repairing file": "Исправление файла",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "В этом файле повреждены метаданные, поэтому его не удаётся открыть. Создать исправленную копию файла и открыть её вместо него? Исходный файл не будет изменён."
+ }
+diff --git a/locales/si/translation.json b/locales/si/translation.json
+index 956110ec..b81a488e 100644
+--- a/locales/si/translation.json
++++ b/locales/si/translation.json
+@@ -17,5 +17,9 @@
+   "Reset all to defaults": "සියල්ල පෙරනිමියට යළි සකසන්න",
+   "Merge cuts": "කැපීම් ඒකාබද්ධ කරන්න",
+   "Merge & Separate": "ඒකාබද්ධ කර වෙන් කරන්න",
+-  "Separate files": "වෙනම ගොනු"
++  "Separate files": "වෙනම ගොනු",
++  "Could not find any damaged metadata to repair in this file.": "මෙම ගොනුවේ අලුත්වැඩියා කිරීමට හානි වූ පාරදත්ත කිසිවක් හමු නොවීය.",
++  "Repair and open": "අලුත්වැඩියා කර විවෘත කරන්න",
++  "Repairing file": "ගොනුව අලුත්වැඩියා කරමින්",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "මෙම ගොනුවේ පාරදත්ත හානි වී ඇති බැවින් එය විවෘත කළ නොහැක. ගොනුවේ අලුත්වැඩියා කළ පිටපතක් සාදා ඒ වෙනුවට එය විවෘත කිරීමට ඔබට අවශ්‍යද? මුල් ගොනුව වෙනස් නොකෙරේ."
+ }
+\ No newline at end of file
+diff --git a/locales/sk/translation.json b/locales/sk/translation.json
+index aec1513e..4f3a3789 100644
+--- a/locales/sk/translation.json
++++ b/locales/sk/translation.json
+@@ -975,5 +975,9 @@
+   "Batch export mode": "Režim hromadného exportu",
+   "Batch export finished": "Hromadný export dokončený",
+   "Exporting batch item {{current}} of {{total}}": "Exportovanie položky {{current}} z {{total}}",
+-  "Reset all to defaults": "Obnoviť všetko na predvolené"
++  "Reset all to defaults": "Obnoviť všetko na predvolené",
++  "Could not find any damaged metadata to repair in this file.": "V tomto súbore sa nenašli žiadne poškodené metadáta na opravu.",
++  "Repair and open": "Opraviť a otvoriť",
++  "Repairing file": "Opravuje sa súbor",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Tento súbor má poškodené metadáta a nedá sa otvoriť. Chcete vytvoriť opravenú kópiu súboru a otvoriť ju namiesto neho? Pôvodný súbor nebude zmenený."
+ }
+diff --git a/locales/sl/translation.json b/locales/sl/translation.json
+index a75d04be..5695acf1 100644
+--- a/locales/sl/translation.json
++++ b/locales/sl/translation.json
+@@ -682,5 +682,9 @@
+   "Batch export mode": "Način paketnega izvoza",
+   "Batch export finished": "Paketni izvoz končan",
+   "Exporting batch item {{current}} of {{total}}": "Izvažanje elementa {{current}} od {{total}}",
+-  "Reset all to defaults": "Ponastavi vse na privzeto"
++  "Reset all to defaults": "Ponastavi vse na privzeto",
++  "Could not find any damaged metadata to repair in this file.": "V tej datoteki ni bilo najdenih poškodovanih metapodatkov za popravilo.",
++  "Repair and open": "Popravi in odpri",
++  "Repairing file": "Popravljanje datoteke",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Ta datoteka ima poškodovane metapodatke in je ni mogoče odpreti. Ali želite ustvariti popravljeno kopijo datoteke in jo odpreti namesto nje? Izvirna datoteka ne bo spremenjena."
+ }
+diff --git a/locales/sr/translation.json b/locales/sr/translation.json
+index 4cf0d24e..df6a99c2 100644
+--- a/locales/sr/translation.json
++++ b/locales/sr/translation.json
+@@ -7,5 +7,9 @@
+   "Reset all to defaults": "Врати све на подразумевано",
+   "Merge cuts": "Спој исечке",
+   "Merge & Separate": "Спој и раздвоји",
+-  "Separate files": "Засебне датотеке"
++  "Separate files": "Засебне датотеке",
++  "Could not find any damaged metadata to repair in this file.": "У овој датотеци нису пронађени оштећени метаподаци за поправку.",
++  "Repair and open": "Поправи и отвори",
++  "Repairing file": "Поправљање датотеке",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Ова датотека има оштећене метаподатке и не може да се отвори. Да ли желите да направите поправљену копију датотеке и отворите је уместо ње? Оригинална датотека неће бити измењена."
+ }
+\ No newline at end of file
+diff --git a/locales/sv/translation.json b/locales/sv/translation.json
+index ba4ec215..de46c051 100644
+--- a/locales/sv/translation.json
++++ b/locales/sv/translation.json
+@@ -204,5 +204,9 @@
+   "Batch export mode": "Läge för batchexport",
+   "Batch export finished": "Batchexport klar",
+   "Exporting batch item {{current}} of {{total}}": "Exporterar batchobjekt {{current}} av {{total}}",
+-  "Reset all to defaults": "Återställ allt till standard"
++  "Reset all to defaults": "Återställ allt till standard",
++  "Could not find any damaged metadata to repair in this file.": "Hittade inga skadade metadata att reparera i den här filen.",
++  "Repair and open": "Reparera och öppna",
++  "Repairing file": "Reparerar fil",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Den här filen har skadade metadata och kan inte öppnas. Vill du skapa en reparerad kopia av filen och öppna den i stället? Originalfilen ändras inte."
+ }
+diff --git a/locales/ta/translation.json b/locales/ta/translation.json
+index 8e7ec6ce..2fff226c 100644
+--- a/locales/ta/translation.json
++++ b/locales/ta/translation.json
+@@ -811,5 +811,9 @@
+   "Batch export mode": "தொகுதி ஏற்றுமதி முறை",
+   "Batch export finished": "தொகுதி ஏற்றுமதி முடிந்தது",
+   "Exporting batch item {{current}} of {{total}}": "தொகுதி உருப்படி {{current}} / {{total}} ஏற்றுமதி செய்யப்படுகிறது",
+-  "Reset all to defaults": "அனைத்தையும் இயல்புநிலைக்கு மீட்டமை"
++  "Reset all to defaults": "அனைத்தையும் இயல்புநிலைக்கு மீட்டமை",
++  "Could not find any damaged metadata to repair in this file.": "இந்தக் கோப்பில் சரிசெய்ய வேண்டிய சேதமடைந்த மீதரவு எதுவும் கண்டறியப்படவில்லை.",
++  "Repair and open": "சரிசெய்து திற",
++  "Repairing file": "கோப்பு சரிசெய்யப்படுகிறது",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "இந்தக் கோப்பின் மீதரவு சேதமடைந்துள்ளதால் அதைத் திறக்க முடியாது. கோப்பின் சரிசெய்யப்பட்ட நகலை உருவாக்கி அதற்குப் பதிலாக அதைத் திறக்க விரும்புகிறீர்களா? அசல் கோப்பு மாற்றப்படாது."
+ }
+diff --git a/locales/tr/translation.json b/locales/tr/translation.json
+index fe51c84f..2847f4db 100644
+--- a/locales/tr/translation.json
++++ b/locales/tr/translation.json
+@@ -1095,5 +1095,9 @@
+   "Batch export mode": "Toplu dışa aktarma modu",
+   "Batch export finished": "Toplu dışa aktarma tamamlandı",
+   "Exporting batch item {{current}} of {{total}}": "Toplu öğe dışa aktarılıyor: {{current}} / {{total}}",
+-  "Reset all to defaults": "Tümünü varsayılana sıfırla"
++  "Reset all to defaults": "Tümünü varsayılana sıfırla",
++  "Could not find any damaged metadata to repair in this file.": "Bu dosyada onarılacak hasarlı meta veri bulunamadı.",
++  "Repair and open": "Onar ve aç",
++  "Repairing file": "Dosya onarılıyor",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Bu dosyanın meta verileri hasarlı olduğu için açılamıyor. Dosyanın onarılmış bir kopyasını oluşturup onun yerine açmak ister misiniz? Orijinal dosya değiştirilmeyecek."
+ }
+diff --git a/locales/uk/translation.json b/locales/uk/translation.json
+index 0fabaee3..38443ef0 100644
+--- a/locales/uk/translation.json
++++ b/locales/uk/translation.json
+@@ -963,5 +963,9 @@
+   "Batch export mode": "Режим пакетного експорту",
+   "Batch export finished": "Пакетний експорт завершено",
+   "Exporting batch item {{current}} of {{total}}": "Експорт файлу {{current}} з {{total}}",
+-  "Reset all to defaults": "Скинути все до типових"
++  "Reset all to defaults": "Скинути все до типових",
++  "Could not find any damaged metadata to repair in this file.": "У цьому файлі не знайдено пошкоджених метаданих, які можна виправити.",
++  "Repair and open": "Виправити й відкрити",
++  "Repairing file": "Виправлення файлу",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Метадані цього файлу пошкоджені, тому його не вдається відкрити. Створити виправлену копію файлу й відкрити її замість нього? Оригінальний файл не буде змінено."
+ }
+diff --git a/locales/vi/translation.json b/locales/vi/translation.json
+index 92178bc9..4985a294 100644
+--- a/locales/vi/translation.json
++++ b/locales/vi/translation.json
+@@ -856,5 +856,9 @@
+   "Batch export mode": "Chế độ xuất hàng loạt",
+   "Batch export finished": "Đã xuất hàng loạt xong",
+   "Exporting batch item {{current}} of {{total}}": "Đang xuất mục {{current}} / {{total}}",
+-  "Reset all to defaults": "Đặt lại tất cả về mặc định"
++  "Reset all to defaults": "Đặt lại tất cả về mặc định",
++  "Could not find any damaged metadata to repair in this file.": "Không tìm thấy siêu dữ liệu bị hỏng nào để sửa trong tệp này.",
++  "Repair and open": "Sửa và mở",
++  "Repairing file": "Đang sửa tệp",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "Tệp này có siêu dữ liệu bị hỏng và không thể mở. Bạn có muốn tạo một bản sao đã sửa của tệp và mở bản đó thay thế không? Tệp gốc sẽ không bị thay đổi."
+ }
+diff --git a/locales/zh_Hans/translation.json b/locales/zh_Hans/translation.json
+index ef8f1044..2e2a8ea3 100644
+--- a/locales/zh_Hans/translation.json
++++ b/locales/zh_Hans/translation.json
+@@ -1149,5 +1149,9 @@
+   "Batch export mode": "批量导出模式",
+   "Batch export finished": "批量导出完成",
+   "Exporting batch item {{current}} of {{total}}": "正在导出批处理项 {{current}}/{{total}}",
+-  "Reset all to defaults": "全部重置为默认值"
++  "Reset all to defaults": "全部重置为默认值",
++  "Could not find any damaged metadata to repair in this file.": "在此文件中未找到可修复的损坏元数据。",
++  "Repair and open": "修复并打开",
++  "Repairing file": "正在修复文件",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "此文件的元数据已损坏，无法打开。是否要创建该文件的修复副本并改为打开它？原始文件不会被修改。"
+ }
+diff --git a/locales/zh_Hant/translation.json b/locales/zh_Hant/translation.json
+index db56c6d6..c24fbc74 100644
+--- a/locales/zh_Hant/translation.json
++++ b/locales/zh_Hant/translation.json
+@@ -1021,5 +1021,9 @@
+   "Batch export mode": "批次匯出模式",
+   "Batch export finished": "批次匯出完成",
+   "Exporting batch item {{current}} of {{total}}": "正在匯出批次項目 {{current}}/{{total}}",
+-  "Reset all to defaults": "全部重設為預設值"
++  "Reset all to defaults": "全部重設為預設值",
++  "Could not find any damaged metadata to repair in this file.": "在此檔案中找不到可修復的損壞中繼資料。",
++  "Repair and open": "修復並開啟",
++  "Repairing file": "正在修復檔案",
++  "This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.": "此檔案的中繼資料已損壞，無法開啟。是否要建立該檔案的修復副本並改為開啟它？原始檔案不會被修改。"
+ }
+diff --git a/src/renderer/errors.ts b/src/renderer/errors.ts
+index f638e12d..1edb9f72 100644
+--- a/src/renderer/errors.ts
++++ b/src/renderer/errors.ts
+@@ -6,9 +6,21 @@ export class DirectoryAccessDeclinedError extends Error {
+ }
+ 
+ export class UnsupportedFileError extends Error {
+-  constructor(message: string, opts?: ErrorOptions) {
++  // e.g. last line of ffprobe's stderr
++  reason: string | undefined;
++
++  constructor(message: string, opts?: ErrorOptions & { reason?: string | undefined }) {
+     super(message, opts);
+     this.name = 'UnsupportedFileError';
++    this.reason = opts?.reason;
++  }
++}
++
++// File has damaged metadata that we know how to repair (see util/mp4Repair.ts)
++export class DamagedMetadataError extends UnsupportedFileError {
++  constructor(message: string, opts?: ErrorOptions & { reason?: string | undefined }) {
++    super(message, opts);
++    this.name = 'DamagedMetadataError';
+   }
+ }
+ 
+diff --git a/src/renderer/src/App.tsx b/src/renderer/src/App.tsx
+index 86723cb6..028a865d 100644
+--- a/src/renderer/src/App.tsx
++++ b/src/renderer/src/App.tsx
+@@ -81,6 +81,7 @@ import {
+   isMasBuild,
+   readFileStats,
+   makeSourceFileAccessError,
++  createRepairedFileCopy,
+   transferTimestamps,
+   getOutFileExtension,
+   getSuffixedOutPath,
+@@ -115,7 +116,7 @@ import useSubtitles from './hooks/useSubtitles';
+ import useStreamsMeta from './hooks/useStreamsMeta';
+ import { bottomStyle, videoStyle } from './styles';
+ import styles from './App.module.css';
+-import { DirectoryAccessDeclinedError, UserFacingError } from '../errors';
++import { DamagedMetadataError, DirectoryAccessDeclinedError, UserFacingError } from '../errors';
+ import SwalContainer from './components/SwalContainer';
+ import ErrorDialog from './components/ErrorDialog';
+ import useErrorHandling from './hooks/useErrorHandling';
+@@ -1670,8 +1671,18 @@ function App() {
+ 
+     if (/\.vob$/i.test(path) && mustDisallowVob()) return;
+ 
+-    await loadMedia({ filePath: path, projectPath });
+-  }, [ensureAccessToSourceDir, loadMedia]);
++    try {
++      await loadMedia({ filePath: path, projectPath });
++    } catch (err) {
++      if (!(err instanceof DamagedMetadataError)) throw err;
++
++      // Offer to open a repaired copy instead (the original file is not modified)
++      if (!(await confirmDialog({ focusConfirm: true, description: i18n.t('This file has damaged metadata and cannot be opened. Do you want to create a repaired copy of the file and open it instead? The original file will not be modified.'), confirmButtonText: i18n.t('Repair and open') }))) return;
++      setWorking({ text: i18n.t('Repairing file') });
++      const repairedPath = await createRepairedFileCopy({ filePath: path, customOutDir });
++      await loadMedia({ filePath: repairedPath, projectPath });
++    }
++  }, [ensureAccessToSourceDir, loadMedia, confirmDialog, setWorking, customOutDir]);
+ 
+   // todo merge with userOpenFiles?
+   const batchOpenSingleFile = useCallback(async (path: string) => {
+diff --git a/src/renderer/src/ffmpeg.ts b/src/renderer/src/ffmpeg.ts
+index 70009788..3a68f8e2 100644
+--- a/src/renderer/src/ffmpeg.ts
++++ b/src/renderer/src/ffmpeg.ts
+@@ -12,7 +12,7 @@ import { isExecaError } from './util';
+ import { isDurationValid } from './segments';
+ import type { FFprobeChapter, FFprobeFormat, FFprobeProbeResult, FFprobeStream } from '../../common/ffprobe';
+ import { parseSrt, parseSrtToSegments } from './edlFormats';
+-import { UnsupportedFileError, UserFacingError } from '../errors';
++import { DamagedMetadataError, UnsupportedFileError, UserFacingError } from '../errors';
+ import mainApi from './mainApi';
+ import { parseFfprobeDuration } from '../../common/util';
+ 
+@@ -354,7 +354,12 @@ export async function readFileFfprobeMeta(filePath: string) {
+     return { format, streams, chapters };
+   } catch (err) {
+     if (isExecaError(err) && err.code == null && err.exitCode != null) {
+-      throw new UnsupportedFileError('Unsupported file', { cause: err });
++      const stderr = err.stderr instanceof Uint8Array ? new TextDecoder().decode(err.stderr) : String(err.stderr ?? '');
++      const reason = stderr.split(/\r?\n/).map((line) => line.trim()).findLast((line) => line.length > 0);
++      if (stderr.includes('The \'keys\' atom with the invalid key count')) {
++        throw new DamagedMetadataError('Damaged metadata', { cause: err, reason });
++      }
++      throw new UnsupportedFileError('Unsupported file', { cause: err, reason });
+     }
+     throw err;
+   }
+diff --git a/src/renderer/src/hooks/useErrorHandling.ts b/src/renderer/src/hooks/useErrorHandling.ts
+index 6346423f..d4c46839 100644
+--- a/src/renderer/src/hooks/useErrorHandling.ts
++++ b/src/renderer/src/hooks/useErrorHandling.ts
+@@ -25,7 +25,7 @@ export default function useErrorHandling() {
+ 
+       if (err instanceof UnsupportedFileError) {
+         console.error(err);
+-        handleError({ title: errorMsg, err: i18n.t('Unsupported file') });
++        handleError({ title: errorMsg, err: err.reason != null ? `${i18n.t('Unsupported file')}\n\n${err.reason}` : i18n.t('Unsupported file') });
+         return;
+       }
+ 
+diff --git a/src/renderer/src/util.ts b/src/renderer/src/util.ts
+index 49fb8196..d5212b65 100644
+--- a/src/renderer/src/util.ts
++++ b/src/renderer/src/util.ts
+@@ -14,8 +14,10 @@ import type { EnableImportChapters, Html5ifyMode } from '../../common/types';
+ import { UserFacingError } from '../errors';
+ import type { FFprobeFormat } from '../../common/ffprobe';
+ import { dirname, parse as parsePath, join, extname, isAbsolute, resolve, basename } from './util/path';
++import type { ReadAt } from './util/mp4Repair';
++import { findDamagedMetadataKeysBoxes, freeBoxType } from './util/mp4Repair';
+ 
+-const { stat, lstat, readdir, utimes, unlink, open, access, constants: { R_OK, W_OK } } = window.require('node:fs/promises');
++const { stat, lstat, readdir, utimes, unlink, open, access, copyFile, rename, constants: { R_OK, W_OK } } = window.require('node:fs/promises');
+ const remote = window.require('@electron/remote');
+ const { app } = remote;
+ const { isWindows, isMac } = remote.require('./index.js');
+@@ -116,6 +118,63 @@ export async function getPathReadAccessError(pathIn: string) {
+   }
+ }
+ 
++async function findDamagedMetadataInFile(filePath: string) {
++  const fd = await open(filePath, 'r');
++  try {
++    const { size } = await fd.stat();
++    const read: ReadAt = async (position, length) => {
++      const buffer = new Uint8Array(length);
++      const { bytesRead } = await fd.read(buffer, 0, length, position);
++      return buffer.subarray(0, bytesRead);
++    };
++    return await findDamagedMetadataKeysBoxes(read, size);
++  } finally {
++    await fd.close();
++  }
++}
++
++/**
++ * Create a copy of a file with damaged metadata, with the damaged metadata disabled. The original file is not modified.
++ * The copy is put next to the original file if possible, otherwise in the working directory or the temp directory.
++ */
++export async function createRepairedFileCopy({ filePath, customOutDir }: { filePath: string, customOutDir: string | undefined }) {
++  const damagedBoxPositions = await findDamagedMetadataInFile(filePath);
++  if (damagedBoxPositions.length === 0) throw new UserFacingError(i18n.t('Could not find any damaged metadata to repair in this file.'));
++
++  const fileName = `${getSuffixedFileName(filePath, 'repaired')}${extname(filePath)}`;
++  const outDirs = [...new Set([dirname(filePath), ...(customOutDir != null ? [customOutDir] : []), app.getPath('temp') as string])];
++
++  let lastError: unknown;
++  for (const outDir of outDirs) {
++    const outPath = join(outDir, fileName);
++    const tmpPath = `${outPath}.tmp`;
++    try {
++      // eslint-disable-next-line no-await-in-loop
++      if ((await getPathReadAccessError(outPath)) == null) return outPath; // already repaired earlier
++      // eslint-disable-next-line no-await-in-loop
++      await copyFile(filePath, tmpPath);
++      // eslint-disable-next-line no-await-in-loop
++      const fd = await open(tmpPath, 'r+');
++      try {
++        // eslint-disable-next-line no-await-in-loop
++        await Promise.all(damagedBoxPositions.map(async (position) => fd.write(freeBoxType, 0, freeBoxType.length, position)));
++      } finally {
++        // eslint-disable-next-line no-await-in-loop
++        await fd.close();
++      }
++      // eslint-disable-next-line no-await-in-loop
++      await rename(tmpPath, outPath);
++      return outPath;
++    } catch (err) {
++      console.warn('Failed to create repaired copy in', outDir, err);
++      lastError = err;
++      // eslint-disable-next-line no-await-in-loop
++      await unlink(tmpPath).catch(() => undefined);
++    }
++  }
++  throw lastError;
++}
++
+ // export const testFailFsOperation = isDev;
+ export const testFailFsOperation = false;
+ 

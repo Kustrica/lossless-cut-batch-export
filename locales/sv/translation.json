@@ -204,5 +204,12 @@
   "Batch export mode": "Läge för batchexport",
   "Batch export finished": "Batchexport klar",
   "Exporting batch item {{current}} of {{total}}": "Exporterar batchobjekt {{current}} av {{total}}",
-  "Reset all to defaults": "Återställ allt till standard"
+  "Reset all to defaults": "Återställ allt till standard",
+  "Could not find any damaged metadata to repair in this file.": "Hittade inga skadade metadata att reparera i den här filen.",
+  "Repair and open": "Reparera och öppna",
+  "Repairing file": "Reparerar fil",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Den här filen har skadade metadata (huvud) och kan inte öppnas. Reparera originalfilen? Endast det skadade huvudblocket ändras; video och ljud påverkas inte.",
+  "Don't ask again": "Fråga inte igen",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Reparera MP4/MOV-filer med skadade metadata (huvud) automatiskt vid öppning, utan att fråga",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Filen kan inte repareras eftersom den är skrivskyddad, används av ett annat program eller du saknar behörighet att ändra den."
 }

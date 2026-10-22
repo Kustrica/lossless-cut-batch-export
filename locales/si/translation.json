@@ -17,5 +17,12 @@
   "Reset all to defaults": "සියල්ල පෙරනිමියට යළි සකසන්න",
   "Merge cuts": "කැපීම් ඒකාබද්ධ කරන්න",
   "Merge & Separate": "ඒකාබද්ධ කර වෙන් කරන්න",
-  "Separate files": "වෙනම ගොනු"
+  "Separate files": "වෙනම ගොනු",
+  "Could not find any damaged metadata to repair in this file.": "මෙම ගොනුවේ අලුත්වැඩියා කිරීමට හානි වූ පාරදත්ත කිසිවක් හමු නොවීය.",
+  "Repair and open": "අලුත්වැඩියා කර විවෘත කරන්න",
+  "Repairing file": "ගොනුව අලුත්වැඩියා කරමින්",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "මෙම ගොනුවේ පාරදත්ත (ශීර්ෂය) හානි වී ඇති බැවින් එය විවෘත කළ නොහැක. මුල් ගොනුව අලුත්වැඩියා කරන්නද? වෙනස් වන්නේ හානි වූ ශීර්ෂ කොටස පමණි; වීඩියෝ සහ ශ්‍රව්‍ය ස්පර්ශ නොකෙරේ.",
+  "Don't ask again": "නැවත නොඅසන්න",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "හානි වූ MP4/MOV පාරදත්ත (ශීර්ෂය) සහිත ගොනු විවෘත කිරීමේදී නොඅසා ස්වයංක්‍රීයව අලුත්වැඩියා කරන්න",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "ගොනුව කියවීමට පමණක් වන නිසා, වෙනත් වැඩසටහනක් භාවිතා කරන නිසා, හෝ එය වෙනස් කිරීමට ඔබට අවසර නැති නිසා එය අලුත්වැඩියා කළ නොහැක."
 }

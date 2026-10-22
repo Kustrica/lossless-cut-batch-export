@@ -157,6 +157,7 @@ const defaults: Config = {
   captureFrameQuality: 0.95,
   captureFrameFileNameFormat: 'timestamp',
   enableNativeHevc: true,
+  autoRepairDamagedMp4Metadata: false,
   enableUpdateCheck: true,
   cleanupChoices: {
     trashTmpFiles: true, askForCleanup: true, closeFile: true, cleanupAfterExport: false,

@@ -381,5 +381,12 @@
   "Batch export mode": "Modus for satsvis utføring",
   "Batch export finished": "Satsvis utføring fullført",
   "Exporting batch item {{current}} of {{total}}": "Fører ut fil {{current}} av {{total}}",
-  "Reset all to defaults": "Still attende alt til standard"
+  "Reset all to defaults": "Still attende alt til standard",
+  "Could not find any damaged metadata to repair in this file.": "Fann ingen skadde metadata å reparere i denne fila.",
+  "Repair and open": "Reparer og opne",
+  "Repairing file": "Reparerer fil",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Denne fila har skadde metadata (header) og kan ikkje opnast. Vil du reparere originalfila? Berre den skadde header-blokka vert endra; video og lyd vert ikkje rørt.",
+  "Don't ask again": "Ikkje spør igjen",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Reparer MP4/MOV-filer med skadde metadata (header) automatisk ved opning, utan å spørje",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Kan ikkje reparere fila fordi ho er skriveverna, i bruk av eit anna program, eller du ikkje har løyve til å endre ho."
 }

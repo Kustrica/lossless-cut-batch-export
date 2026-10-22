@@ -617,5 +617,12 @@
   "Batch export mode": "Paketo eksportavimo režimas",
   "Batch export finished": "Paketo eksportavimas baigtas",
   "Exporting batch item {{current}} of {{total}}": "Eksportuojamas paketo elementas {{current}} iš {{total}}",
-  "Reset all to defaults": "Atstatyti viską į numatytuosius"
+  "Reset all to defaults": "Atstatyti viską į numatytuosius",
+  "Could not find any damaged metadata to repair in this file.": "Šiame faile nerasta sugadintų metaduomenų, kuriuos būtų galima pataisyti.",
+  "Repair and open": "Pataisyti ir atverti",
+  "Repairing file": "Taisomas failas",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Šio failo metaduomenys (antraštė) sugadinti, todėl jo atverti negalima. Pataisyti originalų failą? Pakeičiamas tik sugadintas antraštės blokas; vaizdas ir garsas neliečiami.",
+  "Don't ask again": "Daugiau neklausti",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Atveriant automatiškai, neklausiant, taisyti MP4/MOV failus su sugadintais metaduomenimis (antrašte)",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Nepavyko pataisyti failo, nes jis tik skaitomas, naudojamas kitos programos arba neturite teisės jo keisti."
 }

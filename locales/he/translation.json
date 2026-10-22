@@ -912,5 +912,12 @@
   "Batch export mode": "מצב ייצוא מרובה",
   "Batch export finished": "הייצוא המרובה הסתיים",
   "Exporting batch item {{current}} of {{total}}": "מייצא קובץ {{current}} מתוך {{total}}",
-  "Reset all to defaults": "אפס הכול לברירת המחדל"
+  "Reset all to defaults": "אפס הכול לברירת המחדל",
+  "Could not find any damaged metadata to repair in this file.": "לא נמצאו בקובץ זה מטא־נתונים פגומים לתיקון.",
+  "Repair and open": "תיקון ופתיחה",
+  "Repairing file": "הקובץ בתיקון",
+  "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "לקובץ זה יש מטא־נתונים (כותרת) פגומים ולא ניתן לפתוח אותו. לתקן את הקובץ המקורי? רק בלוק הכותרת הפגום ישתנה; הווידאו והשמע לא ייגעו.",
+  "Don't ask again": "לא לשאול שוב",
+  "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "לתקן אוטומטית בעת הפתיחה, ללא שאלה, קובצי MP4/MOV עם מטא־נתונים (כותרת) פגומים",
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "לא ניתן לתקן את הקובץ, כי הוא לקריאה בלבד, בשימוש על ידי תוכנה אחרת, או שאין לך הרשאה לשנות אותו."
 }

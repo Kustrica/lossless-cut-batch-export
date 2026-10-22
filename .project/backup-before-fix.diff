@@ -1,0 +1,442 @@
+diff --git a/locales/en/translation.json b/locales/en/translation.json
+index bff0f292..135ebb71 100644
+--- a/locales/en/translation.json
++++ b/locales/en/translation.json
+@@ -930,5 +930,13 @@
+   "Zoom in more to view waveform": "Zoom in more to view waveform",
+   "Zoom in timeline": "Zoom in timeline",
+   "Zoom in/out timeline": "Zoom in/out timeline",
+-  "Zoom out timeline": "Zoom out timeline"
++  "Zoom out timeline": "Zoom out timeline",
++  "Batch export": "Batch export",
++  "Batch export options": "Batch export options",
++  "Export all files in batch": "Export all files in batch",
++  "Batch export mode": "Batch export mode",
++  "Export segments separately": "Export segments separately",
++  "Merge segments within each file": "Merge segments within each file",
++  "Batch export finished": "Batch export finished",
++  "Exporting batch item {{current}} of {{total}}": "Exporting batch item {{current}} of {{total}}"
+ }
+diff --git a/locales/ru/translation.json b/locales/ru/translation.json
+index cf5c7b54..16ff1385 100644
+--- a/locales/ru/translation.json
++++ b/locales/ru/translation.json
+@@ -1112,5 +1112,13 @@
+   "Extract segment frames as image files": "Извлечь сегменты кадров в виде файлов изображений",
+   "You are in simple mode, meaning some functionality has been simplified or hidden.": "Вы находитесь в упрощённом режиме. Некоторые функции упрощены или скрыты.",
+   "Source code": "Исходный код",
+-  "You have configured a custom FFmpeg directory. You may change or reset it in Settings.": "Вы указали пользовательскую папку FFmpeg. Её можно изменить или сбросить его в настройках."
++  "You have configured a custom FFmpeg directory. You may change or reset it in Settings.": "Вы указали пользовательскую папку FFmpeg. Её можно изменить или сбросить его в настройках.",
++  "Batch export": "Пакетный экспорт",
++  "Batch export options": "Настройки пакетного экспорта",
++  "Export all files in batch": "Экспортировать все файлы пакета",
++  "Batch export mode": "Режим пакетного экспорта",
++  "Export segments separately": "Экспортировать сегменты отдельно",
++  "Merge segments within each file": "Склеить сегменты внутри каждого файла",
++  "Batch export finished": "Пакетный экспорт завершён",
++  "Exporting batch item {{current}} of {{total}}": "Экспорт файла {{current}} из {{total}}"
+ }
+diff --git a/src/renderer/src/App.tsx b/src/renderer/src/App.tsx
+index 1be69368..bc25a419 100644
+--- a/src/renderer/src/App.tsx
++++ b/src/renderer/src/App.tsx
+@@ -164,6 +164,11 @@ function App() {
+   const [activeSubtitleStreamIndex, setActiveSubtitleStreamIndex] = useState<number>();
+   const [hideCompatPlayer, setHideCompatPlayer] = useState(false);
+   const [exportConfirmOpen, setExportConfirmOpen] = useState(false);
++  const [batchExportRequested, setBatchExportRequested] = useState(false);
++  const [batchExportMergeSegments, setBatchExportMergeSegments] = useState(false);
++  const batchExportJobRef = useRef<{ paths: string[], index: number, startedPath: string | undefined, paused: boolean, warnings: string[], mergeSegments: boolean }>(undefined);
++  const onExportConfirmRef = useRef<() => Promise<void>>(undefined);
++  const batchOpenSingleFileRef = useRef<(path: string) => Promise<void>>(undefined);
+   const [cacheBuster, setCacheBuster] = useState(0);
+   const [currentFileExportCount, setCurrentFileExportCount] = useState(0);
+ 
+@@ -1056,20 +1061,43 @@ function App() {
+     }
+   }, [askForCleanupChoices, cleanupChoices, cleanupFiles, isFileOpened, setWorking, workingRef]);
+ 
+-  const closeExportConfirm = useCallback(() => setExportConfirmOpen(false), []);
++  const closeExportConfirm = useCallback(() => {
++    setExportConfirmOpen(false);
++    if (batchExportJobRef.current?.paused) {
++      batchExportJobRef.current = undefined;
++      setBatchExportRequested(false);
++    }
++  }, []);
+ 
+-  const willMerge = segmentsToExport.length > 1 && autoMerge;
++  const willMerge = segmentsToExport.length > 1 && (batchExportJobRef.current?.mergeSegments ?? (batchExportRequested ? batchExportMergeSegments : autoMerge));
++
++  const setBatchExportMergeMode = useCallback((mergeSegments: boolean) => {
++    setBatchExportMergeSegments(mergeSegments);
++    if (batchExportJobRef.current) batchExportJobRef.current.mergeSegments = mergeSegments;
++  }, []);
+ 
+   const onExportConfirm = useCallback(async () => {
++    if (batchExportJobRef.current) {
++      batchExportJobRef.current.paused = false;
++      batchExportJobRef.current.startedPath = filePath;
++    }
+     invariant(filePath != null && outputDir != null);
+     emitEvent({ eventName: 'export-start', path: filePath });
+ 
+     if (numStreamsToCopy === 0) {
++      if (batchExportJobRef.current) {
++        batchExportJobRef.current = undefined;
++        setBatchExportRequested(false);
++      }
+       errorToast(i18n.t('No tracks selected for export'));
+       return;
+     }
+ 
+     if (haveInvalidSegs) {
++      if (batchExportJobRef.current) {
++        batchExportJobRef.current = undefined;
++        setBatchExportRequested(false);
++      }
+       errorToast(i18n.t('Start time must be before end time'));
+       return;
+     }
+@@ -1079,13 +1107,18 @@ function App() {
+ 
+     if (workingRef.current) return;
+     try {
+-      setWorking({ text: i18n.t('Exporting') });
++      const currentBatchJob = batchExportJobRef.current;
++      setWorking({ text: currentBatchJob ? i18n.t('Exporting batch item {{current}} of {{total}}', { current: currentBatchJob.index + 1, total: currentBatchJob.paths.length }) : i18n.t('Exporting') });
+ 
+       // Special segments-to-chapters mode:
+       let chaptersToAdd: Chapter[] | undefined;
+       if (segmentsToChaptersOnly) {
+         const sortedSegments = sortSegments(segmentsOrInverse.selected);
+         if (hasAnySegmentOverlap(sortedSegments)) {
++          if (batchExportJobRef.current) {
++            batchExportJobRef.current = undefined;
++            setBatchExportRequested(false);
++          }
+           errorToast(i18n.t('Make sure you have no overlapping segments.'));
+           return;
+         }
+@@ -1216,7 +1249,7 @@ function App() {
+       const exportedPaths = willMerge && mergedOutFilePath != null ? [mergedOutFilePath] : outFiles.map((f) => f.path);
+       const [revealPath] = exportedPaths;
+       invariant(revealPath != null);
+-      if (!hideAllNotifications) {
++      if (!hideAllNotifications && !batchExportJobRef.current) {
+         showOsNotification(i18n.t('Export finished'));
+         openCutFinishedDialog({ filePath: revealPath, warnings: [...warnings], notices: [...notices] });
+       }
+@@ -1225,7 +1258,30 @@ function App() {
+       setCurrentFileExportCount((c) => c + 1);
+ 
+       emitEvent({ eventName: 'export-complete', paths: exportedPaths });
++
++      const batchJob = batchExportJobRef.current;
++      if (batchJob) {
++        batchJob.warnings.push(...warnings);
++        batchJob.index += 1;
++        batchJob.startedPath = undefined;
++        const nextPath = batchJob.paths[batchJob.index];
++        if (nextPath) {
++          window.setTimeout(() => batchOpenSingleFileRef.current?.(nextPath), 0);
++        } else {
++          batchExportJobRef.current = undefined;
++          setBatchExportRequested(false);
++          setBatchExportMergeSegments(autoMerge);
++          if (!hideAllNotifications) {
++            const warningText = batchJob.warnings.length > 0 ? ` ${batchJob.warnings.join(' ')}` : '';
++            getSwal().toast.fire({ icon: batchJob.warnings.length > 0 ? 'warning' : 'success', text: `${i18n.t('Batch export finished')}${warningText}` });
++          }
++        }
++      }
+     } catch (err) {
++      if (batchExportJobRef.current) {
++        batchExportJobRef.current = undefined;
++        setBatchExportRequested(false);
++      }
+       emitEvent({ eventName: 'export-complete' });
+ 
+       if (isAbortedError(err)) return;
+@@ -1261,7 +1317,7 @@ function App() {
+       setWorking(undefined);
+       setProgress(undefined);
+     }
+-  }, [filePath, numStreamsToCopy, haveInvalidSegs, workingRef, setWorking, segmentsToChaptersOnly, cutFileTemplateOrDefault, generateCutFileNames, cutMultiple, outputDir, customOutDir, fileFormat, fileDuration, isRotationSet, effectiveRotation, copyFileStreams, allFilesMeta, keyframeCut, segmentsToExport, shortestFlag, ffmpegExperimental, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, paramsByFile, detectedFps, willMerge, enableOverwriteOutput, exportConfirmEnabled, mainFileFormat, mainStreams, exportExtraStreams, areWeCutting, simpleMode, prefersReducedMotion, cleanupChoices, hideAllNotifications, segmentsOrInverse.selected, t, cutMergedFileTemplateOrDefault, segmentsToChapters, invertCutSegments, generateCutMergedFileNames, concatCutSegments, autoDeleteMergedSegments, tryDeleteFiles, nonCopiedExtraStreams, extractStreams, askForCleanupChoices, cleanupFiles, showOsNotification, openCutFinishedDialog, handleExportFailed]);
++  }, [filePath, numStreamsToCopy, haveInvalidSegs, workingRef, setWorking, segmentsToChaptersOnly, cutFileTemplateOrDefault, generateCutFileNames, cutMultiple, outputDir, customOutDir, fileFormat, fileDuration, isRotationSet, effectiveRotation, copyFileStreams, allFilesMeta, keyframeCut, segmentsToExport, shortestFlag, ffmpegExperimental, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, paramsByFile, detectedFps, willMerge, enableOverwriteOutput, exportConfirmEnabled, mainFileFormat, mainStreams, exportExtraStreams, areWeCutting, simpleMode, prefersReducedMotion, cleanupChoices, hideAllNotifications, segmentsOrInverse.selected, t, cutMergedFileTemplateOrDefault, segmentsToChapters, invertCutSegments, generateCutMergedFileNames, concatCutSegments, autoDeleteMergedSegments, tryDeleteFiles, nonCopiedExtraStreams, extractStreams, askForCleanupChoices, cleanupFiles, showOsNotification, openCutFinishedDialog, handleExportFailed, autoMerge]);
+ 
+   const onExportPress = useCallback(async () => {
+     if (!filePath) return;
+@@ -1623,15 +1679,53 @@ function App() {
+     if (workingRef.current) return;
+     if (filePath === path) return;
+     setWorking({ text: i18n.t('Loading file') });
++    let loaded = false;
+     try {
+       await withErrorHandling(async () => {
+         await userOpenSingleFile({ path });
++        loaded = true;
+       }, i18n.t('Failed to open file'));
+     } finally {
+       setWorking(undefined);
+     }
++    if (!loaded && batchExportJobRef.current) {
++      batchExportJobRef.current = undefined;
++      setBatchExportRequested(false);
++    }
+   }, [workingRef, filePath, setWorking, withErrorHandling, userOpenSingleFile]);
+ 
++  useEffect(() => {
++    batchOpenSingleFileRef.current = batchOpenSingleFile;
++    onExportConfirmRef.current = onExportConfirm;
++  }, [batchOpenSingleFile, onExportConfirm]);
++
++  useEffect(() => {
++    const job = batchExportJobRef.current;
++    if (!job || !filePath || filePath !== job.paths[job.index] || job.startedPath === filePath || workingRef.current) return;
++    if (job.paused && exportConfirmEnabled) {
++      setExportConfirmOpen(true);
++      setStreamsSelectorShown(false);
++      return;
++    }
++    job.paused = false;
++    job.startedPath = filePath;
++    onExportConfirmRef.current?.();
++  }, [batchExportRequested, filePath, exportConfirmEnabled, workingRef, working]);
++
++  const onBatchExportPress = useCallback(() => {
++    if (!filePath || batchFiles.length === 0 || workingRef.current) return;
++    const batchPaths = batchFiles.map(({ path }) => path);
++    const paths = batchPaths.includes(filePath) ? [filePath, ...batchPaths.filter((path) => path !== filePath)] : batchPaths;
++    const firstPath = paths[0];
++    if (!firstPath) return;
++    batchExportJobRef.current = { paths, index: 0, startedPath: undefined, paused: exportConfirmEnabled, warnings: [], mergeSegments: autoMerge };
++    setBatchExportMergeSegments(autoMerge);
++    setBatchExportRequested(true);
++    if (filePath !== firstPath) {
++      window.setTimeout(() => batchOpenSingleFile(firstPath), 2100);
++    }
++  }, [filePath, batchFiles, workingRef, exportConfirmEnabled, autoMerge, batchOpenSingleFile]);
++
+   const batchFileJump = useCallback((direction: number, alsoOpen: boolean) => {
+     if (batchFiles.length === 0) return;
+ 
+@@ -2746,6 +2840,8 @@ function App() {
+                     cleanupFilesDialog={cleanupFilesDialog}
+                     captureSnapshot={captureSnapshot}
+                     onExportPress={onExportPress}
++                    onExportAllPress={onBatchExportPress}
++                    canExportAll={batchFiles.length > 0}
+                     segmentsToExport={segmentsToExport}
+                     seekAbs={seekAbs}
+                     currentSegIndexSafe={currentSegIndexSafe}
+@@ -2793,7 +2889,7 @@ function App() {
+ 
+                 {/* Dialogs */}
+ 
+-                <ExportConfirm areWeCutting={areWeCutting} segmentsOrInverse={segmentsOrInverse} segmentsToExport={segmentsToExport} willMerge={willMerge} visible={exportConfirmOpen} onClosePress={closeExportConfirm} onExportConfirm={onExportConfirm} renderOutFmt={renderOutFmt} outputDir={outputDir} numStreamsTotal={numStreamsTotal} numStreamsToCopy={numStreamsToCopy} onShowStreamsSelectorClick={handleShowStreamsSelectorClick} outFormat={fileFormat} cutFileTemplate={cutFileTemplateOrDefault} cutMergedFileTemplate={cutMergedFileTemplateOrDefault} generateCutFileNames={generateCutFileNames} generateCutMergedFileNames={generateCutMergedFileNames} currentSegIndexSafe={currentSegIndexSafe} mainCopiedThumbnailStreams={mainCopiedThumbnailStreams} hvc1NeededStreams={hvc1NeededStreams} needSmartCut={needSmartCut} isEncoding={isEncoding} encBitrate={encBitrate} setEncBitrate={setEncBitrate} toggleSettings={toggleSettings} outputPlaybackRate={outputPlaybackRate} lossyMode={lossyMode} neighbouringKeyFrames={neighbouringKeyFrames} findNearestKeyFrameTime={findNearestKeyFrameTime} />
++                <ExportConfirm areWeCutting={areWeCutting} segmentsOrInverse={segmentsOrInverse} segmentsToExport={segmentsToExport} willMerge={willMerge} visible={exportConfirmOpen} onClosePress={closeExportConfirm} onExportConfirm={onExportConfirm} renderOutFmt={renderOutFmt} outputDir={outputDir} numStreamsTotal={numStreamsTotal} numStreamsToCopy={numStreamsToCopy} onShowStreamsSelectorClick={handleShowStreamsSelectorClick} outFormat={fileFormat} cutFileTemplate={cutFileTemplateOrDefault} cutMergedFileTemplate={cutMergedFileTemplateOrDefault} generateCutFileNames={generateCutFileNames} generateCutMergedFileNames={generateCutMergedFileNames} currentSegIndexSafe={currentSegIndexSafe} mainCopiedThumbnailStreams={mainCopiedThumbnailStreams} hvc1NeededStreams={hvc1NeededStreams} needSmartCut={needSmartCut} isEncoding={isEncoding} encBitrate={encBitrate} setEncBitrate={setEncBitrate} toggleSettings={toggleSettings} outputPlaybackRate={outputPlaybackRate} lossyMode={lossyMode} neighbouringKeyFrames={neighbouringKeyFrames} findNearestKeyFrameTime={findNearestKeyFrameTime} batchExportRequested={batchExportRequested} batchExportMergeSegments={batchExportMergeSegments} setBatchExportMergeSegments={setBatchExportMergeMode} />
+ 
+                 <Dialog.Root open={streamsSelectorShown} onOpenChange={setStreamsSelectorShown}>
+                   <Dialog.Portal>
+diff --git a/src/renderer/src/BottomBar.tsx b/src/renderer/src/BottomBar.tsx
+index e5694450..239d8967 100644
+--- a/src/renderer/src/BottomBar.tsx
++++ b/src/renderer/src/BottomBar.tsx
+@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
+ import { MdRotate90DegreesCcw } from 'react-icons/md';
+ import { useTranslation } from 'react-i18next';
+ import { IoIosCamera, IoMdKey, IoMdSpeedometer } from 'react-icons/io';
+-import { FaYinYang, FaTrashAlt, FaStepBackward, FaStepForward, FaCaretLeft, FaCaretRight, FaPause, FaPlay, FaImages, FaKey, FaExclamationTriangle } from 'react-icons/fa';
++import { FaYinYang, FaTrashAlt, FaStepBackward, FaStepForward, FaCaretLeft, FaCaretRight, FaCaretDown, FaPause, FaPlay, FaImages, FaKey, FaExclamationTriangle } from 'react-icons/fa';
+ import { GiSoundWaves } from 'react-icons/gi';
+ // import useTraceUpdate from 'use-trace-update';
+ import invariant from 'tiny-invariant';
+@@ -13,6 +13,7 @@ import { primaryTextColor, primaryColor, darkModeTransition, dangerColor } from
+ import SegmentCutpointButton from './components/SegmentCutpointButton';
+ import SetCutpointButton from './components/SetCutpointButton';
+ import ExportButton from './components/ExportButton';
++import * as DropdownMenu from './components/DropdownMenu';
+ import ToggleExportConfirm from './components/ToggleExportConfirm';
+ import CaptureFormatButton from './components/CaptureFormatButton';
+ import Select from './components/Select';
+@@ -22,6 +23,7 @@ import { withBlur, mirrorTransform } from './util';
+ import getSwal, { errorToast } from './swal';
+ import { UserFacingError } from '../errors';
+ import { getSegColor as getSegColorRaw } from './util/colors';
++import styles from './BottomBar.module.css';
+ import { useSegColors } from './contexts';
+ import { isExactTimecodeMatch } from './util/duration';
+ import useUserSettings from './hooks/useUserSettings';
+@@ -283,6 +285,7 @@ function BottomBar({
+   zoom, setZoom, timelineToggleComfortZoom,
+   isRotationSet, rotation, areWeCutting, increaseRotation, cleanupFilesDialog,
+   captureSnapshot, onExportPress, segmentsToExport, hasVideo,
++  onExportAllPress, canExportAll,
+   seekAbs, currentSegIndexSafe, cutSegments, currentCutSeg, setCutStart, setCutEnd,
+   setCurrentSegIndex,
+   jumpTimelineStart, jumpTimelineEnd, jumpCutEnd, jumpCutStart, startTimeOffset, setCutTime,
+@@ -304,6 +307,8 @@ function BottomBar({
+   cleanupFilesDialog: () => void,
+   captureSnapshot: () => void,
+   onExportPress: () => void,
++  onExportAllPress: () => void,
++  canExportAll: boolean,
+   segmentsToExport: SegmentToExport[],
+   hasVideo: boolean,
+   seekAbs: (a: number) => void,
+@@ -348,7 +353,6 @@ function BottomBar({
+ }) {
+   const { t } = useTranslation();
+   const { getSegColor } = useSegColors();
+-
+   const isZoomed = zoom > 1;
+ 
+   const playStyle = useMemo<CSSProperties>(() => ({
+@@ -657,7 +661,28 @@ function BottomBar({
+         {(!simpleMode || !exportConfirmEnabled) && <ToggleExportConfirm style={{ marginLeft: exportConfirmEnabled ? '.4em' : undefined }} />}
+ 
+         {isFileOpened && (
+-          <ExportButton segmentsToExport={segmentsToExport} areWeCutting={areWeCutting} onClick={withBlur(onExportPress)} />
++          <div className={styles['splitExportButton']}>
++            <ExportButton
++              segmentsToExport={segmentsToExport}
++              areWeCutting={areWeCutting}
++              onClick={withBlur(onExportPress)}
++              className={canExportAll ? styles['splitExportMain'] : undefined}
++            />
++            {canExportAll && (
++              <DropdownMenu.Root>
++                <DropdownMenu.Trigger asChild>
++                  <button type="button" className={styles['splitExportToggle']} style={{ backgroundColor: primaryColor }} title={t('Batch export options')} aria-label={t('Batch export options')}>
++                    <FaCaretDown />
++                  </button>
++                </DropdownMenu.Trigger>
++                <DropdownMenu.Portal>
++                  <DropdownMenu.Content side="top" align="end" sideOffset={5}>
++                    <DropdownMenu.Item onSelect={onExportAllPress}>{t('Export all files in batch')}</DropdownMenu.Item>
++                  </DropdownMenu.Content>
++                </DropdownMenu.Portal>
++              </DropdownMenu.Root>
++            )}
++          </div>
+         )}
+       </div>
+     </>
+diff --git a/src/renderer/src/components/ExportButton.tsx b/src/renderer/src/components/ExportButton.tsx
+index e8ece5c6..3bf6e116 100644
+--- a/src/renderer/src/components/ExportButton.tsx
++++ b/src/renderer/src/components/ExportButton.tsx
+@@ -15,6 +15,7 @@ interface Props {
+   areWeCutting: boolean,
+   onClick: MouseEventHandler<HTMLButtonElement>,
+   style?: CSSProperties,
++  className?: string | undefined,
+ }
+ 
+ // eslint-disable-next-line react/display-name
+@@ -23,6 +24,7 @@ const ExportButton = forwardRef<HTMLButtonElement, Props>(({
+   areWeCutting,
+   onClick,
+   style,
++  className,
+ }, ref) => {
+   const CutIcon = areWeCutting ? FiScissors : FaFileExport;
+ 
+@@ -43,7 +45,7 @@ const ExportButton = forwardRef<HTMLButtonElement, Props>(({
+     <button
+       ref={ref}
+       type="button"
+-      className={[...(simpleMode ? ['export-animation'] : []), styles['exportButton']].join(' ')}
++      className={[...(simpleMode ? ['export-animation'] : []), styles['exportButton'], className].filter(Boolean).join(' ')}
+       style={{ backgroundColor: primaryColor, ...style }}
+       onClick={onClick}
+       title={title}
+diff --git a/src/renderer/src/components/ExportConfirm.tsx b/src/renderer/src/components/ExportConfirm.tsx
+index 550fe4c4..ff4c0e96 100644
+--- a/src/renderer/src/components/ExportConfirm.tsx
++++ b/src/renderer/src/components/ExportConfirm.tsx
+@@ -7,10 +7,10 @@ import { IoIosHelpCircle, IoIosSettings } from 'react-icons/io';
+ import type { SweetAlertIcon } from 'sweetalert2';
+ 
+ import ExportButton from './ExportButton';
++import Select from './Select';
+ import ExportModeButton from './ExportModeButton';
+ import FileNameTemplateEditor from './FileNameTemplateEditor';
+ import HighlightedText from './HighlightedText';
+-import Select from './Select';
+ import Switch from './Switch';
+ 
+ import { primaryTextColor, warningColor } from '../colors';
+@@ -142,6 +142,9 @@ function ExportConfirm({
+   lossyMode,
+   neighbouringKeyFrames,
+   findNearestKeyFrameTime,
++  batchExportRequested,
++  batchExportMergeSegments,
++  setBatchExportMergeSegments,
+ } : {
+   areWeCutting: boolean,
+   segmentsToExport: SegmentToExport[],
+@@ -172,6 +175,9 @@ function ExportConfirm({
+   lossyMode: LossyMode | undefined,
+   neighbouringKeyFrames: Frame[],
+   findNearestKeyFrameTime: FindNearestKeyframeTime,
++  batchExportRequested: boolean,
++  batchExportMergeSegments: boolean,
++  setBatchExportMergeSegments: (mergeSegments: boolean) => void,
+ }) {
+   const { t } = useTranslation();
+ 
+@@ -375,6 +381,18 @@ function ExportConfirm({
+     >
+       <table className={styles['options']}>
+         <tbody>
++          {batchExportRequested && (
++            <tr>
++              <td>{t('Batch export mode')}</td>
++              <td>
++                <Select value={batchExportMergeSegments ? 'merge' : 'separate'} onChange={(event) => setBatchExportMergeSegments(event.target.value === 'merge')}>
++                  <option value="separate">{t('Export segments separately')}</option>
++                  <option value="merge">{t('Merge segments within each file')}</option>
++                </Select>
++              </td>
++              <td />
++            </tr>
++          )}
+           {notices.generic.map((notice) => renderGenericNotice(notice))}
+ 
+           {segmentsOrInverse.selected.length !== segmentsOrInverse.all.length && (
+@@ -386,18 +404,20 @@ function ExportConfirm({
+             </tr>
+           )}
+ 
+-          <tr>
+-            <td>
+-              {segmentsOrInverse.selected.length > 1 ? t('Export mode for {{segments}} segments', { segments: segmentsOrInverse.selected.length }) : t('Export mode')}
+-              {renderNotice(notices.specific['exportMode'])}
+-            </td>
+-            <td>
+-              <ExportModeButton selectedSegments={segmentsOrInverse.selected} style={{ height: '1.8em' }} />
+-            </td>
+-            <td>
+-              {renderNoticeIcon(notices.specific['exportMode'], rightIconStyle) ?? <HelpIcon onClick={onExportModeHelpPress} />}
+-            </td>
+-          </tr>
++          {!batchExportRequested && (
++            <tr>
++              <td>
++                {segmentsOrInverse.selected.length > 1 ? t('Export mode for {{segments}} segments', { segments: segmentsOrInverse.selected.length }) : t('Export mode')}
++                {renderNotice(notices.specific['exportMode'])}
++              </td>
++              <td>
++                <ExportModeButton selectedSegments={segmentsOrInverse.selected} style={{ height: '1.8em' }} />
++              </td>
++              <td>
++                {renderNoticeIcon(notices.specific['exportMode'], rightIconStyle) ?? <HelpIcon onClick={onExportModeHelpPress} />}
++              </td>
++            </tr>
++          )}
+ 
+           <tr>
+             <td>

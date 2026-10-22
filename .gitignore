@@ -21,3 +21,4 @@ node_modules
 /common-ts-dist
 
 tsconfig.*.tsbuildinfo
+/Release

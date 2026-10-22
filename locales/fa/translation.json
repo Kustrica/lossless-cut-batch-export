@@ -18,5 +18,21 @@
   "Each video: every segment as a separate file": "هر ویدیو: هر بخش به‌صورت فایل جداگانه",
   "Each video: merge segments into one file": "هر ویدیو: ادغام بخش‌ها در یک فایل",
   "Each video: merged file + separate segments": "هر ویدیو: فایل ادغام‌شده + بخش‌های جداگانه",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "برای هر ویدیوی دسته به‌طور جداگانه اعمال می‌شود. ویدیوها هرگز با یکدیگر ادغام نمی‌شوند."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "برای هر ویدیوی دسته به‌طور جداگانه اعمال می‌شود. ویدیوها هرگز با یکدیگر ادغام نمی‌شوند.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "با برش روی فریم کلیدی، خروجی از فریم کلیدی پیش از نقطهٔ برش شروع می‌شود، بنابراین ممکن است در ابتدا تا چند ثانیه از بخشی که بریده‌اید (مثلاً پایان تیتراژ آغازین) دیده شود. با فعال کردن این گزینه، شروع به‌جای آن به فریم کلیدی بعدی منتقل می‌شود: چیزی از پیش از نقطهٔ برش وارد نمی‌شود، اما ممکن است تا چند ثانیه پس از نقطهٔ برش از دست برود. برای شروعی دقیق در حد فریم، به‌جای آن از «برش هوشمند» استفاده کنید.",
+  "Snap start to next keyframe": "انتقال شروع به فریم کلیدی بعدی",
+  "Input files: {{num}}": "فایل‌های ورودی: {{num}}",
+  "Segments exported: {{num}}": "بخش‌های خروجی‌گرفته‌شده: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "فایل‌های ادغام‌شدهٔ ساخته‌شده: {{num}} (بخش‌های ادغام‌شده: {{segments}})",
+  "Separate segment files created: {{num}}": "فایل‌های جداگانهٔ بخش‌ها: {{num}}",
+  "Failed: {{num}}": "ناموفق: {{num}}",
+  "Skipped: {{num}}": "رد شده: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "فایل‌های خروجی کوتاه‌تر از ۱ ثانیه (احتمالاً خراب): {{num}}",
+  "Batch export finished with problems": "خروجی دسته‌ای با مشکلاتی پایان یافت",
+  "Export summary": "خلاصهٔ خروجی",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "بخش {{segNum}}: شروع {{seconds}} ثانیه جلوتر، به فریم کلیدی بعدی منتقل شد، بنابراین خروجی چیزی از پیش از نقطهٔ برش ندارد.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "بخش {{segNum}}: به‌دلیل برش روی فریم کلیدی، خروجی {{seconds}} ثانیه پیش از نقطهٔ برش (در فریم کلیدی قبلی) شروع می‌شود و بنابراین فریم‌هایی را که بریده‌اید در بر دارد. برای جلوگیری از این، در گزینه‌های خروجی «انتقال شروع به فریم کلیدی بعدی» یا «برش هوشمند» را فعال کنید.",
+  "Existing file was not overwritten": "فایل موجود بازنویسی نشد",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "برش فریم کلیدی: شروع بخش {{seconds}} ثانیه به جلو و به فریم کلیدی بعدی منتقل شد، چون برش فریم کلیدی فقط می‌تواند از یک فریم کلیدی شروع شود. برای برش در هر فریم، برش هوشمند را در گزینه‌های خروجی فعال کنید.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "بخش {{segNum}}: برش هوشمند با این فایل کار نکرد، بنابراین بخش به‌جای آن بدون افت کیفیت از یک فریم کلیدی برش داده شد."
 }

@@ -2,7 +2,7 @@ import i18n from 'i18next';
 
 import { getRealVideoStreams, getVideoTimebase } from './util/streams';
 
-import { readKeyframesAroundTime, findNextKeyframe, findKeyframeAtExactTime } from './ffmpeg';
+import { readFramesAroundTime, findNextKeyframe, findKeyframeAtExactTime } from './ffmpeg';
 import type { FFprobeStream } from '../../common/ffprobe';
 import { UserFacingError } from '../errors';
 import { readFileSize } from './util';
@@ -15,32 +15,45 @@ export async function needsSmartCut({ path, desiredCutFrom, videoStream }: {
   desiredCutFrom: number,
   videoStream: Pick<FFprobeStream, 'index'>,
 }) {
-  const readKeyframes = async (window: number) => readKeyframesAroundTime({ filePath: path, streamIndex: videoStream.index, aroundTime: desiredCutFrom, window });
+  const readFrames = async (window: number) => readFramesAroundTime({ filePath: path, streamIndex: videoStream.index, aroundTime: desiredCutFrom, window });
 
-  let keyframes = await readKeyframes(10);
+  let frames = await readFrames(10);
 
-  const keyframeAtExactTime = findKeyframeAtExactTime(keyframes, desiredCutFrom);
+  // The player shows the last frame that starts at or before the current time, so when the cutpoint is in the middle of a frame,
+  // that frame is what the user sees at the cutpoint. Start exactly at that frame, so that it becomes the first frame of the output.
+  // (ffmpeg would otherwise start at the first frame *after* the cutpoint.)
+  const shownFrameIndex = frames.findLastIndex((frame) => frame.time <= desiredCutFrom + 0.000001);
+  const shownFrame = frames[shownFrameIndex];
+  const frameAfterShownFrame = frames[shownFrameIndex + 1];
+  const exactCutFrom = shownFrame != null && frameAfterShownFrame != null && frameAfterShownFrame.time > desiredCutFrom ? shownFrame.time : desiredCutFrom;
+
+  let keyframes = frames.filter((frame) => frame.keyframe);
+
+  const keyframeAtExactTime = findKeyframeAtExactTime(keyframes, exactCutFrom);
   if (keyframeAtExactTime) {
     console.log('Start cut is already on exact keyframe', keyframeAtExactTime.time);
 
     return {
+      exactCutFrom: keyframeAtExactTime.time,
       losslessCutFrom: keyframeAtExactTime.time,
       segmentNeedsSmartCut: false,
     };
   }
 
-  let nextKeyframe = findNextKeyframe(keyframes, desiredCutFrom);
+  let nextKeyframe = findNextKeyframe(keyframes, exactCutFrom);
 
   if (nextKeyframe == null) {
     // try again with a larger window
-    keyframes = await readKeyframes(60);
-    nextKeyframe = findNextKeyframe(keyframes, desiredCutFrom);
+    frames = await readFrames(60);
+    keyframes = frames.filter((frame) => frame.keyframe);
+    nextKeyframe = findNextKeyframe(keyframes, exactCutFrom);
   }
   if (nextKeyframe == null) throw new UserFacingError(i18n.t('Cannot find any keyframe after the desired start cut point'));
 
-  console.log('Smart cut from keyframe', { keyframe: nextKeyframe.time, desiredCutFrom });
+  console.log('Smart cut from keyframe', { keyframe: nextKeyframe.time, desiredCutFrom, exactCutFrom });
 
   return {
+    exactCutFrom,
     losslessCutFrom: nextKeyframe.time,
     segmentNeedsSmartCut: true,
   };

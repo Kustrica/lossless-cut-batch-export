@@ -11,7 +11,7 @@ import { FaLink } from 'react-icons/fa';
 import TextInput from '../components/TextInput';
 import { detectSceneChanges as ffmpegDetectSceneChanges, readFrames, mapTimesToSegments, findKeyframeNearTime } from '../ffmpeg';
 import { getFileSize, shuffleArray } from '../util';
-import { errorToast } from '../swal';
+import getSwal, { errorToast } from '../swal';
 import { createNumSegments as createNumSegmentsDialog, createFixedByteSixedSegments as createFixedByteSixedSegmentsDialog, createRandomSegments as createRandomSegmentsDialog, labelSegmentDialog, askForAlignSegments, selectSegmentsByLabelDialog, askForSegmentDuration, toastError } from '../dialogs';
 import { createSegment, sortSegments, invertSegments, combineOverlappingSegments as combineOverlappingSegments2, combineSelectedSegments as combineSelectedSegments2, isDurationValid, addSegmentColorIndex, filterNonMarkers, makeDurationSegments, isInitialSegment } from '../segments';
 import type { FfmpegDialog } from '../ffmpegParameters';
@@ -42,7 +42,7 @@ type ParameterDialogParameters = Record<string, string>;
 
 const offsetSegments = (segments: DefiniteSegmentBase[], offset: number) => segments.map((s) => ({ start: s.start + offset, end: s.end + offset }));
 
-function useSegments({ filePath, workingRef, setWorking, setProgress, videoStream, fileDuration, getRelevantTime, maxLabelLength, checkFileOpened, invertCutSegments, segmentsToChaptersOnly, timecodePlaceholder, parseTimecode, appendFfmpegCommandLog, fileDurationNonZero, mainFileMeta, seekAbs, activeVideoStreamIndex, activeAudioStreamIndexes, handleError, showGenericDialog, simpleMode, ffmpegHwaccel }: {
+function useSegments({ filePath, workingRef, setWorking, setProgress, videoStream, fileDuration, getRelevantTime, maxLabelLength, checkFileOpened, invertCutSegments, segmentsToChaptersOnly, timecodePlaceholder, parseTimecode, appendFfmpegCommandLog, fileDurationNonZero, mainFileMeta, seekAbs, activeVideoStreamIndex, activeAudioStreamIndexes, handleError, showGenericDialog, simpleMode, ffmpegHwaccel, snapCutStartToKeyframe }: {
   filePath?: string | undefined,
   workingRef: MutableRefObject<boolean>,
   setWorking: (w: { text: string, abortController?: AbortController } | undefined) => void,
@@ -66,6 +66,7 @@ function useSegments({ filePath, workingRef, setWorking, setProgress, videoStrea
   showGenericDialog: ShowGenericDialog,
   simpleMode: boolean,
   ffmpegHwaccel: FfmpegHwAccel,
+  snapCutStartToKeyframe: boolean,
 }) {
   const { t } = useTranslation();
 
@@ -456,6 +457,41 @@ function useSegments({ filePath, workingRef, setWorking, setProgress, videoStrea
     cutSegmentsNew.splice(index, 1, { ...existing, ...newProps });
     safeSetCutSegments(cutSegmentsNew, fileDuration);
   }, [cutSegments, safeSetCutSegments, fileDuration]);
+
+  // With keyframe cut (and smart cut off), an export can only start at a keyframe. So that what you see is what you get,
+  // move the start of the current segment forward to the next keyframe (never backward, so nothing from before the chosen start ends up in the output).
+  // Keyframes are read with ffprobe around the start, so this also works when the keyframes are not loaded on the timeline.
+  // Remember starts that we already handled, so that undo can restore the original start if the user really wants it.
+  const handledSegmentStartsRef = useRef(new Set<string>());
+  useEffect(() => {
+    const segment = currentCutSeg;
+    if (!snapCutStartToKeyframe || filePath == null || videoStream == null || segment == null || isInitialSegment(cutSegments)) return undefined;
+    const { segId, start, end } = segment;
+    const handledStarts = handledSegmentStartsRef.current;
+    if (start <= 0 || handledStarts.has(`${segId}:${start}`)) return undefined;
+
+    let canceled = false;
+    // wait until the user has stopped moving the start (e.g. dragging on the timeline)
+    const timeout = setTimeout(async () => {
+      try {
+        const keyframe = await findKeyframeNearTime({ filePath, streamIndex: videoStream.index, time: start, mode: 'after' });
+        if (canceled) return;
+        handledStarts.add(`${segId}:${start}`);
+        if (keyframe == null || keyframe - start < 0.0005) return;
+        if (end != null && keyframe >= end) return; // the segment would become invalid. The export will warn about it instead
+        handledStarts.add(`${segId}:${keyframe}`);
+        updateSegAtIndex(currentSegIndexSafe, { start: keyframe });
+        seekAbs(keyframe);
+        getSwal().toast.fire({ icon: 'info', timer: 7000, text: i18n.t('Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.', { seconds: (keyframe - start).toFixed(2) }) });
+      } catch (err) {
+        console.warn('Unable to snap segment start to keyframe', err);
+      }
+    }, 500);
+    return () => {
+      canceled = true;
+      clearTimeout(timeout);
+    };
+  }, [snapCutStartToKeyframe, filePath, videoStream, currentCutSeg, cutSegments, currentSegIndexSafe, updateSegAtIndex, seekAbs]);
 
   const setCutTime = useCallback((type: 'start' | 'end' | 'move', time: number | undefined) => {
     if (!isDurationValid(fileDuration) || currentCutSeg == null) return;

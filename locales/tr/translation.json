@@ -1106,5 +1106,21 @@
   "Each video: every segment as a separate file": "Her video: her bölüm ayrı bir dosya olarak",
   "Each video: merge segments into one file": "Her video: bölümleri tek dosyada birleştir",
   "Each video: merged file + separate segments": "Her video: birleştirilmiş dosya + ayrı bölümler",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Toplu işteki her videoya ayrı ayrı uygulanır. Videolar hiçbir zaman birbiriyle birleştirilmez."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Toplu işteki her videoya ayrı ayrı uygulanır. Videolar hiçbir zaman birbiriyle birleştirilmez.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Ana kare kesmede çıktı, kesme noktasından önceki ana karede başlar; bu nedenle başta, kestiğiniz bölümden birkaç saniyeye kadar (örneğin bir girişin sonu) görünebilir. Bu seçenek etkinleştirildiğinde başlangıç bunun yerine bir sonraki ana kareye ileri alınır: kesme noktasından öncesinden hiçbir şey dahil edilmez, ancak kesme noktasından sonraki birkaç saniyeye kadar kaybolabilir. Kare hassasiyetinde bir başlangıç için bunun yerine \"Akıllı kesim\" kullanın.",
+  "Snap start to next keyframe": "Başlangıcı sonraki ana kareye kaydır",
+  "Input files: {{num}}": "Girdi dosyaları: {{num}}",
+  "Segments exported: {{num}}": "Dışa aktarılan bölümler: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Oluşturulan birleştirilmiş dosyalar: {{num}} (birleştirilen bölümler: {{segments}})",
+  "Separate segment files created: {{num}}": "Oluşturulan ayrı bölüm dosyaları: {{num}}",
+  "Failed: {{num}}": "Başarısız: {{num}}",
+  "Skipped: {{num}}": "Atlanan: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "1 saniyeden kısa çıktı dosyaları (muhtemelen bozuk): {{num}}",
+  "Batch export finished with problems": "Toplu dışa aktarma sorunlarla tamamlandı",
+  "Export summary": "Dışa aktarma özeti",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Bölüm {{segNum}}: başlangıç {{seconds}} sn ileri, bir sonraki ana kareye kaydırıldı; bu nedenle çıktı kesme noktasından öncesine ait hiçbir şey içermiyor.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Bölüm {{segNum}}: ana kare kesme nedeniyle çıktı, kesme noktasından {{seconds}} sn önce (önceki ana karede) başlıyor ve bu yüzden kestiğiniz kareleri içeriyor. Bunu önlemek için dışa aktarma seçeneklerinde \"Başlangıcı sonraki ana kareye kaydır\" veya \"Akıllı kesim\" seçeneğini etkinleştirin.",
+  "Existing file was not overwritten": "Mevcut dosyanın üzerine yazılmadı",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Anahtar kare kesimi: anahtar kare kesimi yalnızca bir anahtar karede başlayabildiği için bölümün başlangıcı {{seconds}} sn ileriye, sonraki anahtar kareye taşındı. Herhangi bir karede kesmek için dışa aktarma seçeneklerinde akıllı kesimi etkinleştirin.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Bölüm {{segNum}}: akıllı kesim bu dosyayla çalışmadı, bu yüzden bölüm bunun yerine bir anahtar karede kayıpsız olarak kesildi."
 }

@@ -1002,5 +1002,21 @@
   "Each video: every segment as a separate file": "Cada vídeo: cada segmento como ficheiro separado",
   "Each video: merge segments into one file": "Cada vídeo: juntar os segmentos num único ficheiro",
   "Each video: merged file + separate segments": "Cada vídeo: ficheiro junto + segmentos separados",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplica-se a cada vídeo do lote separadamente. Os vídeos nunca são juntos entre si."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplica-se a cada vídeo do lote separadamente. Os vídeos nunca são juntos entre si.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Com o \"corte em quadro-chave\", a saída começa no quadro-chave anterior ao ponto de corte, por isso até alguns segundos da parte que cortou (por exemplo, o final de uma introdução) podem aparecer no início. Com esta opção ativada, o início é antes avançado para o quadro-chave seguinte: nada de antes do ponto de corte é incluído, mas podem perder-se até alguns segundos depois do ponto de corte. Para um início preciso ao quadro, utilize o \"Corte inteligente\".",
+  "Snap start to next keyframe": "Avançar o início para o quadro-chave seguinte",
+  "Input files: {{num}}": "Ficheiros de entrada: {{num}}",
+  "Segments exported: {{num}}": "Segmentos exportados: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Ficheiros unidos criados: {{num}} (a partir de {{segments}} segmentos)",
+  "Separate segment files created: {{num}}": "Ficheiros de segmentos separados criados: {{num}}",
+  "Failed: {{num}}": "Falhados: {{num}}",
+  "Skipped: {{num}}": "Ignorados: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Ficheiros de saída com menos de 1 segundo (provavelmente danificados): {{num}}",
+  "Batch export finished with problems": "Exportação em lote concluída com problemas",
+  "Export summary": "Resumo da exportação",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segmento {{segNum}}: o início foi avançado {{seconds}} s para o quadro-chave seguinte, por isso a saída não contém nada de antes do ponto de corte.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmento {{segNum}}: devido ao corte em quadro-chave, a saída começa {{seconds}} s antes do ponto de corte (no quadro-chave anterior), por isso contém quadros que cortou. Para evitar isto, ative \"Avançar o início para o quadro-chave seguinte\" ou o \"Corte inteligente\" nas opções de exportação.",
+  "Existing file was not overwritten": "O ficheiro existente não foi substituído",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Corte em fotograma-chave: o início do segmento foi movido {{seconds}} s para a frente, para o fotograma-chave seguinte, porque um corte em fotograma-chave só pode começar num fotograma-chave. Ative o corte inteligente nas opções de exportação para cortar em qualquer fotograma.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: o corte inteligente não funcionou com este ficheiro, por isso o segmento foi cortado sem perdas num fotograma-chave."
 }

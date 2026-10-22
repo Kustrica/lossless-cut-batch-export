@@ -63,6 +63,7 @@ import {
   RefuseOverwriteError, extractSubtitleTrackToSegments,
   mapRecommendedDefaultFormat,
   getFfCommandLine,
+  getDuration,
 } from './ffmpeg';
 import { shouldCopyStreamByDefault, getAudioStreams, getRealVideoStreams, isAudioDefinitelyNotSupported, willPlayerProperlyHandleVideo, doesPlayerSupportHevcPlayback, getSubtitleStreams, enableVideoTrack, enableAudioTrack, canHtml5PlayerPlayStreams, isMatroska } from './util/streams';
 import { needsHvc1Tag } from './util/metadata';
@@ -100,7 +101,7 @@ import { generateCutFileNames as generateCutFileNamesRaw, generateCutMergedFileN
 import { rightBarWidth, leftBarWidth, ffmpegExtractWindow, zoomMax } from './util/constants';
 import BigWaveform from './components/BigWaveform';
 
-import type { BatchFile, Chapter, EdlExportType, EdlFileType, EdlImportType, FfmpegCommandLog, FilesMeta, FileStats, ParamsByFile, PlaybackMode, SegmentBase, SegmentColorIndex, SegmentTags, StateSegment, TunerType } from './types';
+import type { BatchFile, Chapter, EdlExportType, ExportSummary, ExportSummaryItem, EdlFileType, EdlImportType, FfmpegCommandLog, FilesMeta, FileStats, ParamsByFile, PlaybackMode, SegmentBase, SegmentColorIndex, SegmentTags, StateSegment, TunerType } from './types';
 import { goToTimecodeDirectArgsSchema } from './types';
 import type { CaptureFormat, KeyboardAction, ApiActionRequest } from '../../common/types.js';
 import { openFilesActionArgsSchema } from '../../common/types.js';
@@ -166,7 +167,7 @@ function App() {
   const [hideCompatPlayer, setHideCompatPlayer] = useState(false);
   const [exportConfirmOpen, setExportConfirmOpen] = useState(false);
   const [batchExportRequested, setBatchExportRequested] = useState(false);
-  const batchExportJobRef = useRef<{ paths: string[], index: number, startedPath: string | undefined, paused: boolean, warnings: string[] }>(undefined);
+  const batchExportJobRef = useRef<{ paths: string[], index: number, startedPath: string | undefined, paused: boolean, warnings: string[], summary: ExportSummary, lastOutPath?: string | undefined }>(undefined);
   const onExportConfirmRef = useRef<() => Promise<void>>(undefined);
   const batchOpenSingleFileRef = useRef<(path: string) => Promise<void>>(undefined);
   const pendingBatchOpenPathRef = useRef<string>(undefined);
@@ -199,7 +200,7 @@ function App() {
   const [selectedBatchFiles, setSelectedBatchFiles] = useState<string[]>([]);
 
   const allUserSettings = useUserSettingsRoot();
-  const { captureFormat, keyframeCut, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, autoMerge, timecodeFormat, invertCutSegments, autoExportExtraStreams, askBeforeClose, enableImportChapters, enableAskForFileOpenAction, playbackVolume, autoSaveProjectFile, wheelSensitivity, waveformHeight, invertTimelineScroll, language, ffmpegExperimental, hideNotifications, hideOsNotifications, autoLoadTimecode, autoDeleteMergedSegments, exportConfirmEnabled, segmentsToChapters, simpleMode, cutFileTemplate, cutMergedFileTemplate, mergedFileTemplate, keyboardSeekAccFactor, keyboardNormalSeekSpeed, keyboardSeekSpeed2, keyboardSeekSpeed3, treatInputFileModifiedTimeAsStart, treatOutputFileModifiedTimeAsStart, outFormatLocked, safeOutputFileName, enableAutoHtml5ify, segmentsToChaptersOnly, keyBindings, enableSmartCut, customFfPath, storeProjectInWorkingDir, enableOverwriteOutput, mouseWheelZoomModifierKey, mouseWheelFrameSeekModifierKey, mouseWheelKeyframeSeekModifierKey, captureFrameMethod, captureFrameQuality, captureFrameFileNameFormat, enableNativeHevc, cleanupChoices, preferStrongColors, outputFileNameMinZeroPadding, cutFromAdjustmentFrames, cutToAdjustmentFrames, waveformMode: waveformModePreference, thumbnailsEnabled, keyframesEnabled, reducedMotion, ffmpegHwaccel, videoFit, batchExportMode, autoRepairDamagedMp4Metadata } = allUserSettings.settings;
+  const { captureFormat, keyframeCut, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, autoMerge, timecodeFormat, invertCutSegments, autoExportExtraStreams, askBeforeClose, enableImportChapters, enableAskForFileOpenAction, playbackVolume, autoSaveProjectFile, wheelSensitivity, waveformHeight, invertTimelineScroll, language, ffmpegExperimental, hideNotifications, hideOsNotifications, autoLoadTimecode, autoDeleteMergedSegments, exportConfirmEnabled, segmentsToChapters, simpleMode, cutFileTemplate, cutMergedFileTemplate, mergedFileTemplate, keyboardSeekAccFactor, keyboardNormalSeekSpeed, keyboardSeekSpeed2, keyboardSeekSpeed3, treatInputFileModifiedTimeAsStart, treatOutputFileModifiedTimeAsStart, outFormatLocked, safeOutputFileName, enableAutoHtml5ify, segmentsToChaptersOnly, keyBindings, enableSmartCut, keyframeCutSnapStart, customFfPath, storeProjectInWorkingDir, enableOverwriteOutput, mouseWheelZoomModifierKey, mouseWheelFrameSeekModifierKey, mouseWheelKeyframeSeekModifierKey, captureFrameMethod, captureFrameQuality, captureFrameFileNameFormat, enableNativeHevc, cleanupChoices, preferStrongColors, outputFileNameMinZeroPadding, cutFromAdjustmentFrames, cutToAdjustmentFrames, waveformMode: waveformModePreference, thumbnailsEnabled, keyframesEnabled, reducedMotion, ffmpegHwaccel, videoFit, batchExportMode, autoRepairDamagedMp4Metadata, recentCustomOutDirs } = allUserSettings.settings;
   const { setCaptureFormat, setAutoRepairDamagedMp4Metadata, setCustomOutDir, setKeyframeCut, setPlaybackVolume, setExportConfirmEnabled, setSimpleMode, setOutFormatLocked, setSafeOutputFileName, setKeyBindings, resetKeyBindings, setStoreProjectInWorkingDir, setCleanupChoices, darkMode, toggleDarkMode, setWaveformMode, setThumbnailsEnabled, setKeyframesEnabled, prefersReducedMotion, customOutDir } = allUserSettings;
 
   // Batch export uses its own export mode setting (without changing the normal export mode settings)
@@ -212,7 +213,7 @@ function App() {
 
   const { withErrorHandling, handleError, genericError, setGenericError } = useErrorHandling();
 
-  const { showGenericDialog, genericDialog, closeGenericDialog, confirmDialog, confirmDialogWithCheckbox, openExportFinishedDialog, openCutFinishedDialog, openConcatFinishedDialog, openCleanupFilesDialog, openShiftSegmentsDialog, openDecimateDialog } = useDialog();
+  const { showGenericDialog, genericDialog, closeGenericDialog, confirmDialog, confirmDialogWithCheckbox, openExportFinishedDialog, openCutFinishedDialog, openConcatFinishedDialog, openBatchExportFinishedDialog, openCleanupFilesDialog, openShiftSegmentsDialog, openDecimateDialog } = useDialog();
 
   // Note that each action may be multiple key bindings and this will only be the first binding for each action
   const keyBindingByAction = useMemo(() => Object.fromEntries(keyBindings.map((binding) => [binding.action, binding])), [keyBindings]);
@@ -370,7 +371,7 @@ function App() {
 
   const {
     cutSegments, cutSegmentsHistory, createSegmentsFromKeyframes, shuffleSegments, detectBlackScenes, detectSilentScenes, detectSceneChanges, removeSegment, invertAllSegments, fillSegmentsGaps, combineOverlappingSegments, combineSelectedSegments, modifySelectedSegmentTimes, alignSegmentTimesToKeyframes, updateSegOrder, updateSegOrders, reorderSegsByStartTime, addSegment, setCutStart, setCutEnd, labelSegment, splitCurrentSegment, focusSegmentAtCursor, selectSegmentsAtCursor, createNumSegments, createFixedDurationSegments, createFixedByteSizedSegments, createRandomSegments, getSegEstimatedSize, haveInvalidSegs, currentSegIndexSafe, currentCutSeg, inverseCutSegments, clearSegments, clearSegColorCounter, loadCutSegments, setCutTime, setCurrentSegIndex, labelSelectedSegments, deselectAllSegments, selectAllSegments, selectOnlyCurrentSegment, toggleCurrentSegmentSelected, invertSelectedSegments, removeSelectedSegments, selectSegmentsByLabel, selectSegmentsByExpr, selectAllMarkers, mutateSegmentsByExpr, toggleSegmentSelected, selectOnlySegment, selectedSegments, segmentsOrInverse, segmentsToExport, duplicateCurrentSegment, duplicateSegment, updateSegAtIndex, findSegmentsAtCursor, maybeCreateFullLengthSegment, currentCutSegOrWholeTimeline, segColorCounter,
-  } = useSegments({ filePath, workingRef, setWorking, setProgress, videoStream: activeVideoStream, fileDuration, getRelevantTime, maxLabelLength, checkFileOpened, invertCutSegments, segmentsToChaptersOnly: exportSegmentsToChaptersOnly, timecodePlaceholder, parseTimecode, appendFfmpegCommandLog, fileDurationNonZero, mainFileMeta: mainFileMeta?.ffprobeMeta, seekAbs, activeVideoStreamIndex, activeAudioStreamIndexes, handleError, showGenericDialog, simpleMode, ffmpegHwaccel });
+  } = useSegments({ filePath, workingRef, setWorking, setProgress, videoStream: activeVideoStream, fileDuration, getRelevantTime, maxLabelLength, checkFileOpened, invertCutSegments, segmentsToChaptersOnly: exportSegmentsToChaptersOnly, timecodePlaceholder, parseTimecode, appendFfmpegCommandLog, fileDurationNonZero, mainFileMeta: mainFileMeta?.ffprobeMeta, seekAbs, activeVideoStreamIndex, activeAudioStreamIndexes, handleError, showGenericDialog, simpleMode, ffmpegHwaccel, snapCutStartToKeyframe: keyframeCut && keyframeCutSnapStart && !enableSmartCut && lossyMode == null });
 
   const { getEdlFilePath, projectFileSavePath, getProjectFileSavePath } = useSegmentsAutoSave({ autoSaveProjectFile, storeProjectInWorkingDir, filePath, customOutDir, cutSegments });
 
@@ -1075,6 +1076,29 @@ function App() {
     }
   }, []);
 
+  // Called when a batch item has been exported, skipped or has failed. Opens the next file, or shows the summary after the last one.
+  const finishBatchItem = useCallback((job: NonNullable<typeof batchExportJobRef.current>, result?: { failed?: ExportSummaryItem, skipped?: ExportSummaryItem }) => {
+    if (result?.failed) job.summary.failed.push(result.failed);
+    if (result?.skipped) job.summary.skipped.push(result.skipped);
+    // eslint-disable-next-line no-param-reassign
+    job.index += 1;
+    // eslint-disable-next-line no-param-reassign
+    job.startedPath = undefined;
+    const nextPath = job.paths[job.index];
+    if (nextPath) {
+      window.setTimeout(() => batchOpenSingleFileRef.current?.(nextPath), 0);
+      return;
+    }
+    if (batchExportJobRef.current === job) batchExportJobRef.current = undefined;
+    setBatchExportRequested(false);
+    const { summary } = job;
+    const warnings = [...new Set(job.warnings)];
+    const hasProblems = warnings.length > 0 || summary.failed.length > 0 || summary.skipped.length > 0 || summary.tooShort.length > 0;
+    if (hideAllNotifications && !hasProblems) return;
+    showOsNotification(i18n.t('Batch export finished'));
+    openBatchExportFinishedDialog({ filePath: job.lastOutPath, summary, warnings });
+  }, [hideAllNotifications, openBatchExportFinishedDialog, showOsNotification]);
+
   const willMerge = segmentsToExport.length > 1 && exportAutoMerge;
 
   const onExportConfirm = useCallback(async () => {
@@ -1085,21 +1109,26 @@ function App() {
     invariant(filePath != null && outputDir != null);
     emitEvent({ eventName: 'export-start', path: filePath });
 
+    const batchJobAtStart = batchExportJobRef.current;
+    // In a batch, skip a file that cannot be exported and continue with the next one (it will be listed in the summary)
+    const skipOrShowError = (reason: string) => {
+      if (batchJobAtStart) finishBatchItem(batchJobAtStart, { skipped: { name: basename(filePath), reason } });
+      else errorToast(reason);
+    };
+
     if (numStreamsToCopy === 0) {
-      if (batchExportJobRef.current) {
-        batchExportJobRef.current = undefined;
-        setBatchExportRequested(false);
-      }
-      errorToast(i18n.t('No tracks selected for export'));
+      skipOrShowError(i18n.t('No tracks selected for export'));
+      return;
+    }
+
+    // Without segments we export the whole file, which requires a known duration (or we would export only a single frame)
+    if (batchJobAtStart && segmentsToExport.length === 0 && !isDurationValid(fileDuration)) {
+      skipOrShowError(i18n.t('This file does not have a valid duration. This may cause issues. You can try to fix the file\'s duration from the File menu'));
       return;
     }
 
     if (haveInvalidSegs) {
-      if (batchExportJobRef.current) {
-        batchExportJobRef.current = undefined;
-        setBatchExportRequested(false);
-      }
-      errorToast(i18n.t('Start time must be before end time'));
+      skipOrShowError(i18n.t('Start time must be before end time'));
       return;
     }
 
@@ -1116,11 +1145,7 @@ function App() {
       if (exportSegmentsToChaptersOnly) {
         const sortedSegments = sortSegments(segmentsOrInverse.selected);
         if (hasAnySegmentOverlap(sortedSegments)) {
-          if (batchExportJobRef.current) {
-            batchExportJobRef.current = undefined;
-            setBatchExportRequested(false);
-          }
-          errorToast(i18n.t('Make sure you have no overlapping segments.'));
+          skipOrShowError(i18n.t('Make sure you have no overlapping segments.'));
           return;
         }
         // matroska supports gaps, so we can use segments directly
@@ -1158,6 +1183,7 @@ function App() {
         copyFileStreams,
         allFilesMeta,
         keyframeCut,
+        keyframeCutSnapStart,
         segments: segmentsToExport,
         cutFileNames,
         onProgress: setProgress,
@@ -1172,6 +1198,26 @@ function App() {
         paramsByFile,
         chapters: chaptersToAdd,
         detectedFps,
+      });
+
+      // warnings that are specific to this file (in a batch they are prefixed with the file name)
+      const fileWarnings = new Set<string>();
+      outFiles.forEach(({ keyframeCutStart, smartCutFailed }, i) => {
+        const segNum = i + 1;
+        if (smartCutFailed) {
+          const warning = i18n.t('Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.', { segNum });
+          warnings.add(warning);
+          fileWarnings.add(warning);
+        }
+        if (keyframeCutStart == null) return;
+        const seconds = keyframeCutStart.seconds.toFixed(2);
+        if (keyframeCutStart.snappedForward) {
+          notices.add(i18n.t('Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.', { segNum, seconds }));
+        } else {
+          const warning = i18n.t('Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable "Snap start to next keyframe" or "Smart cut" in the export options.', { segNum, seconds });
+          warnings.add(warning);
+          fileWarnings.add(warning);
+        }
       });
 
       let mergedOutFilePath: string | undefined;
@@ -1213,6 +1259,30 @@ function App() {
         if (exportAutoDeleteMergedSegments) await tryDeleteFiles(createdOutFiles);
       }
 
+      // Summary of what was created. Also check that no output is (almost) empty, e.g. only a single frame
+      const separateOutPaths = willMerge && exportAutoDeleteMergedSegments ? [] : outFiles.flatMap((f) => (f.created ? [f.path] : []));
+      const outPathsToCheck = [...(willMerge && mergedOutFilePath != null ? [mergedOutFilePath] : []), ...separateOutPaths];
+      const tooShortOutputs = (await Promise.all(outPathsToCheck.map(async (path): Promise<ExportSummaryItem | undefined> => {
+        try {
+          const duration = await getDuration(path);
+          if (duration != null && duration >= 1) return undefined;
+          return { name: basename(path), reason: duration != null ? `${duration.toFixed(3)} s` : undefined };
+        } catch (err) {
+          console.warn('Unable to read duration of output file', path, err);
+          return { name: basename(path) };
+        }
+      }))).flatMap((item) => (item != null ? [item] : []));
+      const exportSummary: ExportSummary = {
+        inputFiles: 1,
+        segmentsIn: outFiles.length,
+        mergedFiles: willMerge && mergedOutFilePath != null ? 1 : 0,
+        mergedSegments: willMerge ? outFiles.length : 0,
+        separateFiles: separateOutPaths.length,
+        failed: [],
+        skipped: outFiles.filter((f) => !f.created).map((f) => ({ name: basename(f.path), reason: i18n.t('Existing file was not overwritten') })),
+        tooShort: tooShortOutputs,
+      };
+
       if (!enableOverwriteOutput) warnings.add(i18n.t('Overwrite output setting is disabled and some files might have been skipped.'));
 
       if (!exportConfirmEnabled) notices.add(i18n.t('Export options are not shown. You can enable export options by clicking the icon right next to the export button.'));
@@ -1250,9 +1320,9 @@ function App() {
       const exportedPaths = willMerge && mergedOutFilePath != null ? [mergedOutFilePath] : outFiles.map((f) => f.path);
       const [revealPath] = exportedPaths;
       invariant(revealPath != null);
-      if (!hideAllNotifications && !batchExportJobRef.current) {
+      if ((!hideAllNotifications || tooShortOutputs.length > 0) && !batchExportJobRef.current) {
         showOsNotification(i18n.t('Export finished'));
-        openCutFinishedDialog({ filePath: revealPath, warnings: [...warnings], notices: [...notices] });
+        openCutFinishedDialog({ filePath: revealPath, warnings: [...warnings], notices: [...notices], summary: exportSummary });
       }
 
       setExportCount((c) => c + 1);
@@ -1262,27 +1332,34 @@ function App() {
 
       const batchJob = batchExportJobRef.current;
       if (batchJob) {
-        batchJob.warnings.push(...warnings);
-        batchJob.index += 1;
-        batchJob.startedPath = undefined;
-        const nextPath = batchJob.paths[batchJob.index];
-        if (nextPath) {
-          window.setTimeout(() => batchOpenSingleFileRef.current?.(nextPath), 0);
-        } else {
-          batchExportJobRef.current = undefined;
-          setBatchExportRequested(false);
-          if (!hideAllNotifications) {
-            const warningText = batchJob.warnings.length > 0 ? ` ${batchJob.warnings.join(' ')}` : '';
-            getSwal().toast.fire({ icon: batchJob.warnings.length > 0 ? 'warning' : 'success', text: `${i18n.t('Batch export finished')}${warningText}` });
-          }
-        }
+        batchJob.warnings.push(...[...warnings].map((warning) => (fileWarnings.has(warning) ? `${basename(filePath)}: ${warning}` : warning)));
+        const { summary } = batchJob;
+        summary.segmentsIn += exportSummary.segmentsIn;
+        summary.mergedFiles += exportSummary.mergedFiles;
+        summary.mergedSegments += exportSummary.mergedSegments;
+        summary.separateFiles += exportSummary.separateFiles;
+        summary.skipped.push(...exportSummary.skipped);
+        summary.tooShort.push(...exportSummary.tooShort);
+        batchJob.lastOutPath = revealPath;
+        finishBatchItem(batchJob);
       }
     } catch (err) {
-      if (batchExportJobRef.current) {
+      const failedBatchJob = batchExportJobRef.current;
+      emitEvent({ eventName: 'export-complete' });
+
+      // In a batch, list the failed file in the summary and continue with the next file (unless canceled or out of disk space)
+      if (failedBatchJob && !isAbortedError(err) && !(isExecaError(err) && isOutOfSpaceError(err))) {
+        console.error('Batch export of file failed', filePath, err);
+        const ffmpegError = isExecaError(err) ? getStdioString(err.stderr).trim().split('\n').pop()?.trim() : undefined;
+        const reason = ffmpegError || (err instanceof Error ? err.message.split('\n')[0] : String(err));
+        finishBatchItem(failedBatchJob, { failed: { name: basename(filePath), reason: reason?.slice(0, 300) } });
+        return;
+      }
+
+      if (failedBatchJob) {
         batchExportJobRef.current = undefined;
         setBatchExportRequested(false);
       }
-      emitEvent({ eventName: 'export-complete' });
 
       if (isAbortedError(err)) return;
 
@@ -1317,7 +1394,7 @@ function App() {
       setWorking(undefined);
       setProgress(undefined);
     }
-  }, [filePath, numStreamsToCopy, haveInvalidSegs, workingRef, setWorking, exportSegmentsToChaptersOnly, cutFileTemplateOrDefault, generateCutFileNames, cutMultiple, outputDir, customOutDir, fileFormat, fileDuration, isRotationSet, effectiveRotation, copyFileStreams, allFilesMeta, keyframeCut, segmentsToExport, shortestFlag, ffmpegExperimental, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, paramsByFile, detectedFps, willMerge, enableOverwriteOutput, exportConfirmEnabled, mainFileFormat, mainStreams, exportExtraStreams, areWeCutting, simpleMode, prefersReducedMotion, cleanupChoices, hideAllNotifications, segmentsOrInverse.selected, t, cutMergedFileTemplateOrDefault, segmentsToChapters, invertCutSegments, generateCutMergedFileNames, concatCutSegments, exportAutoDeleteMergedSegments, tryDeleteFiles, nonCopiedExtraStreams, extractStreams, askForCleanupChoices, cleanupFiles, showOsNotification, openCutFinishedDialog, handleExportFailed]);
+  }, [filePath, numStreamsToCopy, haveInvalidSegs, workingRef, setWorking, exportSegmentsToChaptersOnly, cutFileTemplateOrDefault, generateCutFileNames, cutMultiple, outputDir, customOutDir, fileFormat, fileDuration, isRotationSet, effectiveRotation, copyFileStreams, allFilesMeta, keyframeCut, keyframeCutSnapStart, segmentsToExport, shortestFlag, ffmpegExperimental, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, paramsByFile, detectedFps, willMerge, enableOverwriteOutput, exportConfirmEnabled, mainFileFormat, mainStreams, exportExtraStreams, areWeCutting, simpleMode, prefersReducedMotion, cleanupChoices, hideAllNotifications, segmentsOrInverse.selected, t, cutMergedFileTemplateOrDefault, segmentsToChapters, invertCutSegments, generateCutMergedFileNames, concatCutSegments, exportAutoDeleteMergedSegments, tryDeleteFiles, nonCopiedExtraStreams, extractStreams, askForCleanupChoices, cleanupFiles, showOsNotification, openCutFinishedDialog, handleExportFailed, finishBatchItem]);
 
   const onExportPress = useCallback(async () => {
     if (!filePath) return;
@@ -1489,6 +1566,24 @@ function App() {
           await ensureAccessToSourceDir(fp);
           // Ok, we got access from the user (or already have access), now read the project file
           await loadEdlFile({ path: sameDirEdlFilePath, type: 'llc' });
+        } else if (storeProjectInWorkingDir) {
+          // The project might have been saved while a different working directory was selected
+          // (e.g. the user edited files, then changed the output folder before exporting). Look in recent working dirs too.
+          const recentEdlFilePaths = recentCustomOutDirs.filter((dir) => dir !== cod).flatMap((dir) => getEdlFilePath(fp, dir) ?? []);
+          for (const recentEdlFilePath of recentEdlFilePaths) {
+            // eslint-disable-next-line no-await-in-loop
+            if (await mainApi.pathExists(recentEdlFilePath)) {
+              // only use it if it was made for this media file
+              // eslint-disable-next-line no-await-in-loop
+              const { mediaFileName } = await loadLlcProject(recentEdlFilePath);
+              if (mediaFileName == null || mediaFileName === basename(fp)) {
+                console.log('Found project file in a previously used working directory', recentEdlFilePath);
+                // eslint-disable-next-line no-await-in-loop
+                await loadEdlFile({ path: recentEdlFilePath, type: 'llc' });
+                return;
+              }
+            }
+          }
         }
 
         // OK, we didn't find a project file, instead maybe try to create project (segments) from chapters
@@ -1621,7 +1716,7 @@ function App() {
       resetState();
       throw err;
     }
-  }, [storeProjectInWorkingDir, setWorking, loadEdlFile, getEdlFilePath, enableImportChapters, ensureAccessToSourceDir, loadCutSegments, autoLoadTimecode, enableNativeHevc, ensureWritableOutDir, customOutDir, resetState, clearSegColorCounter, setCopyStreamIdsForPath, setDetectedFileFormat, outFormatLocked, setUsingDummyVideo, setPreviewFilePath, html5ifyAndLoadWithPreferences, setFileFormat, showNotification, showPreviewFileLoadedMessage, showNotNativelySupportedMessage]);
+  }, [storeProjectInWorkingDir, recentCustomOutDirs, setWorking, loadEdlFile, getEdlFilePath, enableImportChapters, ensureAccessToSourceDir, loadCutSegments, autoLoadTimecode, enableNativeHevc, ensureWritableOutDir, customOutDir, resetState, clearSegColorCounter, setCopyStreamIdsForPath, setDetectedFileFormat, outFormatLocked, setUsingDummyVideo, setPreviewFilePath, html5ifyAndLoadWithPreferences, setFileFormat, showNotification, showPreviewFileLoadedMessage, showNotNativelySupportedMessage]);
 
   const toggleLastCommands = useCallback(() => setLastCommandsVisible((val) => !val), []);
   const toggleSettings = useCallback(() => setSettingsVisible((val) => !val), []);
@@ -1702,11 +1797,17 @@ function App() {
     } finally {
       setWorking(undefined);
     }
-    if (!loaded && batchExportJobRef.current) {
-      batchExportJobRef.current = undefined;
-      setBatchExportRequested(false);
+    const job = batchExportJobRef.current;
+    if (!loaded && job) {
+      if (job.paths[job.index] === path) {
+        // continue with the next file, this one will be listed in the summary
+        finishBatchItem(job, { failed: { name: basename(path), reason: i18n.t('Failed to open file') } });
+      } else {
+        batchExportJobRef.current = undefined;
+        setBatchExportRequested(false);
+      }
     }
-  }, [workingRef, filePath, setWorking, withErrorHandling, userOpenSingleFile]);
+  }, [workingRef, filePath, setWorking, withErrorHandling, userOpenSingleFile, finishBatchItem]);
 
   // open the next batch file after the current one was removed from the batch (wait until any ongoing operation, e.g. cleanup, has finished)
   useEffect(() => {
@@ -1723,16 +1824,26 @@ function App() {
 
   useEffect(() => {
     const job = batchExportJobRef.current;
-    if (!job || !filePath || filePath !== job.paths[job.index] || job.startedPath === filePath || workingRef.current) return;
+    if (!job || !filePath || filePath !== job.paths[job.index] || job.startedPath === filePath || workingRef.current) return undefined;
+    // The file's duration comes from the player, some time after the file has been opened.
+    // Don't start exporting before that, or else a file without segments would be exported with an unknown duration.
+    if (!isDurationValid(fileDuration)) {
+      const timeout = window.setTimeout(() => {
+        if (batchExportJobRef.current !== job || job.startedPath === filePath) return;
+        finishBatchItem(job, { skipped: { name: basename(filePath), reason: i18n.t('This file does not have a valid duration. This may cause issues. You can try to fix the file\'s duration from the File menu') } });
+      }, 30000);
+      return () => window.clearTimeout(timeout);
+    }
     if (job.paused && exportConfirmEnabled) {
       setExportConfirmOpen(true);
       setStreamsSelectorShown(false);
-      return;
+      return undefined;
     }
     job.paused = false;
     job.startedPath = filePath;
     onExportConfirmRef.current?.();
-  }, [batchExportRequested, filePath, exportConfirmEnabled, workingRef, working]);
+    return undefined;
+  }, [batchExportRequested, filePath, fileDuration, exportConfirmEnabled, workingRef, working, finishBatchItem]);
 
   const onBatchExportPress = useCallback(() => {
     if (!filePath || batchFiles.length === 0 || workingRef.current) return;
@@ -1740,7 +1851,7 @@ function App() {
     const paths = batchPaths.includes(filePath) ? [filePath, ...batchPaths.filter((path) => path !== filePath)] : batchPaths;
     const firstPath = paths[0];
     if (!firstPath) return;
-    batchExportJobRef.current = { paths, index: 0, startedPath: undefined, paused: exportConfirmEnabled, warnings: [] };
+    batchExportJobRef.current = { paths, index: 0, startedPath: undefined, paused: exportConfirmEnabled, warnings: [], summary: { inputFiles: paths.length, segmentsIn: 0, mergedFiles: 0, mergedSegments: 0, separateFiles: 0, failed: [], skipped: [], tooShort: [] } };
     setBatchExportRequested(true);
     if (filePath !== firstPath) {
       window.setTimeout(() => batchOpenSingleFile(firstPath), 2100);

@@ -127,5 +127,21 @@
   "Each video: every segment as a separate file": "Iga video: iga lõik eraldi failina",
   "Each video: merge segments into one file": "Iga video: liida lõigud üheks failiks",
   "Each video: merged file + separate segments": "Iga video: liidetud fail + eraldi lõigud",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Kehtib iga partii video kohta eraldi. Videoid ei liideta kunagi omavahel."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Kehtib iga partii video kohta eraldi. Videoid ei liideta kunagi omavahel.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Võtmekaadri lõikamise korral algab väljund lõikepunktile eelnevast võtmekaadrist, seega võib alguses näha kuni paar sekundit välja lõigatud osast (näiteks intro lõppu). Kui see valik on sisse lülitatud, nihutatakse algus hoopis edasi järgmise võtmekaadrini: lõikepunktile eelnevast ei lisata midagi, kuid kuni paar sekundit pärast lõikepunkti võib kaduma minna. Kaadritäpse alguse jaoks kasuta hoopis „Nutikat lõikamist“.",
+  "Snap start to next keyframe": "Nihuta algus järgmise võtmekaadrini",
+  "Input files: {{num}}": "Sisendfailid: {{num}}",
+  "Segments exported: {{num}}": "Eksporditud segmendid: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Loodud ühendatud failid: {{num}} (ühendatud segmendid: {{segments}})",
+  "Separate segment files created: {{num}}": "Loodud eraldi segmendifailid: {{num}}",
+  "Failed: {{num}}": "Ebaõnnestus: {{num}}",
+  "Skipped: {{num}}": "Vahele jäetud: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Alla 1 sekundi pikkused väljundfailid (tõenäoliselt katki): {{num}}",
+  "Batch export finished with problems": "Pakkeksport lõpetatud probleemidega",
+  "Export summary": "Ekspordi kokkuvõte",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: algust nihutati {{seconds}} s edasi järgmise võtmekaadrini, seega ei sisalda väljund midagi lõikepunktile eelnevast.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: võtmekaadri lõikamise tõttu algab väljund {{seconds}} s enne lõikepunkti (eelmisest võtmekaadrist) ja sisaldab seega välja lõigatud kaadreid. Selle vältimiseks lülita ekspordivalikutes sisse „Nihuta algus järgmise võtmekaadrini“ või „Nutikas lõikamine“.",
+  "Existing file was not overwritten": "Olemasolevat faili ei kirjutatud üle",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Võtmekaadri lõikamine: lõigu algus nihutati {{seconds}} s edasi järgmisele võtmekaadrile, sest võtmekaadri lõige saab alata ainult võtmekaadrilt. Suvalisel kaadril lõikamiseks lülitage ekspordi valikutes sisse nutikas lõikamine.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Lõik {{segNum}}: nutikas lõikamine selle failiga ei töötanud, seega lõigati lõik selle asemel kadudeta võtmekaadrilt."
 }

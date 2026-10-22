@@ -1032,5 +1032,21 @@
   "Each video: every segment as a separate file": "每個影片：每個片段作為單獨的檔案",
   "Each video: merge segments into one file": "每個影片：將片段合併為一個檔案",
   "Each video: merged file + separate segments": "每個影片：合併檔案 + 單獨的片段",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "分別套用於批次中的每個影片。不同影片之間永遠不會合併。"
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "分別套用於批次中的每個影片。不同影片之間永遠不會合併。",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "使用「關鍵影格切割」時，輸出會從切割點之前的關鍵影格開始，因此開頭可能會殘留最多幾秒被剪掉的部分（例如片頭的結尾）。啟用此選項後，起點會改為移到下一個關鍵影格：不會包含切割點之前的任何內容，但可能會遺失切割點之後最多幾秒。如需精確到影格的起點，請改用「智能切割」。",
+  "Snap start to next keyframe": "將起點移到下一個關鍵影格",
+  "Input files: {{num}}": "輸入檔案：{{num}}",
+  "Segments exported: {{num}}": "已匯出片段：{{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "已建立合併檔案：{{num}}（合併的片段：{{segments}}）",
+  "Separate segment files created: {{num}}": "已建立個別片段檔案：{{num}}",
+  "Failed: {{num}}": "失敗：{{num}}",
+  "Skipped: {{num}}": "已略過：{{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "短於 1 秒的輸出檔案（可能已損毀）：{{num}}",
+  "Batch export finished with problems": "批次匯出完成，但有問題",
+  "Export summary": "匯出摘要",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "片段 {{segNum}}：起點已後移 {{seconds}} 秒到下一個關鍵影格，因此輸出不包含切割點之前的任何內容。",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "片段 {{segNum}}：由於關鍵影格切割，輸出比切割點提前 {{seconds}} 秒開始（從上一個關鍵影格開始），因此包含您剪掉的畫面。若要避免此情況，請在匯出選項中啟用「將起點移到下一個關鍵影格」或「智能切割」。",
+  "Existing file was not overwritten": "未覆寫現有檔案",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "關鍵影格剪輯：由於關鍵影格剪輯只能從關鍵影格開始，片段起點已往後移動 {{seconds}} 秒到下一個關鍵影格。如需在任意影格剪輯，請在匯出選項中啟用智慧剪輯。",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "片段 {{segNum}}：智慧剪輯不適用於此檔案，因此該片段改為在關鍵影格處無損剪輯。"
 }

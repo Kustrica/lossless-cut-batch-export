@@ -867,5 +867,21 @@
   "Each video: every segment as a separate file": "Mỗi video: mỗi đoạn thành một tệp riêng",
   "Each video: merge segments into one file": "Mỗi video: ghép các đoạn thành một tệp",
   "Each video: merged file + separate segments": "Mỗi video: tệp đã ghép + các đoạn riêng",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Áp dụng riêng cho từng video trong lô. Các video không bao giờ được ghép với nhau."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Áp dụng riêng cho từng video trong lô. Các video không bao giờ được ghép với nhau.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Với cắt theo khung hình chính, đầu ra bắt đầu tại khung hình chính trước điểm cắt, nên ở đầu có thể xuất hiện tới vài giây của phần bạn đã cắt bỏ (ví dụ phần cuối của đoạn intro). Khi bật tùy chọn này, điểm bắt đầu sẽ được dời tới khung hình chính kế tiếp: không có gì trước điểm cắt được đưa vào, nhưng có thể mất tới vài giây sau điểm cắt. Để có điểm bắt đầu chính xác tới từng khung hình, hãy dùng \"Cắt thông minh\".",
+  "Snap start to next keyframe": "Dời điểm bắt đầu tới khung hình chính kế tiếp",
+  "Input files: {{num}}": "Tệp đầu vào: {{num}}",
+  "Segments exported: {{num}}": "Phân đoạn đã xuất: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Tệp đã gộp được tạo: {{num}} (từ {{segments}} phân đoạn)",
+  "Separate segment files created: {{num}}": "Tệp phân đoạn riêng được tạo: {{num}}",
+  "Failed: {{num}}": "Thất bại: {{num}}",
+  "Skipped: {{num}}": "Bỏ qua: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Tệp đầu ra ngắn hơn 1 giây (có thể bị hỏng): {{num}}",
+  "Batch export finished with problems": "Đã xuất hàng loạt xong nhưng có sự cố",
+  "Export summary": "Tóm tắt xuất",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Phân đoạn {{segNum}}: điểm bắt đầu đã được dời {{seconds}} giây tới khung hình chính kế tiếp, nên đầu ra không chứa gì trước điểm cắt.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Phân đoạn {{segNum}}: do cắt theo khung hình chính, đầu ra bắt đầu sớm hơn điểm cắt {{seconds}} giây (tại khung hình chính trước đó), nên chứa các khung hình bạn đã cắt bỏ. Để tránh điều này, hãy bật \"Dời điểm bắt đầu tới khung hình chính kế tiếp\" hoặc \"Cắt thông minh\" trong tùy chọn xuất.",
+  "Existing file was not overwritten": "Tệp hiện có không bị ghi đè",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Cắt theo khung hình chính: điểm đầu đoạn đã được dời lên {{seconds}} giây đến khung hình chính tiếp theo, vì cắt theo khung hình chính chỉ có thể bắt đầu tại một khung hình chính. Bật cắt thông minh trong tùy chọn xuất để cắt tại bất kỳ khung hình nào.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Đoạn {{segNum}}: cắt thông minh không hoạt động với tệp này, nên đoạn đã được cắt không mất dữ liệu tại một khung hình chính."
 }

@@ -18,5 +18,21 @@
   "Each video: every segment as a separate file": "Сваки видео: сваки сегмент као засебна датотека",
   "Each video: merge segments into one file": "Сваки видео: спој сегменте у једну датотеку",
   "Each video: merged file + separate segments": "Сваки видео: спојена датотека + засебни сегменти",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Примењује се на сваки видео у групи засебно. Видео снимци се никада не спајају међусобно."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Примењује се на сваки видео у групи засебно. Видео снимци се никада не спајају међусобно.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Код сечења на кључним кадровима излаз почиње од кључног кадра пре тачке сечења, па се на почетку може видети до неколико секунди дела који сте исекли (на пример крај уводне шпице). Када је ова опција укључена, почетак се уместо тога помера унапред до следећег кључног кадра: ништа пре тачке сечења неће бити укључено, али се може изгубити до неколико секунди после тачке сечења. За почетак прецизан до кадра, користите „Паметно сечење“.",
+  "Snap start to next keyframe": "Помери почетак до следећег кључног кадра",
+  "Input files: {{num}}": "Улазне датотеке: {{num}}",
+  "Segments exported: {{num}}": "Извезени сегменти: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Направљене спојене датотеке: {{num}} (спојени сегменти: {{segments}})",
+  "Separate segment files created: {{num}}": "Направљене засебне датотеке сегмената: {{num}}",
+  "Failed: {{num}}": "Неуспело: {{num}}",
+  "Skipped: {{num}}": "Прескочено: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Излазне датотеке краће од 1 секунде (вероватно оштећене): {{num}}",
+  "Batch export finished with problems": "Групни извоз је завршен уз проблеме",
+  "Export summary": "Резиме извоза",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Сегмент {{segNum}}: почетак је померен унапред за {{seconds}} с до следећег кључног кадра, па излаз не садржи ништа пре тачке сечења.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Сегмент {{segNum}}: због сечења на кључним кадровима излаз почиње {{seconds}} с пре тачке сечења (од претходног кључног кадра), па садржи кадрове које сте исекли. Да бисте то избегли, у опцијама извоза укључите „Помери почетак до следећег кључног кадра“ или „Паметно сечење“.",
+  "Existing file was not overwritten": "Постојећа датотека није преписана",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Сечење по кључном кадру: почетак сегмента је померен унапред за {{seconds}} с на следећи кључни кадар, јер сечење по кључном кадру може да почне само од кључног кадра. Да бисте секли на било ком кадру, укључите паметно сечење у опцијама извоза.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Сегмент {{segNum}}: паметно сечење није успело са овом датотеком, па је сегмент уместо тога исечен без губитака на кључном кадру."
 }

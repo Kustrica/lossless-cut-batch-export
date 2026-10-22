@@ -974,5 +974,21 @@
   "Each video: every segment as a separate file": "Для кожного відео: кожен фрагмент окремим файлом",
   "Each video: merge segments into one file": "Для кожного відео: склеїти фрагменти в один файл",
   "Each video: merged file + separate segments": "Для кожного відео: склеєний файл + окремі фрагменти",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Застосовується до кожного відео пакета окремо. Різні відео між собою не склеюються."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Застосовується до кожного відео пакета окремо. Різні відео між собою не склеюються.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "При «вирізанні за ключовими кадрами» файл починається з ключового кадру перед точкою обрізки, тому на початку може залишитися до кількох секунд вирізаної частини (наприклад, кінець заставки). Якщо ввімкнути цю опцію, початок натомість зсувається вперед до наступного ключового кадру: з вирізаної частини нічого не потрапить, але можна втратити до кількох секунд після точки обрізки. Щоб початок був точним до кадру, використовуйте «Розумну обрізку».",
+  "Snap start to next keyframe": "Зсувати початок до наступного ключового кадру",
+  "Input files: {{num}}": "Вхідних файлів: {{num}}",
+  "Segments exported: {{num}}": "Експортовано сегментів: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Створено об'єднаних файлів: {{num}} (об'єднано сегментів: {{segments}})",
+  "Separate segment files created: {{num}}": "Створено окремих файлів сегментів: {{num}}",
+  "Failed: {{num}}": "З помилкою: {{num}}",
+  "Skipped: {{num}}": "Пропущено: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Файли, коротші за 1 секунду (ймовірно, пошкоджені): {{num}}",
+  "Batch export finished with problems": "Пакетний експорт завершено з проблемами",
+  "Export summary": "Підсумок експорту",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Сегмент {{segNum}}: початок зсунуто вперед на {{seconds}} с, до наступного ключового кадру, тому у файл не потрапило нічого з того, що було до точки обрізки.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Сегмент {{segNum}}: через вирізання за ключовими кадрами файл починається на {{seconds}} с раніше точки обрізки (з попереднього ключового кадру), тому містить кадри з вирізаної частини. Щоб цього уникнути, увімкніть у параметрах експорту «Зсувати початок до наступного ключового кадру» або «Розумну обрізку».",
+  "Existing file was not overwritten": "Наявний файл не перезаписано",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Обрізання за ключовими кадрами: початок сегмента зсунуто вперед на {{seconds}} с, до наступного ключового кадру, бо таке обрізання може починатися лише з ключового кадру. Щоб різати з будь-якого кадру, увімкніть розумне обрізання в параметрах експорту.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Сегмент {{segNum}}: розумне обрізання не спрацювало з цим файлом, тому сегмент обрізано без втрат за ключовим кадром."
 }

@@ -609,5 +609,21 @@
   "Each video: every segment as a separate file": "Jokainen video: jokainen segmentti omaksi tiedostokseen",
   "Each video: merge segments into one file": "Jokainen video: yhdistä segmentit yhdeksi tiedostoksi",
   "Each video: merged file + separate segments": "Jokainen video: yhdistetty tiedosto + erilliset segmentit",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Koskee jokaista erän videota erikseen. Videoita ei koskaan yhdistetä keskenään."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Koskee jokaista erän videota erikseen. Videoita ei koskaan yhdistetä keskenään.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Avainkuvaleikkauksessa tuloste alkaa leikkauskohtaa edeltävästä avainkuvasta, joten alussa voi näkyä jopa muutama sekunti poistetusta osasta (esimerkiksi intron loppu). Kun tämä asetus on käytössä, alku siirretään sen sijaan eteenpäin seuraavaan avainkuvaan: mitään leikkauskohtaa edeltävää ei tule mukaan, mutta leikkauskohdan jälkeen voi hävitä muutama sekunti. Käytä kuvatarkkaan alkuun ”Älykästä leikkausta”.",
+  "Snap start to next keyframe": "Siirrä alku seuraavaan avainkuvaan",
+  "Input files: {{num}}": "Syötetiedostot: {{num}}",
+  "Segments exported: {{num}}": "Viedyt osiot: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Luodut yhdistetyt tiedostot: {{num}} (yhdistetyt osiot: {{segments}})",
+  "Separate segment files created: {{num}}": "Luodut erilliset osiotiedostot: {{num}}",
+  "Failed: {{num}}": "Epäonnistui: {{num}}",
+  "Skipped: {{num}}": "Ohitettu: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Alle 1 sekunnin pituiset tulostiedostot (todennäköisesti rikki): {{num}}",
+  "Batch export finished with problems": "Nippuvienti valmis, ongelmia havaittiin",
+  "Export summary": "Viennin yhteenveto",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Osio {{segNum}}: alkua siirrettiin {{seconds}} s eteenpäin seuraavaan avainkuvaan, joten tuloste ei sisällä mitään leikkauskohtaa edeltävää.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Osio {{segNum}}: avainkuvaleikkauksen vuoksi tuloste alkaa {{seconds}} s ennen leikkauskohtaa (edellisestä avainkuvasta), joten se sisältää kuvia, jotka leikkasit pois. Välttääksesi tämän ota vientiasetuksista käyttöön ”Siirrä alku seuraavaan avainkuvaan” tai ”Älykäs leikkaus”.",
+  "Existing file was not overwritten": "Olemassa olevaa tiedostoa ei korvattu",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Avainruutuleikkaus: segmentin alkua siirrettiin {{seconds}} s eteenpäin seuraavaan avainruutuun, koska avainruutuleikkaus voi alkaa vain avainruudusta. Ota älyleikkaus käyttöön vientiasetuksissa, jos haluat leikata mistä tahansa ruudusta.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentti {{segNum}}: älyleikkaus ei toiminut tämän tiedoston kanssa, joten segmentti leikattiin sen sijaan häviöttömästi avainruudusta."
 }

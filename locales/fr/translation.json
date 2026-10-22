@@ -916,5 +916,21 @@
   "Each video: every segment as a separate file": "Chaque vidéo : chaque segment dans un fichier distinct",
   "Each video: merge segments into one file": "Chaque vidéo : fusionner les segments en un seul fichier",
   "Each video: merged file + separate segments": "Chaque vidéo : fichier fusionné + segments distincts",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "S'applique à chaque vidéo du lot séparément. Les vidéos ne sont jamais fusionnées entre elles."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "S'applique à chaque vidéo du lot séparément. Les vidéos ne sont jamais fusionnées entre elles.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Avec la « coupure sur images clés », la sortie commence à l'image clé précédant le point de coupe : jusqu'à quelques secondes de la partie supprimée (par exemple la fin d'une intro) peuvent donc apparaître au début. Si cette option est activée, le début est au contraire avancé jusqu'à l'image clé suivante : rien d'avant le point de coupe n'est inclus, mais jusqu'à quelques secondes après le point de coupe peuvent être perdues. Pour un début précis à l'image près, utilisez plutôt le « Découpage intelligent ».",
+  "Snap start to next keyframe": "Avancer le début à l'image clé suivante",
+  "Input files: {{num}}": "Fichiers d'entrée : {{num}}",
+  "Segments exported: {{num}}": "Segments exportés : {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Fichiers fusionnés créés : {{num}} (à partir de {{segments}} segments)",
+  "Separate segment files created: {{num}}": "Fichiers de segments séparés créés : {{num}}",
+  "Failed: {{num}}": "Échecs : {{num}}",
+  "Skipped: {{num}}": "Ignorés : {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Fichiers de sortie de moins d'une seconde (probablement défectueux) : {{num}}",
+  "Batch export finished with problems": "Exportation par lots terminée avec des problèmes",
+  "Export summary": "Résumé de l'exportation",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}} : le début a été avancé de {{seconds}} s jusqu'à l'image clé suivante, la sortie ne contient donc rien d'avant le point de coupe.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}} : à cause de la coupure sur images clés, la sortie commence {{seconds}} s avant le point de coupe (à l'image clé précédente) et contient donc des images que vous avez supprimées. Pour l'éviter, activez « Avancer le début à l'image clé suivante » ou le « Découpage intelligent » dans les options d'exportation.",
+  "Existing file was not overwritten": "Le fichier existant n'a pas été écrasé",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Coupe sur image clé : le début du segment a été avancé de {{seconds}} s jusqu'à l'image clé suivante, car une coupe sur image clé ne peut commencer que sur une image clé. Activez la coupe intelligente dans les options d'export pour couper à n'importe quelle image.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}} : la coupe intelligente n'a pas fonctionné avec ce fichier, le segment a donc été coupé sans perte sur une image clé."
 }

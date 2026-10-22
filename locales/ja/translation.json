@@ -1117,5 +1117,21 @@
   "Each video: every segment as a separate file": "各動画: セグメントごとに個別のファイル",
   "Each video: merge segments into one file": "各動画: セグメントを 1 つのファイルに結合",
   "Each video: merged file + separate segments": "各動画: 結合ファイル + 個別のセグメント",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "バッチ内の各動画に個別に適用されます。異なる動画同士が結合されることはありません。"
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "バッチ内の各動画に個別に適用されます。異なる動画同士が結合されることはありません。",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "「キーフレーム切り取り」では、出力は切り取り位置より前のキーフレームから始まるため、冒頭に切り取った部分（例: イントロの終わり）が最大数秒残ることがあります。このオプションを有効にすると、代わりに開始位置が次のキーフレームまでずらされます。切り取り位置より前の部分は含まれませんが、切り取り位置の後の最大数秒が失われることがあります。フレーム単位で正確に開始したい場合は「スマート切り取り」を使用してください。",
+  "Snap start to next keyframe": "開始位置を次のキーフレームにずらす",
+  "Input files: {{num}}": "入力ファイル: {{num}}",
+  "Segments exported: {{num}}": "出力したセグメント: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "作成した結合ファイル: {{num}}（結合したセグメント: {{segments}}）",
+  "Separate segment files created: {{num}}": "作成した個別のセグメントファイル: {{num}}",
+  "Failed: {{num}}": "失敗: {{num}}",
+  "Skipped: {{num}}": "スキップ: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "1 秒未満の出力ファイル（破損の可能性あり）: {{num}}",
+  "Batch export finished with problems": "一括出力完了（問題あり）",
+  "Export summary": "出力の概要",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "セグメント {{segNum}}: 開始位置を次のキーフレームまで {{seconds}} 秒ずらしたため、出力には切り取り位置より前の部分は含まれません。",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "セグメント {{segNum}}: キーフレーム切り取りのため、出力は切り取り位置より {{seconds}} 秒前（直前のキーフレーム）から始まり、切り取ったフレームが含まれています。これを避けるには、出力オプションで「開始位置を次のキーフレームにずらす」または「スマート切り取り」を有効にしてください。",
+  "Existing file was not overwritten": "既存のファイルは上書きされませんでした",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "キーフレームカット: キーフレームカットはキーフレームからしか開始できないため、セグメントの開始位置を次のキーフレームまで {{seconds}} 秒後ろへ移動しました。任意のフレームでカットするには、出力オプションでスマートカットを有効にしてください。",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "セグメント {{segNum}}: このファイルではスマートカットが機能しなかったため、代わりにキーフレームで無劣化カットしました。"
 }

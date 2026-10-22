@@ -1135,5 +1135,21 @@
   "Each video: every segment as a separate file": "Jedes Video: jedes Segment als separate Datei",
   "Each video: merge segments into one file": "Jedes Video: Segmente zu einer Datei zusammenführen",
   "Each video: merged file + separate segments": "Jedes Video: zusammengeführte Datei + separate Segmente",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Gilt für jedes Video im Stapel einzeln. Videos werden nie miteinander zusammengeführt."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Gilt für jedes Video im Stapel einzeln. Videos werden nie miteinander zusammengeführt.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Beim „Keyframe-Schnitt“ beginnt die Ausgabe beim Keyframe vor dem Schnittpunkt, daher können am Anfang bis zu einige Sekunden des herausgeschnittenen Teils (z. B. das Ende eines Intros) zu sehen sein. Ist diese Option aktiviert, wird der Anfang stattdessen zum nächsten Keyframe nach vorne verschoben: Nichts von vor dem Schnittpunkt wird übernommen, aber bis zu einige Sekunden nach dem Schnittpunkt können verloren gehen. Für einen bildgenauen Anfang verwende stattdessen „Intelligenter Schnitt“.",
+  "Snap start to next keyframe": "Anfang zum nächsten Keyframe verschieben",
+  "Input files: {{num}}": "Eingabedateien: {{num}}",
+  "Segments exported: {{num}}": "Exportierte Segmente: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Erstellte zusammengeführte Dateien: {{num}} (aus {{segments}} Segmenten)",
+  "Separate segment files created: {{num}}": "Erstellte einzelne Segmentdateien: {{num}}",
+  "Failed: {{num}}": "Fehlgeschlagen: {{num}}",
+  "Skipped: {{num}}": "Übersprungen: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Ausgabedateien kürzer als 1 Sekunde (wahrscheinlich defekt): {{num}}",
+  "Batch export finished with problems": "Stapelexport mit Problemen abgeschlossen",
+  "Export summary": "Export-Zusammenfassung",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: Der Anfang wurde um {{seconds}} s zum nächsten Keyframe nach vorne verschoben, daher enthält die Ausgabe nichts von vor dem Schnittpunkt.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: Wegen des Keyframe-Schnitts beginnt die Ausgabe {{seconds}} s vor dem Schnittpunkt (beim vorherigen Keyframe) und enthält daher Bilder, die du herausgeschnitten hast. Um das zu vermeiden, aktiviere in den Exportoptionen „Anfang zum nächsten Keyframe verschieben“ oder „Intelligenter Schnitt“.",
+  "Existing file was not overwritten": "Vorhandene Datei wurde nicht überschrieben",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Keyframe-Schnitt: Der Segmentanfang wurde um {{seconds}} s nach vorne zum nächsten Keyframe verschoben, da ein Keyframe-Schnitt nur an einem Keyframe beginnen kann. Aktivieren Sie den Smart Cut in den Exportoptionen, um an jedem Frame zu schneiden.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: Smart Cut hat mit dieser Datei nicht funktioniert, daher wurde das Segment stattdessen verlustfrei an einem Keyframe geschnitten."
 }

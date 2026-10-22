@@ -693,5 +693,21 @@
   "Each video: every segment as a separate file": "Vsak video: vsak segment kot ločena datoteka",
   "Each video: merge segments into one file": "Vsak video: združi segmente v eno datoteko",
   "Each video: merged file + separate segments": "Vsak video: združena datoteka + ločeni segmenti",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Velja za vsak video v paketu posebej. Videi se med seboj nikoli ne združujejo."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Velja za vsak video v paketu posebej. Videi se med seboj nikoli ne združujejo.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Pri izrezu po ključnih sličicah se izhod začne pri ključni sličici pred točko reza, zato se lahko na začetku pojavi do nekaj sekund izrezanega dela (npr. konec uvoda). Ko je ta možnost vklopljena, se začetek namesto tega premakne naprej na naslednjo ključno sličico: nič izpred točke reza ni vključeno, lahko pa se izgubi do nekaj sekund za točko reza. Za začetek, natančen na sličico, uporabite »Pameten rez«.",
+  "Snap start to next keyframe": "Premakni začetek na naslednjo ključno sličico",
+  "Input files: {{num}}": "Vhodne datoteke: {{num}}",
+  "Segments exported: {{num}}": "Izvoženi segmenti: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Ustvarjene združene datoteke: {{num}} (združeni segmenti: {{segments}})",
+  "Separate segment files created: {{num}}": "Ustvarjene ločene datoteke segmentov: {{num}}",
+  "Failed: {{num}}": "Neuspešno: {{num}}",
+  "Skipped: {{num}}": "Preskočeno: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Izhodne datoteke, krajše od 1 sekunde (verjetno pokvarjene): {{num}}",
+  "Batch export finished with problems": "Paketni izvoz končan s težavami",
+  "Export summary": "Povzetek izvoza",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: začetek je bil premaknjen naprej za {{seconds}} s na naslednjo ključno sličico, zato izhod ne vsebuje ničesar izpred točke reza.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: zaradi izreza po ključnih sličicah se izhod začne {{seconds}} s pred točko reza (pri prejšnji ključni sličici), zato vsebuje sličice, ki ste jih izrezali. Da se temu izognete, v možnostih izvoza vklopite »Premakni začetek na naslednjo ključno sličico« ali »Pameten rez«.",
+  "Existing file was not overwritten": "Obstoječa datoteka ni bila prepisana",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Rez na ključni sličici: začetek segmenta je bil premaknjen naprej za {{seconds}} s na naslednjo ključno sličico, ker se rez na ključni sličici lahko začne samo na ključni sličici. Za rez na kateri koli sličici v možnostih izvoza vklopite pametni rez.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: pametni rez s to datoteko ni deloval, zato je bil segment namesto tega brez izgub odrezan na ključni sličici."
 }

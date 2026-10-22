@@ -204,3 +204,26 @@ export interface BatchFile {
 }
 
 export type KeyboardLayoutMap = Map<string, string>;
+
+export interface ExportSummaryItem {
+  name: string,
+  reason?: string | undefined,
+}
+
+export interface ExportSummary {
+  inputFiles: number,
+  segmentsIn: number,
+  mergedFiles: number,
+  mergedSegments: number,
+  separateFiles: number,
+  failed: ExportSummaryItem[],
+  skipped: ExportSummaryItem[],
+  tooShort: ExportSummaryItem[],
+}
+
+// When cutting at keyframes, the output starts at the keyframe *before* the cutpoint (it then contains frames from before the cutpoint),
+// or, if enabled, the start is moved forward to the next keyframe.
+export interface KeyframeCutStartInfo {
+  snappedForward: boolean,
+  seconds: number,
+}

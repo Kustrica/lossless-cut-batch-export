@@ -28,5 +28,21 @@
   "Each video: every segment as a separate file": "සෑම වීඩියෝවක්ම: සෑම කොටසක්ම වෙනම ගොනුවක් ලෙස",
   "Each video: merge segments into one file": "සෑම වීඩියෝවක්ම: කොටස් එක් ගොනුවකට ඒකාබද්ධ කරන්න",
   "Each video: merged file + separate segments": "සෑම වීඩියෝවක්ම: ඒකාබද්ධ ගොනුව + වෙනම කොටස්",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "කාණ්ඩයේ එක් එක් වීඩියෝවට වෙන වෙනම යෙදේ. වීඩියෝ කිසිවිටෙක එකිනෙක සමඟ ඒකාබද්ධ නොකෙරේ."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "කාණ්ඩයේ එක් එක් වීඩියෝවට වෙන වෙනම යෙදේ. වීඩියෝ කිසිවිටෙක එකිනෙක සමඟ ඒකාබද්ධ නොකෙරේ.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "කී-ෆ්‍රේම් කැපීමේදී, ප්‍රතිදානය කැපුම් ලක්ෂ්‍යයට පෙර ඇති කී-ෆ්‍රේම් එකෙන් ආරම්භ වේ, එබැවින් ආරම්භයේ ඔබ කපා ඉවත් කළ කොටසින් තත්පර කිහිපයක් දක්වා (උදා. හැඳින්වීමේ අවසානය) දිස් විය හැක. මෙම විකල්පය සක්‍රිය කළ විට, ආරම්භය ඒ වෙනුවට ඊළඟ කී-ෆ්‍රේම් එකට ඉදිරියට ගෙන යයි: කැපුම් ලක්ෂ්‍යයට පෙර කිසිවක් ඇතුළත් නොවේ, නමුත් කැපුම් ලක්ෂ්‍යයෙන් පසු තත්පර කිහිපයක් දක්වා නැති විය හැක. ෆ්‍රේම් එකට නිවැරදි ආරම්භයක් සඳහා, ඒ වෙනුවට \"ස්මාර්ට් කැපීම\" භාවිතා කරන්න.",
+  "Snap start to next keyframe": "ආරම්භය ඊළඟ කී-ෆ්‍රේම් එකට ගෙන යන්න",
+  "Input files: {{num}}": "ආදාන ගොනු: {{num}}",
+  "Segments exported: {{num}}": "අපනයනය කළ කොටස්: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "සෑදූ ඒකාබද්ධ ගොනු: {{num}} (ඒකාබද්ධ කළ කොටස්: {{segments}})",
+  "Separate segment files created: {{num}}": "සෑදූ වෙනම කොටස් ගොනු: {{num}}",
+  "Failed: {{num}}": "අසාර්ථක: {{num}}",
+  "Skipped: {{num}}": "මඟ හැරිය: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "තත්පර 1 ට වඩා කෙටි ප්‍රතිදාන ගොනු (බොහෝ විට හානි වී ඇත): {{num}}",
+  "Batch export finished with problems": "කාණ්ඩ අපනයනය ගැටලු සහිතව අවසන්",
+  "Export summary": "අපනයන සාරාංශය",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "කොටස {{segNum}}: ආරම්භය තත්පර {{seconds}} කින් ඊළඟ කී-ෆ්‍රේම් එකට ඉදිරියට ගෙන ගිය බැවින්, ප්‍රතිදානයේ කැපුම් ලක්ෂ්‍යයට පෙර කිසිවක් නැත.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "කොටස {{segNum}}: කී-ෆ්‍රේම් කැපීම නිසා, ප්‍රතිදානය කැපුම් ලක්ෂ්‍යයට තත්පර {{seconds}} කට පෙර (පෙර කී-ෆ්‍රේම් එකේ) ආරම්භ වන අතර, ඔබ කපා ඉවත් කළ ෆ්‍රේම් අඩංගු වේ. මෙය වළක්වා ගැනීමට, අපනයන විකල්පවල \"ආරම්භය ඊළඟ කී-ෆ්‍රේම් එකට ගෙන යන්න\" හෝ \"ස්මාර්ට් කැපීම\" සක්‍රිය කරන්න.",
+  "Existing file was not overwritten": "පවතින ගොනුව උඩින් ලියා නැත",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "මූලික රාමු කැපීම: මූලික රාමු කැපීමක් ආරම්භ කළ හැක්කේ මූලික රාමුවකින් පමණක් බැවින්, කොටසේ ආරම්භය ඊළඟ මූලික රාමුවට තත්පර {{seconds}} කින් ඉදිරියට ගෙන යන ලදී. ඕනෑම රාමුවකින් කැපීමට අපනයන විකල්පවල ස්මාර්ට් කැපීම සක්‍රිය කරන්න.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "කොටස {{segNum}}: මෙම ගොනුව සමඟ ස්මාර්ට් කැපීම ක්‍රියා නොකළ බැවින්, කොටස ඒ වෙනුවට මූලික රාමුවකින් හානියකින් තොරව කපන ලදී."
 }

@@ -971,5 +971,21 @@
   "Each video: every segment as a separate file": "Minden videó: minden szakasz külön fájlba",
   "Each video: merge segments into one file": "Minden videó: szakaszok egyesítése egy fájlba",
   "Each video: merged file + separate segments": "Minden videó: egyesített fájl + külön szakaszok",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "A köteg minden videójára külön vonatkozik. A videók soha nem egyesülnek egymással."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "A köteg minden videójára külön vonatkozik. A videók soha nem egyesülnek egymással.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Kulcskocka vágás esetén a kimenet a vágási pont előtti kulcskockánál kezdődik, így az elején megjelenhet néhány másodpercnyi rész a kivágott szakaszból (például egy intró vége). Ha ez a beállítás be van kapcsolva, a kezdet ehelyett előre kerül a következő kulcskockára: a vágási pont előtti részből semmi sem kerül bele, viszont a vágási pont utáni néhány másodperc elveszhet. Képkockapontos kezdéshez használja inkább az „Intelligens szerkesztés” lehetőséget.",
+  "Snap start to next keyframe": "Kezdet áthelyezése a következő kulcskockára",
+  "Input files: {{num}}": "Bemeneti fájlok: {{num}}",
+  "Segments exported: {{num}}": "Exportált szakaszok: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Létrehozott egyesített fájlok: {{num}} (egyesített szakaszok: {{segments}})",
+  "Separate segment files created: {{num}}": "Létrehozott különálló szakaszfájlok: {{num}}",
+  "Failed: {{num}}": "Sikertelen: {{num}}",
+  "Skipped: {{num}}": "Kihagyva: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "1 másodpercnél rövidebb kimeneti fájlok (valószínűleg hibásak): {{num}}",
+  "Batch export finished with problems": "Kötegelt exportálás kész, problémákkal",
+  "Export summary": "Exportálás összegzése",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "{{segNum}}. szakasz: a kezdet {{seconds}} mp-cel előre került a következő kulcskockára, így a kimenet semmit sem tartalmaz a vágási pont előttről.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "{{segNum}}. szakasz: a kulcskocka vágás miatt a kimenet {{seconds}} mp-cel a vágási pont előtt kezdődik (az előző kulcskockánál), így kivágott képkockákat is tartalmaz. Ennek elkerüléséhez kapcsolja be az exportálási beállításokban a „Kezdet áthelyezése a következő kulcskockára” vagy az „Intelligens szerkesztés” lehetőséget.",
+  "Existing file was not overwritten": "A meglévő fájl nem lett felülírva",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Kulcskockás vágás: a szakasz eleje {{seconds}} mp-cel előrébb került a következő kulcskockára, mert a kulcskockás vágás csak kulcskockánál kezdődhet. Bármely képkockánál való vágáshoz kapcsolja be az okos vágást az exportálási beállításokban.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "{{segNum}}. szakasz: az okos vágás nem működött ezzel a fájllal, ezért a szakasz helyette veszteségmentesen, kulcskockánál lett vágva."
 }

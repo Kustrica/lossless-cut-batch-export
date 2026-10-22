@@ -2,7 +2,7 @@ import type { FormEventHandler, MouseEventHandler, ReactNode } from 'react';
 import React, { useCallback, useContext, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import invariant from 'tiny-invariant';
-import { FaCheckCircle, FaInfoCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaExclamationTriangle, FaInfoCircle } from 'react-icons/fa';
 import { TextField } from '@radix-ui/themes';
 
 import * as Dialog from './Dialog';
@@ -13,6 +13,52 @@ import type { CleanupChoice, CleanupChoicesType } from '../dialogs';
 import { ListItem, Notices, OutputIncorrectSeeHelpMenu, UnorderedList, Warnings } from '../dialogs';
 import Checkbox from './Checkbox';
 import { saveColor, warningColor } from '../colors';
+import type { ExportSummary, ExportSummaryItem } from '../types';
+
+
+export const hasExportSummaryProblems = (summary: ExportSummary | undefined) => summary != null && (summary.failed.length > 0 || summary.skipped.length > 0 || summary.tooShort.length > 0);
+
+function ExportSummaryItems({ items }: { items: ExportSummaryItem[] }) {
+  return (
+    <ul style={{ paddingLeft: '2em', margin: '.2em 0', maxHeight: '10em', overflowY: 'auto' }}>
+      {items.map((item, i) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <li key={i} style={{ wordBreak: 'break-word' }}>{item.name}{item.reason ? ` — ${item.reason}` : ''}</li>
+      ))}
+    </ul>
+  );
+}
+
+function ExportSummaryList({ summary }: { summary: ExportSummary }) {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <ListItem icon={<FaInfoCircle />}>{t('Input files: {{num}}', { num: summary.inputFiles })}</ListItem>
+      <ListItem icon={<FaInfoCircle />}>{t('Segments exported: {{num}}', { num: summary.segmentsIn })}</ListItem>
+      {summary.mergedFiles > 0 && <ListItem icon={<FaInfoCircle />}>{t('Merged files created: {{num}} (from {{segments}} segments)', { num: summary.mergedFiles, segments: summary.mergedSegments })}</ListItem>}
+      {(summary.separateFiles > 0 || summary.mergedFiles === 0) && <ListItem icon={<FaInfoCircle />}>{t('Separate segment files created: {{num}}', { num: summary.separateFiles })}</ListItem>}
+      {summary.failed.length > 0 && (
+        <ListItem icon={<FaExclamationTriangle />} iconColor={warningColor}>
+          {t('Failed: {{num}}', { num: summary.failed.length })}
+          <ExportSummaryItems items={summary.failed} />
+        </ListItem>
+      )}
+      {summary.skipped.length > 0 && (
+        <ListItem icon={<FaExclamationTriangle />} iconColor={warningColor}>
+          {t('Skipped: {{num}}', { num: summary.skipped.length })}
+          <ExportSummaryItems items={summary.skipped} />
+        </ListItem>
+      )}
+      {summary.tooShort.length > 0 && (
+        <ListItem icon={<FaExclamationTriangle />} iconColor={warningColor} style={{ fontWeight: 'bold' }}>
+          {t('Output files shorter than 1 second (probably broken): {{num}}', { num: summary.tooShort.length })}
+          <ExportSummaryItems items={summary.tooShort} />
+        </ListItem>
+      )}
+    </>
+  );
+}
 
 
 export interface GenericDialogParams {
@@ -187,10 +233,11 @@ export function useDialog() {
     });
   }), [showGenericDialog, t]);
 
-  const openExportFinishedDialog = useCallback(async ({ filePath, children, width }: {
-    filePath: string,
+  const openExportFinishedDialog = useCallback(async ({ filePath, children, width, title }: {
+    filePath: string | undefined,
     children: ReactNode,
     width?: string,
+    title?: string,
   }) => {
     const response = await new Promise<boolean>((resolve) => {
       function ExportFinishedDialog() {
@@ -204,7 +251,7 @@ export function useDialog() {
 
         return (
           <Dialog.Content aria-describedby={undefined} style={{ width }}>
-            <Dialog.Title>{t('Success!')}</Dialog.Title>
+            <Dialog.Title>{title ?? t('Success!')}</Dialog.Title>
 
             {children}
 
@@ -213,7 +260,7 @@ export function useDialog() {
                 <DialogButton>{t('Close')}</DialogButton>
               </Dialog.Close>
 
-              <DialogButton primary onClick={handleConfirmClick}>{t('Show')}</DialogButton>
+              {filePath != null && <DialogButton primary onClick={handleConfirmClick}>{t('Show')}</DialogButton>}
             </Dialog.ButtonRow>
           </Dialog.Content>
         );
@@ -225,13 +272,14 @@ export function useDialog() {
       });
     });
 
-    if (response) {
+    if (response && filePath != null) {
       showItemInFolder(filePath);
     }
   }, [showGenericDialog, t]);
 
-  const openCutFinishedDialog = useCallback(async ({ filePath, warnings, notices }: { filePath: string, warnings: string[], notices: string[] }) => {
-    const hasWarnings = warnings.length > 0;
+  const openCutFinishedDialog = useCallback(async ({ filePath, warnings, notices, summary }: { filePath: string, warnings: string[], notices: string[], summary?: ExportSummary }) => {
+    const numProblems = warnings.length + (summary ? summary.failed.length + summary.skipped.length + summary.tooShort.length : 0);
+    const hasWarnings = numProblems > 0;
 
     // https://github.com/mifi/lossless-cut/issues/2048
     await openExportFinishedDialog({
@@ -239,7 +287,8 @@ export function useDialog() {
       width: '60em',
       children: (
         <UnorderedList>
-          <ListItem icon={<FaCheckCircle />} iconColor={hasWarnings ? warningColor : saveColor} style={{ fontWeight: 'bold' }}>{hasWarnings ? t('Export finished with warning(s)', { count: warnings.length }) : t('Export is done!')}</ListItem>
+          <ListItem icon={<FaCheckCircle />} iconColor={hasWarnings ? warningColor : saveColor} style={{ fontWeight: 'bold' }}>{hasWarnings ? t('Export finished with warning(s)', { count: numProblems }) : t('Export is done!')}</ListItem>
+          {summary != null && <ExportSummaryList summary={summary} />}
           <Warnings warnings={warnings} />
           <ListItem icon={<FaInfoCircle />}>{t('Please test the output file in your desired player/editor before you delete the source file.')}</ListItem>
           <OutputIncorrectSeeHelpMenu />
@@ -262,6 +311,25 @@ export function useDialog() {
           <ListItem icon={<FaInfoCircle />}>{t('Please test the output files in your desired player/editor before you delete the source files.')}</ListItem>
           <OutputIncorrectSeeHelpMenu />
           <Notices notices={notices} />
+        </UnorderedList>
+      ),
+    });
+  }, [openExportFinishedDialog, t]);
+
+  const openBatchExportFinishedDialog = useCallback(async ({ filePath, summary, warnings }: { filePath: string | undefined, summary: ExportSummary, warnings: string[] }) => {
+    const hasProblems = warnings.length > 0 || hasExportSummaryProblems(summary);
+
+    await openExportFinishedDialog({
+      filePath,
+      width: '60em',
+      title: hasProblems ? t('Batch export finished with problems') : t('Batch export finished'),
+      children: (
+        <UnorderedList>
+          <ListItem icon={<FaCheckCircle />} iconColor={hasProblems ? warningColor : saveColor} style={{ fontWeight: 'bold' }}>{t('Export summary')}</ListItem>
+          <ExportSummaryList summary={summary} />
+          <Warnings warnings={warnings} />
+          <ListItem icon={<FaInfoCircle />}>{t('Please test the output files in your desired player/editor before you delete the source files.')}</ListItem>
+          <OutputIncorrectSeeHelpMenu />
         </UnorderedList>
       ),
     });
@@ -493,6 +561,7 @@ export function useDialog() {
     openExportFinishedDialog,
     openCutFinishedDialog,
     openConcatFinishedDialog,
+    openBatchExportFinishedDialog,
     openCleanupFilesDialog,
     openShiftSegmentsDialog,
     openDecimateDialog,

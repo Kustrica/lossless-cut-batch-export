@@ -107,7 +107,9 @@ const defaults: Config = {
   autoDeleteMergedSegments: true,
   segmentsToChaptersOnly: false,
   batchExportMode: 'merge',
-  enableSmartCut: false,
+  enableSmartCut: true,
+  keyframeCutSnapStart: true,
+  exactCutDefaultsMigrated: false,
   timecodeFormat: 'timecodeWithDecimalFraction',
   invertCutSegments: false,
   autoExportExtraStreams: true,
@@ -291,6 +293,15 @@ export async function init({ customConfigDir }: { customConfigDir: string | unde
   if (!batchExportModeSchema.safeParse(batchExportMode).success) {
     logger.info('Migrating invalid batchExportMode', batchExportMode);
     reset('batchExportMode');
+  }
+
+  // Smart cut is now the default, so that the first frame of each output is exactly the frame that the user chose.
+  // Also enable it (and snapping keyframe cuts forward) once for existing configs. After that, the user's choice is kept.
+  if (store.get('exactCutDefaultsMigrated') !== true) {
+    logger.info('Migrating to exact cut defaults (smart cut on)');
+    set('enableSmartCut', true);
+    set('keyframeCutSnapStart', true);
+    set('exactCutDefaultsMigrated', true);
   }
 
   // const configVersion: number = store.get('version');

@@ -681,5 +681,21 @@
   "Each video: every segment as a separate file": "Elke video: elk segment als apart bestand",
   "Each video: merge segments into one file": "Elke video: segmenten samenvoegen tot één bestand",
   "Each video: merged file + separate segments": "Elke video: samengevoegd bestand + losse segmenten",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Geldt voor elke video in de batch afzonderlijk. Video's worden nooit met elkaar samengevoegd."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Geldt voor elke video in de batch afzonderlijk. Video's worden nooit met elkaar samengevoegd.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Bij \"keyframe-knippen\" begint de uitvoer bij het keyframe vóór het knippunt, dus aan het begin kunnen tot enkele seconden van het weggeknipte deel (bijvoorbeeld het einde van een intro) te zien zijn. Als deze optie is ingeschakeld, wordt het begin in plaats daarvan naar het volgende keyframe verschoven: er wordt niets van vóór het knippunt meegenomen, maar tot enkele seconden na het knippunt kunnen verloren gaan. Gebruik voor een framenauwkeurig begin \"Slim knippen\".",
+  "Snap start to next keyframe": "Begin naar volgend keyframe verschuiven",
+  "Input files: {{num}}": "Invoerbestanden: {{num}}",
+  "Segments exported: {{num}}": "Geëxporteerde segmenten: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Samengevoegde bestanden gemaakt: {{num}} (uit {{segments}} segmenten)",
+  "Separate segment files created: {{num}}": "Afzonderlijke segmentbestanden gemaakt: {{num}}",
+  "Failed: {{num}}": "Mislukt: {{num}}",
+  "Skipped: {{num}}": "Overgeslagen: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Uitvoerbestanden korter dan 1 seconde (waarschijnlijk defect): {{num}}",
+  "Batch export finished with problems": "Batch-export voltooid met problemen",
+  "Export summary": "Exportoverzicht",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: het begin is {{seconds}} s naar het volgende keyframe verschoven, dus de uitvoer bevat niets van vóór het knippunt.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: door keyframe-knippen begint de uitvoer {{seconds}} s vóór het knippunt (bij het vorige keyframe) en bevat dus beelden die je hebt weggeknipt. Schakel \"Begin naar volgend keyframe verschuiven\" of \"Slim knippen\" in de exportopties in om dit te voorkomen.",
+  "Existing file was not overwritten": "Bestaand bestand is niet overschreven",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Keyframe-knip: het begin van het segment is {{seconds}} s naar voren verplaatst naar het volgende keyframe, omdat een keyframe-knip alleen bij een keyframe kan beginnen. Schakel slim knippen in bij de exportopties om bij elk frame te knippen.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: slim knippen werkte niet met dit bestand, daarom is het segment in plaats daarvan verliesvrij bij een keyframe geknipt."
 }

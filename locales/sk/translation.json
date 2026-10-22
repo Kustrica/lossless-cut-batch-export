@@ -986,5 +986,21 @@
   "Each video: every segment as a separate file": "Každé video: každý segment ako samostatný súbor",
   "Each video: merge segments into one file": "Každé video: zlúčiť segmenty do jedného súboru",
   "Each video: merged file + separate segments": "Každé video: zlúčený súbor + samostatné segmenty",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Platí pre každé video v dávke samostatne. Videá sa medzi sebou nikdy nezlučujú."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Platí pre každé video v dávke samostatne. Videá sa medzi sebou nikdy nezlučujú.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Pri strihaní na kľúčových snímkach sa výstup začína kľúčovou snímkou pred bodom strihu, takže na začiatku sa môže objaviť až niekoľko sekúnd vystrihnutej časti (napr. koniec intra). Keď je táto možnosť zapnutá, začiatok sa namiesto toho posunie dopredu na ďalšiu kľúčovú snímku: nič spred bodu strihu sa nezahrnie, ale môže sa stratiť až niekoľko sekúnd po bode strihu. Pre začiatok presný na snímku použite „Chytrý strih“.",
+  "Snap start to next keyframe": "Posunúť začiatok na ďalšiu kľúčovú snímku",
+  "Input files: {{num}}": "Vstupné súbory: {{num}}",
+  "Segments exported: {{num}}": "Exportované segmenty: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Vytvorené zlúčené súbory: {{num}} (zlúčené segmenty: {{segments}})",
+  "Separate segment files created: {{num}}": "Vytvorené samostatné súbory segmentov: {{num}}",
+  "Failed: {{num}}": "Zlyhalo: {{num}}",
+  "Skipped: {{num}}": "Preskočené: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Výstupné súbory kratšie ako 1 sekunda (pravdepodobne poškodené): {{num}}",
+  "Batch export finished with problems": "Hromadný export dokončený s problémami",
+  "Export summary": "Súhrn exportu",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: začiatok bol posunutý o {{seconds}} s dopredu na ďalšiu kľúčovú snímku, takže výstup neobsahuje nič spred bodu strihu.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: kvôli strihaniu na kľúčových snímkach sa výstup začína {{seconds}} s pred bodom strihu (na predchádzajúcej kľúčovej snímke), takže obsahuje snímky, ktoré ste vystrihli. Ak sa tomu chcete vyhnúť, zapnite v možnostiach exportu „Posunúť začiatok na ďalšiu kľúčovú snímku“ alebo „Chytrý strih“.",
+  "Existing file was not overwritten": "Existujúci súbor nebol prepísaný",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Strih na kľúčovej snímke: začiatok segmentu bol posunutý dopredu o {{seconds}} s na ďalšiu kľúčovú snímku, pretože strih na kľúčovej snímke môže začínať len na kľúčovej snímke. Ak chcete strihať na ľubovoľnej snímke, zapnite v možnostiach exportu inteligentný strih.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: inteligentný strih s týmto súborom nefungoval, preto bol segment namiesto toho bezstratovo strihnutý na kľúčovej snímke."
 }

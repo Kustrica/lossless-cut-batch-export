@@ -628,5 +628,21 @@
   "Each video: every segment as a separate file": "Kiekvienas vaizdo įrašas: kiekvienas segmentas atskirame faile",
   "Each video: merge segments into one file": "Kiekvienas vaizdo įrašas: sujungti segmentus į vieną failą",
   "Each video: merged file + separate segments": "Kiekvienas vaizdo įrašas: sujungtas failas + atskiri segmentai",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Taikoma kiekvienam paketo vaizdo įrašui atskirai. Vaizdo įrašai niekada nesujungiami tarpusavyje."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Taikoma kiekvienam paketo vaizdo įrašui atskirai. Vaizdo įrašai niekada nesujungiami tarpusavyje.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Naudojant bazinio kadro kirpimą, išvestis prasideda nuo bazinio kadro prieš kirpimo tašką, todėl pradžioje gali matytis iki kelių sekundžių iškirptos dalies (pvz., intro pabaiga). Įjungus šią parinktį, pradžia vietoj to perkeliama į priekį iki kito bazinio kadro: nieko iš laikotarpio prieš kirpimo tašką neįtraukiama, tačiau gali būti prarasta iki kelių sekundžių po kirpimo taško. Norėdami, kad pradžia būtų tiksli iki kadro, naudokite „Išmanųjį kirpimą“.",
+  "Snap start to next keyframe": "Perkelti pradžią į kitą bazinį kadrą",
+  "Input files: {{num}}": "Įvesties failai: {{num}}",
+  "Segments exported: {{num}}": "Eksportuoti segmentai: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Sukurti sujungti failai: {{num}} (sujungti segmentai: {{segments}})",
+  "Separate segment files created: {{num}}": "Sukurti atskiri segmentų failai: {{num}}",
+  "Failed: {{num}}": "Nepavyko: {{num}}",
+  "Skipped: {{num}}": "Praleista: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Išvesties failai, trumpesni nei 1 sekundė (tikriausiai sugadinti): {{num}}",
+  "Batch export finished with problems": "Paketo eksportavimas baigtas su problemomis",
+  "Export summary": "Eksportavimo suvestinė",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segmentas {{segNum}}: pradžia perkelta į priekį {{seconds}} s iki kito bazinio kadro, todėl išvestyje nėra nieko iš laikotarpio prieš kirpimo tašką.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmentas {{segNum}}: dėl bazinio kadro kirpimo išvestis prasideda {{seconds}} s prieš kirpimo tašką (nuo ankstesnio bazinio kadro), todėl joje yra iškirptų kadrų. Kad to išvengtumėte, eksportavimo parinktyse įjunkite „Perkelti pradžią į kitą bazinį kadrą“ arba „Išmanųjį kirpimą“.",
+  "Existing file was not overwritten": "Esamas failas nebuvo perrašytas",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Kirpimas ties raktiniu kadru: segmento pradžia perkelta {{seconds}} s pirmyn iki kito raktinio kadro, nes toks kirpimas gali prasidėti tik nuo raktinio kadro. Norėdami kirpti ties bet kuriuo kadru, eksporto parinktyse įjunkite išmanųjį kirpimą.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentas {{segNum}}: išmanusis kirpimas su šiuo failu neveikė, todėl segmentas buvo nukirptas be nuostolių ties raktiniu kadru."
 }

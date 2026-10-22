@@ -19,5 +19,21 @@
   "Each video: every segment as a separate file": "لكل فيديو: كل مقطع في ملف منفصل",
   "Each video: merge segments into one file": "لكل فيديو: دمج المقاطع في ملف واحد",
   "Each video: merged file + separate segments": "لكل فيديو: ملف مدمج + مقاطع منفصلة",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "يُطبَّق على كل فيديو في الدفعة على حدة. لا يتم دمج مقاطع الفيديو المختلفة مع بعضها أبدًا."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "يُطبَّق على كل فيديو في الدفعة على حدة. لا يتم دمج مقاطع الفيديو المختلفة مع بعضها أبدًا.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "مع القص عند الإطارات المفتاحية، يبدأ الناتج عند الإطار المفتاحي الذي يسبق نقطة القص، لذا قد تظهر في البداية بضع ثوانٍ من الجزء الذي قصصته (مثل نهاية المقدمة). عند تفعيل هذا الخيار، تُنقل البداية بدلاً من ذلك إلى الإطار المفتاحي التالي: لن يُضمَّن أي شيء قبل نقطة القص، لكن قد تُفقد بضع ثوانٍ بعد نقطة القص. للحصول على بداية دقيقة على مستوى الإطار، استخدم \"القص الذكي\" بدلاً من ذلك.",
+  "Snap start to next keyframe": "نقل البداية إلى الإطار المفتاحي التالي",
+  "Input files: {{num}}": "ملفات الإدخال: {{num}}",
+  "Segments exported: {{num}}": "المقاطع المُصدَّرة: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "الملفات المدمجة المُنشأة: {{num}} (المقاطع المدمجة: {{segments}})",
+  "Separate segment files created: {{num}}": "ملفات المقاطع المنفصلة المُنشأة: {{num}}",
+  "Failed: {{num}}": "فشل: {{num}}",
+  "Skipped: {{num}}": "تم التخطي: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "ملفات ناتجة أقصر من ثانية واحدة (على الأرجح تالفة): {{num}}",
+  "Batch export finished with problems": "اكتمل التصدير الدفعي مع وجود مشكلات",
+  "Export summary": "ملخص التصدير",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "المقطع {{segNum}}: نُقلت البداية {{seconds}} ث إلى الإطار المفتاحي التالي، لذا لا يحتوي الناتج على أي شيء قبل نقطة القص.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "المقطع {{segNum}}: بسبب القص عند الإطارات المفتاحية، يبدأ الناتج قبل نقطة القص بـ {{seconds}} ث (عند الإطار المفتاحي السابق)، لذا يحتوي على إطارات قمت بقصها. لتجنب ذلك، فعّل \"نقل البداية إلى الإطار المفتاحي التالي\" أو \"القص الذكي\" في خيارات التصدير.",
+  "Existing file was not overwritten": "لم تتم الكتابة فوق الملف الموجود",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "قص الإطار الرئيسي: تم نقل بداية المقطع إلى الأمام بمقدار {{seconds}} ث إلى الإطار الرئيسي التالي، لأن قص الإطار الرئيسي يمكن أن يبدأ فقط عند إطار رئيسي. فعّل القص الذكي في خيارات التصدير للقص عند أي إطار.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "المقطع {{segNum}}: لم يعمل القص الذكي مع هذا الملف، لذلك تم قص المقطع دون فقدان عند إطار رئيسي بدلاً من ذلك."
 }

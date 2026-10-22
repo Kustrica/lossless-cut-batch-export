@@ -1114,5 +1114,21 @@
   "Each video: every segment as a separate file": "각 동영상: 각 구간을 별도 파일로",
   "Each video: merge segments into one file": "각 동영상: 구간을 하나의 파일로 병합",
   "Each video: merged file + separate segments": "각 동영상: 병합된 파일 + 개별 구간",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "일괄 처리의 각 동영상에 개별적으로 적용됩니다. 동영상끼리는 절대 병합되지 않습니다."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "일괄 처리의 각 동영상에 개별적으로 적용됩니다. 동영상끼리는 절대 병합되지 않습니다.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "\"키프레임 절단\"에서는 출력이 절단 지점 앞의 키프레임에서 시작되므로, 시작 부분에 잘라낸 부분(예: 인트로의 끝)이 최대 몇 초 남을 수 있습니다. 이 옵션을 켜면 시작 지점이 대신 다음 키프레임으로 옮겨집니다. 절단 지점 이전의 내용은 포함되지 않지만, 절단 지점 이후 최대 몇 초가 손실될 수 있습니다. 프레임 단위로 정확하게 시작하려면 \"스마트 절단\"을 사용하세요.",
+  "Snap start to next keyframe": "시작 지점을 다음 키프레임으로 이동",
+  "Input files: {{num}}": "입력 파일: {{num}}",
+  "Segments exported: {{num}}": "내보낸 구간: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "생성된 병합 파일: {{num}} (병합된 구간: {{segments}})",
+  "Separate segment files created: {{num}}": "생성된 개별 구간 파일: {{num}}",
+  "Failed: {{num}}": "실패: {{num}}",
+  "Skipped: {{num}}": "건너뜀: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "1초보다 짧은 출력 파일 (손상되었을 수 있음): {{num}}",
+  "Batch export finished with problems": "일괄 내보내기 마침 (문제 있음)",
+  "Export summary": "내보내기 요약",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "구간 {{segNum}}: 시작 지점을 다음 키프레임으로 {{seconds}}초 이동했으므로 출력에는 절단 지점 이전의 내용이 포함되지 않습니다.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "구간 {{segNum}}: 키프레임 절단 때문에 출력이 절단 지점보다 {{seconds}}초 앞(이전 키프레임)에서 시작되어 잘라낸 프레임이 포함되어 있습니다. 이를 피하려면 내보내기 옵션에서 \"시작 지점을 다음 키프레임으로 이동\" 또는 \"스마트 절단\"을 켜세요.",
+  "Existing file was not overwritten": "기존 파일을 덮어쓰지 않았습니다",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "키프레임 자르기: 키프레임 자르기는 키프레임에서만 시작할 수 있으므로 구간 시작이 다음 키프레임으로 {{seconds}}초 앞으로 이동되었습니다. 아무 프레임에서나 자르려면 내보내기 옵션에서 스마트 자르기를 켜세요.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "구간 {{segNum}}: 이 파일에서는 스마트 자르기가 작동하지 않아 대신 키프레임에서 무손실로 잘랐습니다."
 }

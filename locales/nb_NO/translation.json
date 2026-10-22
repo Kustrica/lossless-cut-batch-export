@@ -404,5 +404,21 @@
   "Each video: every segment as a separate file": "Hver video: hvert segment som egen fil",
   "Each video: merge segments into one file": "Hver video: slå sammen segmentene til én fil",
   "Each video: merged file + separate segments": "Hver video: sammenslått fil + separate segmenter",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Gjelder hver video i partiet separat. Videoer slås aldri sammen med hverandre."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Gjelder hver video i partiet separat. Videoer slås aldri sammen med hverandre.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Med nøkkelbildeklipp starter utdata ved nøkkelbildet før klippepunktet, så i starten kan opptil noen sekunder av den bortklipte delen (for eksempel slutten av en intro) vises. Når dette alternativet er slått på, flyttes starten i stedet frem til neste nøkkelbilde: ingenting fra før klippepunktet tas med, men opptil noen sekunder etter klippepunktet kan gå tapt. For en bildenøyaktig start, bruk «Smart klipping» i stedet.",
+  "Snap start to next keyframe": "Flytt starten til neste nøkkelbilde",
+  "Input files: {{num}}": "Inndatafiler: {{num}}",
+  "Segments exported: {{num}}": "Eksporterte segmenter: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Sammenslåtte filer opprettet: {{num}} (fra {{segments}} segmenter)",
+  "Separate segment files created: {{num}}": "Separate segmentfiler opprettet: {{num}}",
+  "Failed: {{num}}": "Mislyktes: {{num}}",
+  "Skipped: {{num}}": "Hoppet over: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Utdatafiler kortere enn 1 sekund (sannsynligvis ødelagte): {{num}}",
+  "Batch export finished with problems": "Satsvis eksport fullført med problemer",
+  "Export summary": "Eksportsammendrag",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: starten ble flyttet frem {{seconds}} s til neste nøkkelbilde, så utdata inneholder ingenting fra før klippepunktet.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: på grunn av nøkkelbildeklipp starter utdata {{seconds}} s før klippepunktet (ved forrige nøkkelbilde) og inneholder derfor bilder du har klippet bort. For å unngå dette, slå på «Flytt starten til neste nøkkelbilde» eller «Smart klipping» i eksportalternativene.",
+  "Existing file was not overwritten": "Eksisterende fil ble ikke overskrevet",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Nøkkelbildekutt: starten av segmentet ble flyttet {{seconds}} s fremover til neste nøkkelbilde, fordi et nøkkelbildekutt bare kan starte på et nøkkelbilde. Slå på smartkutt i eksportvalgene for å kutte på et hvilket som helst bilde.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: smartkutt fungerte ikke med denne filen, så segmentet ble i stedet kuttet tapsfritt på et nøkkelbilde."
 }

@@ -988,5 +988,21 @@
   "Each video: every segment as a separate file": "Każde wideo: każdy fragment jako osobny plik",
   "Each video: merge segments into one file": "Każde wideo: scal fragmenty w jeden plik",
   "Each video: merged file + separate segments": "Każde wideo: scalony plik + osobne fragmenty",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Dotyczy każdego wideo w partii osobno. Różne filmy nigdy nie są ze sobą scalane."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Dotyczy każdego wideo w partii osobno. Różne filmy nigdy nie są ze sobą scalane.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "W trybie cięcia klatki kluczowej plik wyjściowy zaczyna się od klatki kluczowej przed punktem cięcia, więc na początku może pojawić się do kilku sekund wyciętej części (np. koniec intra). Po włączeniu tej opcji początek jest zamiast tego przesuwany do następnej klatki kluczowej: nic sprzed punktu cięcia nie zostanie dołączone, ale można stracić do kilku sekund po punkcie cięcia. Aby uzyskać początek dokładny co do klatki, użyj „Inteligentnego cięcia”.",
+  "Snap start to next keyframe": "Przesuń początek do następnej klatki kluczowej",
+  "Input files: {{num}}": "Pliki wejściowe: {{num}}",
+  "Segments exported: {{num}}": "Wyeksportowane segmenty: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Utworzone scalone pliki: {{num}} (scalone segmenty: {{segments}})",
+  "Separate segment files created: {{num}}": "Utworzone osobne pliki segmentów: {{num}}",
+  "Failed: {{num}}": "Nieudane: {{num}}",
+  "Skipped: {{num}}": "Pominięte: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Pliki wyjściowe krótsze niż 1 sekunda (prawdopodobnie uszkodzone): {{num}}",
+  "Batch export finished with problems": "Eksport wsadowy zakończony z problemami",
+  "Export summary": "Podsumowanie eksportu",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segment {{segNum}}: początek przesunięto o {{seconds}} s do następnej klatki kluczowej, więc plik nie zawiera niczego sprzed punktu cięcia.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: z powodu cięcia na klatkach kluczowych plik zaczyna się {{seconds}} s przed punktem cięcia (od poprzedniej klatki kluczowej), więc zawiera wycięte klatki. Aby tego uniknąć, włącz w opcjach eksportu „Przesuń początek do następnej klatki kluczowej” lub „Inteligentne cięcie”.",
+  "Existing file was not overwritten": "Istniejący plik nie został nadpisany",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Cięcie na klatce kluczowej: początek segmentu przesunięto o {{seconds}} s do przodu, do następnej klatki kluczowej, ponieważ takie cięcie może zaczynać się tylko od klatki kluczowej. Aby ciąć na dowolnej klatce, włącz inteligentne cięcie w opcjach eksportu.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: inteligentne cięcie nie zadziałało z tym plikiem, więc segment został zamiast tego wycięty bezstratnie na klatce kluczowej."
 }

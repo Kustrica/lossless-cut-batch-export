@@ -897,5 +897,21 @@
   "Each video: every segment as a separate file": "Fiecare videoclip: fiecare segment ca fișier separat",
   "Each video: merge segments into one file": "Fiecare videoclip: îmbină segmentele într-un singur fișier",
   "Each video: merged file + separate segments": "Fiecare videoclip: fișier îmbinat + segmente separate",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Se aplică fiecărui videoclip din lot în parte. Videoclipurile nu sunt niciodată îmbinate între ele."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Se aplică fiecărui videoclip din lot în parte. Videoclipurile nu sunt niciodată îmbinate între ele.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Cu decuparea la cadre-cheie, ieșirea începe la cadrul-cheie dinaintea punctului de tăiere, așa că la început pot apărea până la câteva secunde din partea eliminată (de exemplu, sfârșitul unui intro). Când această opțiune este activată, începutul este mutat în schimb înainte, la următorul cadru-cheie: nu se include nimic dinaintea punctului de tăiere, dar se pot pierde până la câteva secunde de după punctul de tăiere. Pentru un început precis la nivel de cadru, folosiți „Decupare inteligentă”.",
+  "Snap start to next keyframe": "Mută începutul la următorul cadru-cheie",
+  "Input files: {{num}}": "Fișiere de intrare: {{num}}",
+  "Segments exported: {{num}}": "Segmente exportate: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Fișiere combinate create: {{num}} (segmente combinate: {{segments}})",
+  "Separate segment files created: {{num}}": "Fișiere de segmente separate create: {{num}}",
+  "Failed: {{num}}": "Eșuate: {{num}}",
+  "Skipped: {{num}}": "Omise: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Fișiere de ieșire mai scurte de 1 secundă (probabil defecte): {{num}}",
+  "Batch export finished with problems": "Exportarea în lot a fost finalizată cu probleme",
+  "Export summary": "Rezumatul exportului",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segmentul {{segNum}}: începutul a fost mutat înainte cu {{seconds}} s, la următorul cadru-cheie, astfel încât ieșirea nu conține nimic dinaintea punctului de tăiere.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmentul {{segNum}}: din cauza decupării la cadre-cheie, ieșirea începe cu {{seconds}} s înainte de punctul de tăiere (la cadrul-cheie anterior), deci conține cadre pe care le-ați eliminat. Pentru a evita acest lucru, activați „Mută începutul la următorul cadru-cheie” sau „Decupare inteligentă” în opțiunile de export.",
+  "Existing file was not overwritten": "Fișierul existent nu a fost suprascris",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Tăiere la cadru cheie: începutul segmentului a fost mutat înainte cu {{seconds}} s la următorul cadru cheie, deoarece o tăiere la cadru cheie poate începe doar la un cadru cheie. Activați tăierea inteligentă în opțiunile de export pentru a tăia la orice cadru.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentul {{segNum}}: tăierea inteligentă nu a funcționat cu acest fișier, așa că segmentul a fost tăiat fără pierderi la un cadru cheie."
 }

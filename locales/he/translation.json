@@ -923,5 +923,21 @@
   "Each video: every segment as a separate file": "כל סרטון: כל קטע כקובץ נפרד",
   "Each video: merge segments into one file": "כל סרטון: מיזוג הקטעים לקובץ אחד",
   "Each video: merged file + separate segments": "כל סרטון: קובץ ממוזג + קטעים נפרדים",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "חל על כל סרטון באצווה בנפרד. סרטונים לעולם אינם ממוזגים זה עם זה."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "חל על כל סרטון באצווה בנפרד. סרטונים לעולם אינם ממוזגים זה עם זה.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "במצב חיתוך לפי פריימי מפתח, הפלט מתחיל בפריים המפתח שלפני נקודת החיתוך, ולכן בהתחלה עשויות להופיע עד כמה שניות מהחלק שחתכת (למשל סוף הפתיח). כשאפשרות זו מופעלת, ההתחלה מוזזת במקום זאת קדימה לפריים המפתח הבא: שום דבר מלפני נקודת החיתוך לא נכלל, אך עלולות ללכת לאיבוד עד כמה שניות אחרי נקודת החיתוך. להתחלה מדויקת ברמת הפריים, השתמש ב\"חיתוך חכם\".",
+  "Snap start to next keyframe": "הזזת ההתחלה לפריים המפתח הבא",
+  "Input files: {{num}}": "קובצי קלט: {{num}}",
+  "Segments exported: {{num}}": "מקטעים שיוצאו: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "קבצים ממוזגים שנוצרו: {{num}} (מקטעים שמוזגו: {{segments}})",
+  "Separate segment files created: {{num}}": "קובצי מקטעים נפרדים שנוצרו: {{num}}",
+  "Failed: {{num}}": "נכשלו: {{num}}",
+  "Skipped: {{num}}": "דולגו: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "קובצי פלט קצרים משנייה אחת (כנראה פגומים): {{num}}",
+  "Batch export finished with problems": "הייצוא המרובה הסתיים עם בעיות",
+  "Export summary": "סיכום הייצוא",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "מקטע {{segNum}}: ההתחלה הוזזה קדימה ב-{{seconds}} שנ' לפריים המפתח הבא, כך שהפלט אינו מכיל דבר מלפני נקודת החיתוך.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "מקטע {{segNum}}: בגלל חיתוך לפי פריימי מפתח, הפלט מתחיל {{seconds}} שנ' לפני נקודת החיתוך (בפריים המפתח הקודם), ולכן מכיל פריימים שחתכת. כדי להימנע מכך, הפעל באפשרויות הייצוא את \"הזזת ההתחלה לפריים המפתח הבא\" או את \"חיתוך חכם\".",
+  "Existing file was not overwritten": "הקובץ הקיים לא נדרס",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "חיתוך בפריים מפתח: תחילת המקטע הוזזה קדימה ב-{{seconds}} שנ׳ לפריים המפתח הבא, כי חיתוך בפריים מפתח יכול להתחיל רק בפריים מפתח. הפעילו חיתוך חכם באפשרויות הייצוא כדי לחתוך בכל פריים.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "מקטע {{segNum}}: החיתוך החכם לא עבד עם הקובץ הזה, ולכן המקטע נחתך במקום זאת ללא אובדן בפריים מפתח."
 }

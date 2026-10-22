@@ -178,7 +178,7 @@ function ExportConfirm({
 }) {
   const { t } = useTranslation();
 
-  const { keyframeCut, toggleKeyframeCut, preserveMovData, setPreserveMovData, preserveMetadata, setPreserveMetadata, preserveChapters, setPreserveChapters, movFastStart, setMovFastStart, avoidNegativeTs, setAvoidNegativeTs, autoDeleteMergedSegments, exportConfirmEnabled, toggleExportConfirmEnabled, segmentsToChapters, setSegmentsToChapters, preserveMetadataOnMerge, setPreserveMetadataOnMerge, enableSmartCut, setEnableSmartCut, effectiveExportMode, enableOverwriteOutput, setEnableOverwriteOutput, ffmpegExperimental, setFfmpegExperimental, cutFromAdjustmentFrames, setCutFromAdjustmentFrames, cutToAdjustmentFrames, setCutToAdjustmentFrames, setCutFileTemplate, setCutMergedFileTemplate, simpleMode, keyframesEnabled, batchExportMode } = useUserSettings();
+  const { keyframeCut, toggleKeyframeCut, keyframeCutSnapStart, setKeyframeCutSnapStart, preserveMovData, setPreserveMovData, preserveMetadata, setPreserveMetadata, preserveChapters, setPreserveChapters, movFastStart, setMovFastStart, avoidNegativeTs, setAvoidNegativeTs, autoDeleteMergedSegments, exportConfirmEnabled, toggleExportConfirmEnabled, segmentsToChapters, setSegmentsToChapters, preserveMetadataOnMerge, setPreserveMetadataOnMerge, enableSmartCut, setEnableSmartCut, effectiveExportMode, enableOverwriteOutput, setEnableOverwriteOutput, ffmpegExperimental, setFfmpegExperimental, cutFromAdjustmentFrames, setCutFromAdjustmentFrames, cutToAdjustmentFrames, setCutToAdjustmentFrames, setCutFileTemplate, setCutMergedFileTemplate, simpleMode, keyframesEnabled, batchExportMode } = useUserSettings();
 
   // Batch export uses its own export mode setting
   const batchExportModeOverride = batchExportRequested ? batchExportMode : undefined;
@@ -302,6 +302,10 @@ function ExportConfirm({
 
   const onSmartCutHelpPress = useCallback(() => {
     showHelpText({ text: i18n.t('This experimental feature will re-encode the part of the video from the cutpoint until the next keyframe in order to attempt to make a 100% accurate cut. Only works on some files. I\'ve had success with some h264 files, and only a few h265 files. See more here: {{url}}', { url: 'https://github.com/mifi/lossless-cut/issues/126' }) });
+  }, [showHelpText]);
+
+  const onKeyframeCutSnapStartHelpPress = useCallback(() => {
+    showHelpText({ text: i18n.t('With "keyframe cut", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use "Smart cut" instead.') });
   }, [showHelpText]);
 
   const onTracksHelpPress = useCallback(() => {
@@ -654,6 +658,20 @@ function ExportConfirm({
                       </td>
                       <td>
                         {renderNoticeIcon(notices.specific['cutMode'], rightIconStyle) ?? <HelpIcon onClick={onKeyframeCutHelpPress} />}
+                      </td>
+                    </AnimatedTr>
+                  )}
+
+                  {!isEncoding && keyframeCut && (
+                    <AnimatedTr>
+                      <td>
+                        {t('Snap start to next keyframe')}
+                      </td>
+                      <td>
+                        <Switch checked={keyframeCutSnapStart} onCheckedChange={() => setKeyframeCutSnapStart((v) => !v)} />
+                      </td>
+                      <td>
+                        <HelpIcon onClick={onKeyframeCutSnapStartHelpPress} />
                       </td>
                     </AnimatedTr>
                   )}

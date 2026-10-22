@@ -912,5 +912,21 @@
   "Each video: every segment as a separate file": "Setiap video: setiap segmen sebagai berkas terpisah",
   "Each video: merge segments into one file": "Setiap video: gabungkan segmen menjadi satu berkas",
   "Each video: merged file + separate segments": "Setiap video: berkas gabungan + segmen terpisah",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Berlaku untuk setiap video dalam batch secara terpisah. Video tidak pernah digabungkan satu sama lain."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Berlaku untuk setiap video dalam batch secara terpisah. Video tidak pernah digabungkan satu sama lain.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Dengan potong keyframe, keluaran dimulai dari keyframe sebelum titik potong, sehingga di awal bisa muncul hingga beberapa detik dari bagian yang Anda potong (misalnya akhir intro). Jika opsi ini diaktifkan, awal justru dimajukan ke keyframe berikutnya: tidak ada bagian sebelum titik potong yang disertakan, tetapi hingga beberapa detik setelah titik potong bisa hilang. Untuk awal yang tepat per bingkai, gunakan \"Smart cut\".",
+  "Snap start to next keyframe": "Majukan awal ke keyframe berikutnya",
+  "Input files: {{num}}": "Berkas masukan: {{num}}",
+  "Segments exported: {{num}}": "Segmen diekspor: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Berkas gabungan dibuat: {{num}} (dari {{segments}} segmen)",
+  "Separate segment files created: {{num}}": "Berkas segmen terpisah dibuat: {{num}}",
+  "Failed: {{num}}": "Gagal: {{num}}",
+  "Skipped: {{num}}": "Dilewati: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Berkas keluaran lebih pendek dari 1 detik (kemungkinan rusak): {{num}}",
+  "Batch export finished with problems": "Ekspor batch selesai dengan masalah",
+  "Export summary": "Ringkasan ekspor",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segmen {{segNum}}: awal dimajukan {{seconds}} dtk ke keyframe berikutnya, sehingga keluaran tidak berisi apa pun dari sebelum titik potong.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmen {{segNum}}: karena potong keyframe, keluaran dimulai {{seconds}} dtk sebelum titik potong (pada keyframe sebelumnya), sehingga berisi bingkai yang Anda potong. Untuk menghindarinya, aktifkan \"Majukan awal ke keyframe berikutnya\" atau \"Smart cut\" di opsi ekspor.",
+  "Existing file was not overwritten": "Berkas yang ada tidak ditimpa",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Potong keyframe: awal segmen dipindahkan maju {{seconds}} dtk ke keyframe berikutnya, karena potongan keyframe hanya bisa dimulai pada keyframe. Aktifkan potong pintar di opsi ekspor untuk memotong di frame mana pun.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmen {{segNum}}: potong pintar tidak berhasil dengan file ini, jadi segmen dipotong tanpa kehilangan kualitas pada keyframe."
 }

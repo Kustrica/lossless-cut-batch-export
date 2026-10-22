@@ -62,6 +62,8 @@ export const configSchema = z.object({
   segmentsToChaptersOnly: z.boolean(),
   batchExportMode: batchExportModeSchema,
   enableSmartCut: z.boolean(),
+  keyframeCutSnapStart: z.boolean(),
+  exactCutDefaultsMigrated: z.boolean(),
   timecodeFormat: timecodeFormatSchema,
   invertCutSegments: z.boolean(),
   autoExportExtraStreams: z.boolean(),

@@ -155,6 +155,8 @@ export default function useUserSettingsRoot() {
   useEffect(() => safeSetConfig({ keyBindings }), [keyBindings]);
   const [enableSmartCut, setEnableSmartCut] = useState(safeGetConfigInitial('enableSmartCut'));
   useEffect(() => safeSetConfig({ enableSmartCut }), [enableSmartCut]);
+  const [keyframeCutSnapStart, setKeyframeCutSnapStart] = useState(safeGetConfigInitial('keyframeCutSnapStart'));
+  useEffect(() => safeSetConfig({ keyframeCutSnapStart }), [keyframeCutSnapStart]);
   const [customFfPath, setCustomFfPath] = useState(safeGetConfigInitial('customFfPath'));
   useEffect(() => safeSetConfig({ customFfPath }), [customFfPath]);
   const [storeProjectInWorkingDir, setStoreProjectInWorkingDir] = useState(safeGetConfigInitial('storeProjectInWorkingDir'));
@@ -309,6 +311,7 @@ export default function useUserSettingsRoot() {
     batchExportMode,
     keyBindings,
     enableSmartCut,
+    keyframeCutSnapStart,
     customFfPath,
     storeProjectInWorkingDir,
     enableOverwriteOutput,
@@ -394,6 +397,7 @@ export default function useUserSettingsRoot() {
     setKeyBindings,
     resetKeyBindings,
     setEnableSmartCut,
+    setKeyframeCutSnapStart,
     setCustomFfPath,
     setStoreProjectInWorkingDir,
     setEnableOverwriteOutput,

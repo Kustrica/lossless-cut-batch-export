@@ -22,5 +22,21 @@
   "Each video: every segment as a separate file": "Ĉiu video: ĉiu segmento kiel aparta dosiero",
   "Each video: merge segments into one file": "Ĉiu video: kunfandi segmentojn en unu dosieron",
   "Each video: merged file + separate segments": "Ĉiu video: kunfandita dosiero + apartaj segmentoj",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplikiĝas al ĉiu video en la aro aparte. Videoj neniam estas kunfanditaj inter si."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplikiĝas al ĉiu video en la aro aparte. Videoj neniam estas kunfanditaj inter si.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Per ŝlosilkadra tranĉo, la eligo komenciĝas ĉe la ŝlosilkadro antaŭ la tranĉpunkto, do komence povas aperi ĝis kelkaj sekundoj de la parto, kiun vi fortranĉis (ekzemple la fino de enkonduko). Kiam ĉi tiu opcio estas ŝaltita, la komenco anstataŭe moviĝas antaŭen al la sekva ŝlosilkadro: nenio de antaŭ la tranĉpunkto estas inkluzivita, sed ĝis kelkaj sekundoj post la tranĉpunkto povas perdiĝi. Por kadroprecize komenci, uzu anstataŭe \"Inteligentan tranĉon\".",
+  "Snap start to next keyframe": "Movi la komencon al la sekva ŝlosilkadro",
+  "Input files: {{num}}": "Enigaj dosieroj: {{num}}",
+  "Segments exported: {{num}}": "Eksportitaj segmentoj: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Kreitaj kunigitaj dosieroj: {{num}} (kunigitaj segmentoj: {{segments}})",
+  "Separate segment files created: {{num}}": "Kreitaj apartaj segmentaj dosieroj: {{num}}",
+  "Failed: {{num}}": "Malsukcesis: {{num}}",
+  "Skipped: {{num}}": "Preterlasitaj: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Eligaj dosieroj pli mallongaj ol 1 sekundo (verŝajne difektitaj): {{num}}",
+  "Batch export finished with problems": "Amasa eksporto finiĝis kun problemoj",
+  "Export summary": "Resumo de la eksporto",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segmento {{segNum}}: la komenco estis movita antaŭen je {{seconds}} s al la sekva ŝlosilkadro, do la eligo enhavas nenion de antaŭ la tranĉpunkto.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmento {{segNum}}: pro ŝlosilkadra tranĉo, la eligo komenciĝas {{seconds}} s antaŭ la tranĉpunkto (ĉe la antaŭa ŝlosilkadro), do ĝi enhavas kadrojn, kiujn vi fortranĉis. Por eviti tion, ŝaltu \"Movi la komencon al la sekva ŝlosilkadro\" aŭ \"Inteligentan tranĉon\" en la eksportaj opcioj.",
+  "Existing file was not overwritten": "La ekzistanta dosiero ne estis anstataŭigita",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Ŝlosilkadra tranĉo: la komenco de la segmento estis movita antaŭen je {{seconds}} s al la sekva ŝlosilkadro, ĉar ŝlosilkadra tranĉo povas komenciĝi nur ĉe ŝlosilkadro. Ŝaltu inteligentan tranĉon en la eksportaj agordoj por tranĉi ĉe ajna kadro.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: inteligenta tranĉo ne funkciis kun ĉi tiu dosiero, do la segmento estis anstataŭe senperde tranĉita ĉe ŝlosilkadro."
 }

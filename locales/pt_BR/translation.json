@@ -1091,5 +1091,21 @@
   "Each video: every segment as a separate file": "Cada vídeo: cada segmento como arquivo separado",
   "Each video: merge segments into one file": "Cada vídeo: mesclar os segmentos em um único arquivo",
   "Each video: merged file + separate segments": "Cada vídeo: arquivo mesclado + segmentos separados",
-  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplica-se a cada vídeo do lote separadamente. Os vídeos nunca são mesclados entre si."
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplica-se a cada vídeo do lote separadamente. Os vídeos nunca são mesclados entre si.",
+  "With \"keyframe cut\", the output starts at the keyframe before the cutpoint, so up to a few seconds of the part that you cut away (for example the end of an intro) can appear at the start. When this option is enabled, the start is instead moved forward to the next keyframe: nothing from before the cutpoint is included, but up to a few seconds after the cutpoint may be lost. For a frame-accurate start, use \"Smart cut\" instead.": "Com o \"corte em quadro-chave\", a saída começa no quadro-chave anterior ao ponto de corte, então até alguns segundos da parte que você cortou (por exemplo, o final de uma introdução) podem aparecer no início. Com esta opção ativada, o início é adiantado para o próximo quadro-chave: nada de antes do ponto de corte é incluído, mas até alguns segundos depois do ponto de corte podem ser perdidos. Para um início preciso ao quadro, use o \"Corte inteligente\".",
+  "Snap start to next keyframe": "Adiantar o início para o próximo quadro-chave",
+  "Input files: {{num}}": "Arquivos de entrada: {{num}}",
+  "Segments exported: {{num}}": "Segmentos exportados: {{num}}",
+  "Merged files created: {{num}} (from {{segments}} segments)": "Arquivos mesclados criados: {{num}} (a partir de {{segments}} segmentos)",
+  "Separate segment files created: {{num}}": "Arquivos de segmentos separados criados: {{num}}",
+  "Failed: {{num}}": "Com falha: {{num}}",
+  "Skipped: {{num}}": "Ignorados: {{num}}",
+  "Output files shorter than 1 second (probably broken): {{num}}": "Arquivos de saída com menos de 1 segundo (provavelmente corrompidos): {{num}}",
+  "Batch export finished with problems": "Exportação em lote concluída com problemas",
+  "Export summary": "Resumo da exportação",
+  "Segment {{segNum}}: the start was moved forward by {{seconds}} s to the next keyframe, so the output contains nothing from before the cutpoint.": "Segmento {{segNum}}: o início foi adiantado em {{seconds}} s para o próximo quadro-chave, então a saída não contém nada de antes do ponto de corte.",
+  "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmento {{segNum}}: por causa do corte em quadro-chave, a saída começa {{seconds}} s antes do ponto de corte (no quadro-chave anterior), então contém quadros que você cortou. Para evitar isso, ative \"Adiantar o início para o próximo quadro-chave\" ou o \"Corte inteligente\" nas opções de exportação.",
+  "Existing file was not overwritten": "O arquivo existente não foi substituído",
+  "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Corte em quadro-chave: o início do segmento foi movido {{seconds}} s para frente, até o próximo quadro-chave, porque um corte em quadro-chave só pode começar em um quadro-chave. Ative o corte inteligente nas opções de exportação para cortar em qualquer quadro.",
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: o corte inteligente não funcionou com este arquivo, então o segmento foi cortado sem perdas em um quadro-chave."
 }

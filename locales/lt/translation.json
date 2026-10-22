@@ -624,5 +624,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Šio failo metaduomenys (antraštė) sugadinti, todėl jo atverti negalima. Pataisyti originalų failą? Pakeičiamas tik sugadintas antraštės blokas; vaizdas ir garsas neliečiami.",
   "Don't ask again": "Daugiau neklausti",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Atveriant automatiškai, neklausiant, taisyti MP4/MOV failus su sugadintais metaduomenimis (antrašte)",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Nepavyko pataisyti failo, nes jis tik skaitomas, naudojamas kitos programos arba neturite teisės jo keisti."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Nepavyko pataisyti failo, nes jis tik skaitomas, naudojamas kitos programos arba neturite teisės jo keisti.",
+  "Each video: every segment as a separate file": "Kiekvienas vaizdo įrašas: kiekvienas segmentas atskirame faile",
+  "Each video: merge segments into one file": "Kiekvienas vaizdo įrašas: sujungti segmentus į vieną failą",
+  "Each video: merged file + separate segments": "Kiekvienas vaizdo įrašas: sujungtas failas + atskiri segmentai",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Taikoma kiekvienam paketo vaizdo įrašui atskirai. Vaizdo įrašai niekada nesujungiami tarpusavyje."
 }

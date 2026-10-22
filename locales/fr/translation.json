@@ -912,5 +912,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Ce fichier contient des métadonnées (en-tête) endommagées et ne peut pas être ouvert. Réparer le fichier original ? Seul le bloc d'en-tête endommagé est modifié ; la vidéo et l'audio ne sont pas touchés.",
   "Don't ask again": "Ne plus demander",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Réparer automatiquement à l'ouverture, sans demander, les fichiers MP4/MOV dont les métadonnées (en-tête) sont endommagées",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Impossible de réparer le fichier, car il est en lecture seule, utilisé par un autre programme, ou vous n'avez pas l'autorisation de le modifier."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Impossible de réparer le fichier, car il est en lecture seule, utilisé par un autre programme, ou vous n'avez pas l'autorisation de le modifier.",
+  "Each video: every segment as a separate file": "Chaque vidéo : chaque segment dans un fichier distinct",
+  "Each video: merge segments into one file": "Chaque vidéo : fusionner les segments en un seul fichier",
+  "Each video: merged file + separate segments": "Chaque vidéo : fichier fusionné + segments distincts",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "S'applique à chaque vidéo du lot séparément. Les vidéos ne sont jamais fusionnées entre elles."
 }

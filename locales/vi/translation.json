@@ -863,5 +863,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Tệp này có siêu dữ liệu (phần đầu) bị hỏng và không thể mở. Sửa tệp gốc? Chỉ khối phần đầu bị hỏng được thay đổi; video và âm thanh không bị động đến.",
   "Don't ask again": "Không hỏi lại",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Tự động sửa các tệp MP4/MOV có siêu dữ liệu (phần đầu) bị hỏng khi mở, không cần hỏi",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Không thể sửa tệp vì tệp chỉ đọc, đang được chương trình khác sử dụng, hoặc bạn không có quyền sửa đổi tệp."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Không thể sửa tệp vì tệp chỉ đọc, đang được chương trình khác sử dụng, hoặc bạn không có quyền sửa đổi tệp.",
+  "Each video: every segment as a separate file": "Mỗi video: mỗi đoạn thành một tệp riêng",
+  "Each video: merge segments into one file": "Mỗi video: ghép các đoạn thành một tệp",
+  "Each video: merged file + separate segments": "Mỗi video: tệp đã ghép + các đoạn riêng",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Áp dụng riêng cho từng video trong lô. Các video không bao giờ được ghép với nhau."
 }

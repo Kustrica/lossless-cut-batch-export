@@ -123,5 +123,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Selle faili metaandmed (päis) on kahjustatud ja seda ei saa avada. Kas parandada algne fail? Muudetakse ainult kahjustatud päiseplokki; videot ja heli ei puudutata.",
   "Don't ask again": "Ära enam küsi",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Paranda kahjustatud MP4/MOV metaandmetega (päisega) failid avamisel automaatselt, küsimata",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Faili ei saa parandada, sest see on kirjutuskaitstud, teise programmi poolt kasutusel või sul pole selle muutmiseks õigusi."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Faili ei saa parandada, sest see on kirjutuskaitstud, teise programmi poolt kasutusel või sul pole selle muutmiseks õigusi.",
+  "Each video: every segment as a separate file": "Iga video: iga lõik eraldi failina",
+  "Each video: merge segments into one file": "Iga video: liida lõigud üheks failiks",
+  "Each video: merged file + separate segments": "Iga video: liidetud fail + eraldi lõigud",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Kehtib iga partii video kohta eraldi. Videoid ei liideta kunagi omavahel."
 }

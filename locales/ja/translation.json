@@ -1113,5 +1113,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "このファイルはメタデータ（ヘッダー）が破損しているため開けません。元のファイルを修復しますか？変更されるのは破損したヘッダーブロックのみで、映像と音声には触れません。",
   "Don't ask again": "今後確認しない",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "メタデータ（ヘッダー）が破損した MP4/MOV ファイルを開くときに確認せずに自動で修復する",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "ファイルが読み取り専用、他のプログラムで使用中、または変更する権限がないため、修復できません。"
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "ファイルが読み取り専用、他のプログラムで使用中、または変更する権限がないため、修復できません。",
+  "Each video: every segment as a separate file": "各動画: セグメントごとに個別のファイル",
+  "Each video: merge segments into one file": "各動画: セグメントを 1 つのファイルに結合",
+  "Each video: merged file + separate segments": "各動画: 結合ファイル + 個別のセグメント",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "バッチ内の各動画に個別に適用されます。異なる動画同士が結合されることはありません。"
 }

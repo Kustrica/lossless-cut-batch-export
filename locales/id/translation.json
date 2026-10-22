@@ -908,5 +908,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Berkas ini memiliki metadata (header) yang rusak dan tidak dapat dibuka. Perbaiki berkas asli? Hanya blok header yang rusak yang diubah; video dan audio tidak disentuh.",
   "Don't ask again": "Jangan tanya lagi",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Perbaiki berkas MP4/MOV dengan metadata (header) rusak secara otomatis saat dibuka, tanpa bertanya",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Tidak dapat memperbaiki berkas karena berkas hanya-baca, sedang digunakan program lain, atau Anda tidak memiliki izin untuk mengubahnya."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Tidak dapat memperbaiki berkas karena berkas hanya-baca, sedang digunakan program lain, atau Anda tidak memiliki izin untuk mengubahnya.",
+  "Each video: every segment as a separate file": "Setiap video: setiap segmen sebagai berkas terpisah",
+  "Each video: merge segments into one file": "Setiap video: gabungkan segmen menjadi satu berkas",
+  "Each video: merged file + separate segments": "Setiap video: berkas gabungan + segmen terpisah",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Berlaku untuk setiap video dalam batch secara terpisah. Video tidak pernah digabungkan satu sama lain."
 }

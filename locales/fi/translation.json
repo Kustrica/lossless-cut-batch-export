@@ -605,5 +605,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Tämän tiedoston metatiedot (otsake) ovat vioittuneet, eikä sitä voi avata. Korjataanko alkuperäinen tiedosto? Vain vioittunut otsakelohko muutetaan; videoon ja ääneen ei kosketa.",
   "Don't ask again": "Älä kysy uudelleen",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Korjaa MP4/MOV-tiedostot, joiden metatiedot (otsake) ovat vioittuneet, automaattisesti avattaessa kysymättä",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Tiedostoa ei voi korjata, koska se on vain luku -tilassa, toisen ohjelman käytössä tai sinulla ei ole oikeutta muokata sitä."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Tiedostoa ei voi korjata, koska se on vain luku -tilassa, toisen ohjelman käytössä tai sinulla ei ole oikeutta muokata sitä.",
+  "Each video: every segment as a separate file": "Jokainen video: jokainen segmentti omaksi tiedostokseen",
+  "Each video: merge segments into one file": "Jokainen video: yhdistä segmentit yhdeksi tiedostoksi",
+  "Each video: merged file + separate segments": "Jokainen video: yhdistetty tiedosto + erilliset segmentit",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Koskee jokaista erän videota erikseen. Videoita ei koskaan yhdistetä keskenään."
 }

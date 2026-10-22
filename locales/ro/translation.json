@@ -893,5 +893,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Acest fișier are metadate (antet) deteriorate și nu poate fi deschis. Reparați fișierul original? Se modifică doar blocul de antet deteriorat; video și audio nu sunt atinse.",
   "Don't ask again": "Nu mai întreba",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Repară automat la deschidere, fără a întreba, fișierele MP4/MOV cu metadate (antet) deteriorate",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Fișierul nu poate fi reparat, deoarece este doar în citire, este folosit de alt program sau nu aveți permisiunea de a-l modifica."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Fișierul nu poate fi reparat, deoarece este doar în citire, este folosit de alt program sau nu aveți permisiunea de a-l modifica.",
+  "Each video: every segment as a separate file": "Fiecare videoclip: fiecare segment ca fișier separat",
+  "Each video: merge segments into one file": "Fiecare videoclip: îmbină segmentele într-un singur fișier",
+  "Each video: merged file + separate segments": "Fiecare videoclip: fișier îmbinat + segmente separate",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Se aplică fiecărui videoclip din lot în parte. Videoclipurile nu sunt niciodată îmbinate între ele."
 }

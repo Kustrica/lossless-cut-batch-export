@@ -388,5 +388,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Denne fila har skadde metadata (header) og kan ikkje opnast. Vil du reparere originalfila? Berre den skadde header-blokka vert endra; video og lyd vert ikkje rørt.",
   "Don't ask again": "Ikkje spør igjen",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Reparer MP4/MOV-filer med skadde metadata (header) automatisk ved opning, utan å spørje",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Kan ikkje reparere fila fordi ho er skriveverna, i bruk av eit anna program, eller du ikkje har løyve til å endre ho."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Kan ikkje reparere fila fordi ho er skriveverna, i bruk av eit anna program, eller du ikkje har løyve til å endre ho.",
+  "Each video: every segment as a separate file": "Kvar video: kvart segment som eiga fil",
+  "Each video: merge segments into one file": "Kvar video: slå saman segmenta til éi fil",
+  "Each video: merged file + separate segments": "Kvar video: samanslått fil + separate segment",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Gjeld kvar video i partiet separat. Videoar vert aldri slått saman med kvarandre."
 }

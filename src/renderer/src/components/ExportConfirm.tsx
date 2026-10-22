@@ -388,6 +388,7 @@ function ExportConfirm({
               <td>{t('Batch export mode')}</td>
               <td>
                 <BatchExportModeSelect style={{ height: '1.8em' }} />
+                <div style={{ fontSize: '.8em', opacity: 0.7, marginTop: '.3em' }}>{t('Applies to each video in the batch separately. Videos are never merged with each other.')}</div>
               </td>
               <td />
             </tr>

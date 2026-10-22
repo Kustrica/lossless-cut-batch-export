@@ -1102,5 +1102,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Bu dosyanın meta verileri (başlığı) hasarlı olduğu için açılamıyor. Orijinal dosya onarılsın mı? Yalnızca hasarlı başlık bloğu değiştirilir; video ve sese dokunulmaz.",
   "Don't ask again": "Bir daha sorma",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Meta verileri (başlığı) hasarlı MP4/MOV dosyalarını açarken sormadan otomatik olarak onar",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Dosya salt okunur olduğu, başka bir program tarafından kullanıldığı veya değiştirme izniniz olmadığı için onarılamıyor."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Dosya salt okunur olduğu, başka bir program tarafından kullanıldığı veya değiştirme izniniz olmadığı için onarılamıyor.",
+  "Each video: every segment as a separate file": "Her video: her bölüm ayrı bir dosya olarak",
+  "Each video: merge segments into one file": "Her video: bölümleri tek dosyada birleştir",
+  "Each video: merged file + separate segments": "Her video: birleştirilmiş dosya + ayrı bölümler",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Toplu işteki her videoya ayrı ayrı uygulanır. Videolar hiçbir zaman birbiriyle birleştirilmez."
 }

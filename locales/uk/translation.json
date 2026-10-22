@@ -970,5 +970,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Метадані (заголовок) цього файлу пошкоджені, тому його не вдається відкрити. Виправити оригінальний файл? Буде змінено лише пошкоджений блок заголовка, відео й звук не зачіпаються.",
   "Don't ask again": "Більше не питати",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Автоматично виправляти під час відкриття файли MP4/MOV з пошкодженими метаданими (заголовком), не питаючи",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Не вдалося виправити файл: він доступний лише для читання, використовується іншою програмою або у вас немає прав на його зміну."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Не вдалося виправити файл: він доступний лише для читання, використовується іншою програмою або у вас немає прав на його зміну.",
+  "Each video: every segment as a separate file": "Для кожного відео: кожен фрагмент окремим файлом",
+  "Each video: merge segments into one file": "Для кожного відео: склеїти фрагменти в один файл",
+  "Each video: merged file + separate segments": "Для кожного відео: склеєний файл + окремі фрагменти",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Застосовується до кожного відео пакета окремо. Різні відео між собою не склеюються."
 }

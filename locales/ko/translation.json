@@ -1110,5 +1110,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "이 파일은 메타데이터(헤더)가 손상되어 열 수 없습니다. 원본 파일을 복구하시겠습니까? 손상된 헤더 블록만 변경되며 비디오와 오디오는 건드리지 않습니다.",
   "Don't ask again": "다시 묻지 않기",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "메타데이터(헤더)가 손상된 MP4/MOV 파일을 열 때 묻지 않고 자동으로 복구",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "파일이 읽기 전용이거나 다른 프로그램에서 사용 중이거나 수정할 권한이 없어 파일을 복구할 수 없습니다."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "파일이 읽기 전용이거나 다른 프로그램에서 사용 중이거나 수정할 권한이 없어 파일을 복구할 수 없습니다.",
+  "Each video: every segment as a separate file": "각 동영상: 각 구간을 별도 파일로",
+  "Each video: merge segments into one file": "각 동영상: 구간을 하나의 파일로 병합",
+  "Each video: merged file + separate segments": "각 동영상: 병합된 파일 + 개별 구간",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "일괄 처리의 각 동영상에 개별적으로 적용됩니다. 동영상끼리는 절대 병합되지 않습니다."
 }

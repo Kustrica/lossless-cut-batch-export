@@ -15,5 +15,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "يحتوي هذا الملف على بيانات وصفية (ترويسة) تالفة ولا يمكن فتحه. هل تريد إصلاح الملف الأصلي؟ سيتم تغيير كتلة الترويسة التالفة فقط؛ ولن يتم المساس بالفيديو والصوت.",
   "Don't ask again": "لا تسأل مرة أخرى",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "إصلاح الملفات ذات البيانات الوصفية (الترويسة) التالفة في MP4/MOV تلقائيًا عند الفتح، دون سؤال",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "تعذر إصلاح الملف لأنه للقراءة فقط، أو قيد الاستخدام من قبل برنامج آخر، أو ليس لديك إذن بتعديله."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "تعذر إصلاح الملف لأنه للقراءة فقط، أو قيد الاستخدام من قبل برنامج آخر، أو ليس لديك إذن بتعديله.",
+  "Each video: every segment as a separate file": "لكل فيديو: كل مقطع في ملف منفصل",
+  "Each video: merge segments into one file": "لكل فيديو: دمج المقاطع في ملف واحد",
+  "Each video: merged file + separate segments": "لكل فيديو: ملف مدمج + مقاطع منفصلة",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "يُطبَّق على كل فيديو في الدفعة على حدة. لا يتم دمج مقاطع الفيديو المختلفة مع بعضها أبدًا."
 }

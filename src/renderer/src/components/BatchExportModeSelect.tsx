@@ -19,9 +19,9 @@ function BatchExportModeSelect({ style }: { style?: CSSProperties }) {
       value={batchExportMode}
       onChange={withBlur((e) => setBatchExportMode(e.target.value as BatchExportMode))}
     >
-      <option value="separate">{t('Separate files')}</option>
-      <option value="merge">{t('Merge cuts')}</option>
-      <option value="merge+separate">{t('Merge & Separate')}</option>
+      <option value="separate">{t('Each video: every segment as a separate file')}</option>
+      <option value="merge">{t('Each video: merge segments into one file')}</option>
+      <option value="merge+separate">{t('Each video: merged file + separate segments')}</option>
     </Select>
   );
 }

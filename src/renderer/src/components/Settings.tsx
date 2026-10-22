@@ -312,9 +312,12 @@ function Settings({
         </Row>
 
         <Row>
-          <KeyCell>{t('Batch export mode')}</KeyCell>
+          <KeyCell>
+            {t('Batch export mode')}<br />
+            <div style={detailsStyle}>{t('Applies to each video in the batch separately. Videos are never merged with each other.')}</div>
+          </KeyCell>
           <td>
-            <BatchExportModeSelect style={{ padding: '.5em 1.9em .5em .9em', maxWidth: '15em' }} />
+            <BatchExportModeSelect style={{ padding: '.5em 1.9em .5em .9em', maxWidth: '22em' }} />
           </td>
         </Row>
 

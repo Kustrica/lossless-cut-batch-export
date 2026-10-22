@@ -18,5 +18,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Ĉi tiu dosiero havas difektitajn metadatumojn (kapon) kaj ne malfermeblas. Ĉu ripari la originalan dosieron? Nur la difektita kapa bloko ŝanĝiĝas; video kaj sono ne estas tuŝataj.",
   "Don't ask again": "Ne plu demandi",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Aŭtomate ripari dosierojn kun difektitaj MP4/MOV-metadatumoj (kapo) dum malfermo, sen demandi",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Ne eblas ripari la dosieron, ĉar ĝi estas nurlega, uzata de alia programo, aŭ vi ne rajtas modifi ĝin."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Ne eblas ripari la dosieron, ĉar ĝi estas nurlega, uzata de alia programo, aŭ vi ne rajtas modifi ĝin.",
+  "Each video: every segment as a separate file": "Ĉiu video: ĉiu segmento kiel aparta dosiero",
+  "Each video: merge segments into one file": "Ĉiu video: kunfandi segmentojn en unu dosieron",
+  "Each video: merged file + separate segments": "Ĉiu video: kunfandita dosiero + apartaj segmentoj",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Aplikiĝas al ĉiu video en la aro aparte. Videoj neniam estas kunfanditaj inter si."
 }

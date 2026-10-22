@@ -1135,5 +1135,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Tento soubor má poškozená metadata (hlavičku) a nelze jej otevřít. Opravit původní soubor? Změní se pouze poškozený blok hlavičky; video a zvuk zůstanou nedotčeny.",
   "Don't ask again": "Příště se neptat",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Automaticky opravovat soubory MP4/MOV s poškozenými metadaty (hlavičkou) při otevření, bez dotazu",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Soubor nelze opravit, protože je jen pro čtení, používá jej jiný program, nebo nemáte oprávnění jej měnit."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Soubor nelze opravit, protože je jen pro čtení, používá jej jiný program, nebo nemáte oprávnění jej měnit.",
+  "Each video: every segment as a separate file": "Každé video: každý segment jako samostatný soubor",
+  "Each video: merge segments into one file": "Každé video: sloučit segmenty do jednoho souboru",
+  "Each video: merged file + separate segments": "Každé video: sloučený soubor + samostatné segmenty",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Platí pro každé video v dávce zvlášť. Videa se mezi sebou nikdy neslučují."
 }

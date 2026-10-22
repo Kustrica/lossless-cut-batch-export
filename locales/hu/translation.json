@@ -967,5 +967,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "A fájl metaadatai (fejléce) sérültek, ezért nem nyitható meg. Javítod az eredeti fájlt? Csak a sérült fejlécblokk módosul; a videó és a hang érintetlen marad.",
   "Don't ask again": "Ne kérdezze többé",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Sérült metaadatú (fejlécű) MP4/MOV fájlok automatikus javítása megnyitáskor, kérdés nélkül",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "A fájl nem javítható, mert csak olvasható, egy másik program használja, vagy nincs jogosultságod a módosításához."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "A fájl nem javítható, mert csak olvasható, egy másik program használja, vagy nincs jogosultságod a módosításához.",
+  "Each video: every segment as a separate file": "Minden videó: minden szakasz külön fájlba",
+  "Each video: merge segments into one file": "Minden videó: szakaszok egyesítése egy fájlba",
+  "Each video: merged file + separate segments": "Minden videó: egyesített fájl + külön szakaszok",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "A köteg minden videójára külön vonatkozik. A videók soha nem egyesülnek egymással."
 }

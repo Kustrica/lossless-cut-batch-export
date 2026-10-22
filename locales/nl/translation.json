@@ -677,5 +677,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "Dit bestand heeft beschadigde metadata (header) en kan niet worden geopend. Het originele bestand herstellen? Alleen het beschadigde headerblok wordt gewijzigd; video en audio blijven onaangeroerd.",
   "Don't ask again": "Niet meer vragen",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "Bestanden met beschadigde MP4/MOV-metadata (header) bij het openen automatisch herstellen, zonder te vragen",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Kan het bestand niet herstellen, omdat het alleen-lezen is, door een ander programma wordt gebruikt of je geen toestemming hebt om het te wijzigen."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "Kan het bestand niet herstellen, omdat het alleen-lezen is, door een ander programma wordt gebruikt of je geen toestemming hebt om het te wijzigen.",
+  "Each video: every segment as a separate file": "Elke video: elk segment als apart bestand",
+  "Each video: merge segments into one file": "Elke video: segmenten samenvoegen tot één bestand",
+  "Each video: merged file + separate segments": "Elke video: samengevoegd bestand + losse segmenten",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "Geldt voor elke video in de batch afzonderlijk. Video's worden nooit met elkaar samengevoegd."
 }

@@ -818,5 +818,9 @@
   "This file has damaged metadata (header) and cannot be opened. Repair the original file? Only the damaged header block is changed; video and audio are not touched.": "இந்தக் கோப்பின் மீதரவு (தலைப்பு) சேதமடைந்துள்ளதால் அதைத் திறக்க முடியாது. அசல் கோப்பைச் சரிசெய்யவா? சேதமடைந்த தலைப்புத் தொகுதி மட்டுமே மாற்றப்படும்; காணொளி மற்றும் ஒலி தொடப்படாது.",
   "Don't ask again": "மீண்டும் கேட்க வேண்டாம்",
   "Repair files with damaged MP4/MOV metadata (header) automatically when opening, without asking": "சேதமடைந்த MP4/MOV மீதரவு (தலைப்பு) கொண்ட கோப்புகளைத் திறக்கும்போது கேட்காமல் தானாகச் சரிசெய்",
-  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "கோப்பு படிக்க மட்டும் என்பதால், வேறொரு நிரலால் பயன்படுத்தப்படுவதால், அல்லது அதை மாற்ற உங்களுக்கு அனுமதி இல்லாததால் அதைச் சரிசெய்ய முடியவில்லை."
+  "Cannot repair the file, because it is read-only, in use by another program, or you do not have permission to modify it.": "கோப்பு படிக்க மட்டும் என்பதால், வேறொரு நிரலால் பயன்படுத்தப்படுவதால், அல்லது அதை மாற்ற உங்களுக்கு அனுமதி இல்லாததால் அதைச் சரிசெய்ய முடியவில்லை.",
+  "Each video: every segment as a separate file": "ஒவ்வொரு காணொளியும்: ஒவ்வொரு பகுதியும் தனிக் கோப்பாக",
+  "Each video: merge segments into one file": "ஒவ்வொரு காணொளியும்: பகுதிகளை ஒரே கோப்பாக இணை",
+  "Each video: merged file + separate segments": "ஒவ்வொரு காணொளியும்: இணைக்கப்பட்ட கோப்பு + தனிப் பகுதிகள்",
+  "Applies to each video in the batch separately. Videos are never merged with each other.": "தொகுப்பில் உள்ள ஒவ்வொரு காணொளிக்கும் தனித்தனியாகப் பொருந்தும். காணொளிகள் ஒன்றோடொன்று ஒருபோதும் இணைக்கப்படாது."
 }

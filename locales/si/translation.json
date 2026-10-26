@@ -44,5 +44,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "කොටස {{segNum}}: කී-ෆ්‍රේම් කැපීම නිසා, ප්‍රතිදානය කැපුම් ලක්ෂ්‍යයට තත්පර {{seconds}} කට පෙර (පෙර කී-ෆ්‍රේම් එකේ) ආරම්භ වන අතර, ඔබ කපා ඉවත් කළ ෆ්‍රේම් අඩංගු වේ. මෙය වළක්වා ගැනීමට, අපනයන විකල්පවල \"ආරම්භය ඊළඟ කී-ෆ්‍රේම් එකට ගෙන යන්න\" හෝ \"ස්මාර්ට් කැපීම\" සක්‍රිය කරන්න.",
   "Existing file was not overwritten": "පවතින ගොනුව උඩින් ලියා නැත",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "මූලික රාමු කැපීම: මූලික රාමු කැපීමක් ආරම්භ කළ හැක්කේ මූලික රාමුවකින් පමණක් බැවින්, කොටසේ ආරම්භය ඊළඟ මූලික රාමුවට තත්පර {{seconds}} කින් ඉදිරියට ගෙන යන ලදී. ඕනෑම රාමුවකින් කැපීමට අපනයන විකල්පවල ස්මාර්ට් කැපීම සක්‍රිය කරන්න.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "කොටස {{segNum}}: මෙම ගොනුව සමඟ ස්මාර්ට් කැපීම ක්‍රියා නොකළ බැවින්, කොටස ඒ වෙනුවට මූලික රාමුවකින් හානියකින් තොරව කපන ලදී."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "කොටස {{segNum}}: මෙම ගොනුව සමඟ ස්මාර්ට් කැපීම ක්‍රියා නොකළ බැවින්, කොටස ඒ වෙනුවට මූලික රාමුවකින් හානියකින් තොරව කපන ලදී.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "ඛණ්ඩය {{segNum}} / {{total}}: ප්‍රධාන රාමු විශ්ලේෂණය",
+  "Segment {{segNum}} of {{total}}: copying": "ඛණ්ඩය {{segNum}} / {{total}}: පිටපත් කිරීම",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "ඛණ්ඩය {{segNum}} / {{total}}: නැවත කේතනය ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "ඛණ්ඩය {{segNum}} / {{total}}: ආරම්භය නැවත කේතනය ({{encoder}})"
 }

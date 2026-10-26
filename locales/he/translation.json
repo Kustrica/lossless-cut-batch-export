@@ -939,5 +939,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "מקטע {{segNum}}: בגלל חיתוך לפי פריימי מפתח, הפלט מתחיל {{seconds}} שנ' לפני נקודת החיתוך (בפריים המפתח הקודם), ולכן מכיל פריימים שחתכת. כדי להימנע מכך, הפעל באפשרויות הייצוא את \"הזזת ההתחלה לפריים המפתח הבא\" או את \"חיתוך חכם\".",
   "Existing file was not overwritten": "הקובץ הקיים לא נדרס",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "חיתוך בפריים מפתח: תחילת המקטע הוזזה קדימה ב-{{seconds}} שנ׳ לפריים המפתח הבא, כי חיתוך בפריים מפתח יכול להתחיל רק בפריים מפתח. הפעילו חיתוך חכם באפשרויות הייצוא כדי לחתוך בכל פריים.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "מקטע {{segNum}}: החיתוך החכם לא עבד עם הקובץ הזה, ולכן המקטע נחתך במקום זאת ללא אובדן בפריים מפתח."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "מקטע {{segNum}}: החיתוך החכם לא עבד עם הקובץ הזה, ולכן המקטע נחתך במקום זאת ללא אובדן בפריים מפתח.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "מקטע {{segNum}} מתוך {{total}}: ניתוח תמונות מפתח",
+  "Segment {{segNum}} of {{total}}: copying": "מקטע {{segNum}} מתוך {{total}}: העתקה",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "מקטע {{segNum}} מתוך {{total}}: קידוד מחדש ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "מקטע {{segNum}} מתוך {{total}}: קידוד מחדש של ההתחלה ({{encoder}})"
 }

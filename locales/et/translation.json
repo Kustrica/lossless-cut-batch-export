@@ -143,5 +143,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: võtmekaadri lõikamise tõttu algab väljund {{seconds}} s enne lõikepunkti (eelmisest võtmekaadrist) ja sisaldab seega välja lõigatud kaadreid. Selle vältimiseks lülita ekspordivalikutes sisse „Nihuta algus järgmise võtmekaadrini“ või „Nutikas lõikamine“.",
   "Existing file was not overwritten": "Olemasolevat faili ei kirjutatud üle",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Võtmekaadri lõikamine: lõigu algus nihutati {{seconds}} s edasi järgmisele võtmekaadrile, sest võtmekaadri lõige saab alata ainult võtmekaadrilt. Suvalisel kaadril lõikamiseks lülitage ekspordi valikutes sisse nutikas lõikamine.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Lõik {{segNum}}: nutikas lõikamine selle failiga ei töötanud, seega lõigati lõik selle asemel kadudeta võtmekaadrilt."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Lõik {{segNum}}: nutikas lõikamine selle failiga ei töötanud, seega lõigati lõik selle asemel kadudeta võtmekaadrilt.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}}/{{total}}: võtmekaadrite analüüs",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}}/{{total}}: kopeerimine",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}}/{{total}}: ümberkodeerimine ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}}/{{total}}: alguse ümberkodeerimine ({{encoder}})"
 }

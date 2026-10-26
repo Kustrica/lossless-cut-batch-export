@@ -231,5 +231,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: på grund av nyckelbildsklipp börjar utdata {{seconds}} s före klipppunkten (vid föregående nyckelbild) och innehåller därför bilder som du klippt bort. Undvik detta genom att aktivera ”Flytta början till nästa nyckelbild” eller ”Smart klippning” i exportalternativen.",
   "Existing file was not overwritten": "Befintlig fil skrevs inte över",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Nyckelbildsklipp: segmentets början flyttades fram {{seconds}} s till nästa nyckelbild, eftersom ett nyckelbildsklipp bara kan börja på en nyckelbild. Aktivera smart klipp i exportalternativen för att klippa på valfri bildruta.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: smart klipp fungerade inte med den här filen, så segmentet klipptes i stället förlustfritt vid en nyckelbild."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: smart klipp fungerade inte med den här filen, så segmentet klipptes i stället förlustfritt vid en nyckelbild.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} av {{total}}: analyserar nyckelbildrutor",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} av {{total}}: kopierar",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} av {{total}}: omkodar ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} av {{total}}: omkodar början ({{encoder}})"
 }

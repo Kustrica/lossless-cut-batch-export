@@ -38,5 +38,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmento {{segNum}}: pro ŝlosilkadra tranĉo, la eligo komenciĝas {{seconds}} s antaŭ la tranĉpunkto (ĉe la antaŭa ŝlosilkadro), do ĝi enhavas kadrojn, kiujn vi fortranĉis. Por eviti tion, ŝaltu \"Movi la komencon al la sekva ŝlosilkadro\" aŭ \"Inteligentan tranĉon\" en la eksportaj opcioj.",
   "Existing file was not overwritten": "La ekzistanta dosiero ne estis anstataŭigita",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Ŝlosilkadra tranĉo: la komenco de la segmento estis movita antaŭen je {{seconds}} s al la sekva ŝlosilkadro, ĉar ŝlosilkadra tranĉo povas komenciĝi nur ĉe ŝlosilkadro. Ŝaltu inteligentan tranĉon en la eksportaj agordoj por tranĉi ĉe ajna kadro.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: inteligenta tranĉo ne funkciis kun ĉi tiu dosiero, do la segmento estis anstataŭe senperde tranĉita ĉe ŝlosilkadro."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: inteligenta tranĉo ne funkciis kun ĉi tiu dosiero, do la segmento estis anstataŭe senperde tranĉita ĉe ŝlosilkadro.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segmento {{segNum}} el {{total}}: analizado de ŝlosilkadroj",
+  "Segment {{segNum}} of {{total}}: copying": "Segmento {{segNum}} el {{total}}: kopiado",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segmento {{segNum}} el {{total}}: rekodado ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segmento {{segNum}} el {{total}}: rekodado de la komenco ({{encoder}})"
 }

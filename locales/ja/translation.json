@@ -1133,5 +1133,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "セグメント {{segNum}}: キーフレーム切り取りのため、出力は切り取り位置より {{seconds}} 秒前（直前のキーフレーム）から始まり、切り取ったフレームが含まれています。これを避けるには、出力オプションで「開始位置を次のキーフレームにずらす」または「スマート切り取り」を有効にしてください。",
   "Existing file was not overwritten": "既存のファイルは上書きされませんでした",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "キーフレームカット: キーフレームカットはキーフレームからしか開始できないため、セグメントの開始位置を次のキーフレームまで {{seconds}} 秒後ろへ移動しました。任意のフレームでカットするには、出力オプションでスマートカットを有効にしてください。",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "セグメント {{segNum}}: このファイルではスマートカットが機能しなかったため、代わりにキーフレームで無劣化カットしました。"
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "セグメント {{segNum}}: このファイルではスマートカットが機能しなかったため、代わりにキーフレームで無劣化カットしました。",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "セグメント {{segNum}}/{{total}}: キーフレームを解析中",
+  "Segment {{segNum}} of {{total}}: copying": "セグメント {{segNum}}/{{total}}: コピー中",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "セグメント {{segNum}}/{{total}}: 再エンコード中 ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "セグメント {{segNum}}/{{total}}: 先頭を再エンコード中 ({{encoder}})"
 }

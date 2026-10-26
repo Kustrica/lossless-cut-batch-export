@@ -928,5 +928,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmen {{segNum}}: karena potong keyframe, keluaran dimulai {{seconds}} dtk sebelum titik potong (pada keyframe sebelumnya), sehingga berisi bingkai yang Anda potong. Untuk menghindarinya, aktifkan \"Majukan awal ke keyframe berikutnya\" atau \"Smart cut\" di opsi ekspor.",
   "Existing file was not overwritten": "Berkas yang ada tidak ditimpa",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Potong keyframe: awal segmen dipindahkan maju {{seconds}} dtk ke keyframe berikutnya, karena potongan keyframe hanya bisa dimulai pada keyframe. Aktifkan potong pintar di opsi ekspor untuk memotong di frame mana pun.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmen {{segNum}}: potong pintar tidak berhasil dengan file ini, jadi segmen dipotong tanpa kehilangan kualitas pada keyframe."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmen {{segNum}}: potong pintar tidak berhasil dengan file ini, jadi segmen dipotong tanpa kehilangan kualitas pada keyframe.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segmen {{segNum}} dari {{total}}: menganalisis keyframe",
+  "Segment {{segNum}} of {{total}}: copying": "Segmen {{segNum}} dari {{total}}: menyalin",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segmen {{segNum}} dari {{total}}: mengodekan ulang ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segmen {{segNum}} dari {{total}}: mengodekan ulang awal ({{encoder}})"
 }

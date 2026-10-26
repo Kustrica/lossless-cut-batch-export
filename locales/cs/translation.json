@@ -1154,5 +1154,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: kvůli střihu na klíčových snímcích začíná výstup {{seconds}} s před bodem střihu (na předchozím klíčovém snímku), takže obsahuje snímky, které jste vystřihli. Abyste tomu předešli, zapněte v možnostech exportu „Posunout začátek na další klíčový snímek“ nebo „Přesný střih“.",
   "Existing file was not overwritten": "Existující soubor nebyl přepsán",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Střih na klíčovém snímku: začátek segmentu byl posunut dopředu o {{seconds}} s na další klíčový snímek, protože střih na klíčovém snímku může začínat jen na klíčovém snímku. Pro střih na libovolném snímku zapněte v možnostech exportu chytrý střih.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: chytrý střih s tímto souborem nefungoval, proto byl segment místo toho bezeztrátově střižen na klíčovém snímku."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: chytrý střih s tímto souborem nefungoval, proto byl segment místo toho bezeztrátově střižen na klíčovém snímku.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} z {{total}}: analýza klíčových snímků",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} z {{total}}: kopírování",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} z {{total}}: překódování ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} z {{total}}: překódování začátku ({{encoder}})"
 }

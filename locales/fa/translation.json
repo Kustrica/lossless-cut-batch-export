@@ -34,5 +34,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "بخش {{segNum}}: به‌دلیل برش روی فریم کلیدی، خروجی {{seconds}} ثانیه پیش از نقطهٔ برش (در فریم کلیدی قبلی) شروع می‌شود و بنابراین فریم‌هایی را که بریده‌اید در بر دارد. برای جلوگیری از این، در گزینه‌های خروجی «انتقال شروع به فریم کلیدی بعدی» یا «برش هوشمند» را فعال کنید.",
   "Existing file was not overwritten": "فایل موجود بازنویسی نشد",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "برش فریم کلیدی: شروع بخش {{seconds}} ثانیه به جلو و به فریم کلیدی بعدی منتقل شد، چون برش فریم کلیدی فقط می‌تواند از یک فریم کلیدی شروع شود. برای برش در هر فریم، برش هوشمند را در گزینه‌های خروجی فعال کنید.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "بخش {{segNum}}: برش هوشمند با این فایل کار نکرد، بنابراین بخش به‌جای آن بدون افت کیفیت از یک فریم کلیدی برش داده شد."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "بخش {{segNum}}: برش هوشمند با این فایل کار نکرد، بنابراین بخش به‌جای آن بدون افت کیفیت از یک فریم کلیدی برش داده شد.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "بخش {{segNum}} از {{total}}: تحلیل فریم‌های کلیدی",
+  "Segment {{segNum}} of {{total}}: copying": "بخش {{segNum}} از {{total}}: کپی",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "بخش {{segNum}} از {{total}}: کدگذاری مجدد ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "بخش {{segNum}} از {{total}}: کدگذاری مجدد ابتدا ({{encoder}})"
 }

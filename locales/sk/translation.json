@@ -1002,5 +1002,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: kvôli strihaniu na kľúčových snímkach sa výstup začína {{seconds}} s pred bodom strihu (na predchádzajúcej kľúčovej snímke), takže obsahuje snímky, ktoré ste vystrihli. Ak sa tomu chcete vyhnúť, zapnite v možnostiach exportu „Posunúť začiatok na ďalšiu kľúčovú snímku“ alebo „Chytrý strih“.",
   "Existing file was not overwritten": "Existujúci súbor nebol prepísaný",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Strih na kľúčovej snímke: začiatok segmentu bol posunutý dopredu o {{seconds}} s na ďalšiu kľúčovú snímku, pretože strih na kľúčovej snímke môže začínať len na kľúčovej snímke. Ak chcete strihať na ľubovoľnej snímke, zapnite v možnostiach exportu inteligentný strih.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: inteligentný strih s týmto súborom nefungoval, preto bol segment namiesto toho bezstratovo strihnutý na kľúčovej snímke."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: inteligentný strih s týmto súborom nefungoval, preto bol segment namiesto toho bezstratovo strihnutý na kľúčovej snímke.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} z {{total}}: analýza kľúčových snímok",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} z {{total}}: kopírovanie",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} z {{total}}: prekódovanie ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} z {{total}}: prekódovanie začiatku ({{encoder}})"
 }

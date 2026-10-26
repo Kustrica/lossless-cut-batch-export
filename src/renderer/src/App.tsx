@@ -149,6 +149,8 @@ function App() {
   const [ffmpegCommandLog, setFfmpegCommandLog] = useState<FfmpegCommandLog>([]);
   const [rotation, setRotation] = useState(360);
   const [progress, setProgress] = useState<number>();
+  // details about what an operation (export) is currently doing, shown below the working text
+  const [workingStatus, setWorkingStatus] = useState<string>();
   const [startTimeOffset, setStartTimeOffset] = useState(0);
   const [filePath, setFilePath] = useState<string>();
   const [fileDuration, setFileDuration] = useState<number>();
@@ -1187,6 +1189,7 @@ function App() {
         segments: segmentsToExport,
         cutFileNames,
         onProgress: setProgress,
+        onStatus: setWorkingStatus,
         shortestFlag,
         ffmpegExperimental,
         preserveMetadata,
@@ -1226,6 +1229,7 @@ function App() {
         console.log('cutMergedFileTemplateOrDefault', cutMergedFileTemplateOrDefault);
 
         setProgress(0);
+        setWorkingStatus(undefined);
         setWorking({ text: i18n.t('Merging') });
 
         const chapterNames = segmentsToChapters && !invertCutSegments ? segmentsToExport.map((s) => s.name) : undefined;
@@ -1392,6 +1396,7 @@ function App() {
       handleExportFailed(err);
     } finally {
       setWorking(undefined);
+      setWorkingStatus(undefined);
       setProgress(undefined);
     }
   }, [filePath, numStreamsToCopy, haveInvalidSegs, workingRef, setWorking, exportSegmentsToChaptersOnly, cutFileTemplateOrDefault, generateCutFileNames, cutMultiple, outputDir, customOutDir, fileFormat, fileDuration, isRotationSet, effectiveRotation, copyFileStreams, allFilesMeta, keyframeCut, keyframeCutSnapStart, segmentsToExport, shortestFlag, ffmpegExperimental, preserveMetadata, preserveMetadataOnMerge, preserveMovData, preserveChapters, movFastStart, avoidNegativeTs, paramsByFile, detectedFps, willMerge, enableOverwriteOutput, exportConfirmEnabled, mainFileFormat, mainStreams, exportExtraStreams, areWeCutting, simpleMode, prefersReducedMotion, cleanupChoices, hideAllNotifications, segmentsOrInverse.selected, t, cutMergedFileTemplateOrDefault, segmentsToChapters, invertCutSegments, generateCutMergedFileNames, concatCutSegments, exportAutoDeleteMergedSegments, tryDeleteFiles, nonCopiedExtraStreams, extractStreams, askForCleanupChoices, cleanupFiles, showOsNotification, openCutFinishedDialog, handleExportFailed, finishBatchItem]);
@@ -3095,7 +3100,7 @@ function App() {
 
                 {/* This should probably be last, so that it's always on top */}
                 <AnimatePresence>
-                  {working && <Working text={working.text} progress={progress} onAbortClick={abortWorking} />}
+                  {working && <Working text={working.text} status={workingStatus} progress={progress} onAbortClick={abortWorking} />}
                 </AnimatePresence>
 
                 <GenericDialog dialog={genericDialog} onOpenChange={(open) => !open && closeGenericDialog()} />

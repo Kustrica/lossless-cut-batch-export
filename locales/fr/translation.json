@@ -932,5 +932,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}} : à cause de la coupure sur images clés, la sortie commence {{seconds}} s avant le point de coupe (à l'image clé précédente) et contient donc des images que vous avez supprimées. Pour l'éviter, activez « Avancer le début à l'image clé suivante » ou le « Découpage intelligent » dans les options d'exportation.",
   "Existing file was not overwritten": "Le fichier existant n'a pas été écrasé",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Coupe sur image clé : le début du segment a été avancé de {{seconds}} s jusqu'à l'image clé suivante, car une coupe sur image clé ne peut commencer que sur une image clé. Activez la coupe intelligente dans les options d'export pour couper à n'importe quelle image.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}} : la coupe intelligente n'a pas fonctionné avec ce fichier, le segment a donc été coupé sans perte sur une image clé."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}} : la coupe intelligente n'a pas fonctionné avec ce fichier, le segment a donc été coupé sans perte sur une image clé.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} sur {{total}} : analyse des images clés",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} sur {{total}} : copie",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} sur {{total}} : réencodage ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} sur {{total}} : réencodage du début ({{encoder}})"
 }

@@ -838,5 +838,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "பகுதி {{segNum}}: கீஃப்ரேம் வெட்டு காரணமாக, வெளியீடு வெட்டுப் புள்ளிக்கு {{seconds}} வி முன்பு (முந்தைய கீஃப்ரேமில்) தொடங்குகிறது, எனவே நீங்கள் வெட்டி நீக்கிய ஃப்ரேம்கள் அதில் உள்ளன. இதைத் தவிர்க்க, ஏற்றுமதி விருப்பங்களில் \"தொடக்கத்தை அடுத்த கீஃப்ரேமுக்கு நகர்த்து\" அல்லது \"அறிவுள்ள வெட்டு\" என்பதை இயக்கவும்.",
   "Existing file was not overwritten": "ஏற்கனவே உள்ள கோப்பு மேலெழுதப்படவில்லை",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "கீஃப்ரேம் வெட்டு: கீஃப்ரேம் வெட்டு ஒரு கீஃப்ரேமில் மட்டுமே தொடங்க முடியும் என்பதால், பிரிவின் தொடக்கம் அடுத்த கீஃப்ரேமுக்கு {{seconds}} வி முன்னோக்கி நகர்த்தப்பட்டது. எந்த ஃப்ரேமிலும் வெட்ட, ஏற்றுமதி விருப்பங்களில் ஸ்மார்ட் வெட்டை இயக்கவும்.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "பிரிவு {{segNum}}: இந்தக் கோப்பில் ஸ்மார்ட் வெட்டு வேலை செய்யவில்லை, எனவே பிரிவு அதற்குப் பதிலாக ஒரு கீஃப்ரேமில் இழப்பின்றி வெட்டப்பட்டது."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "பிரிவு {{segNum}}: இந்தக் கோப்பில் ஸ்மார்ட் வெட்டு வேலை செய்யவில்லை, எனவே பிரிவு அதற்குப் பதிலாக ஒரு கீஃப்ரேமில் இழப்பின்றி வெட்டப்பட்டது.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "பிரிவு {{segNum}} / {{total}}: முக்கிய சட்டகங்களை பகுப்பாய்வு செய்கிறது",
+  "Segment {{segNum}} of {{total}}: copying": "பிரிவு {{segNum}} / {{total}}: நகலெடுக்கிறது",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "பிரிவு {{segNum}} / {{total}}: மறுகுறியாக்கம் ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "பிரிவு {{segNum}} / {{total}}: தொடக்கத்தை மறுகுறியாக்கம் ({{encoder}})"
 }

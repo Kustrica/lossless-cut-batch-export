@@ -987,5 +987,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "{{segNum}}. szakasz: a kulcskocka vágás miatt a kimenet {{seconds}} mp-cel a vágási pont előtt kezdődik (az előző kulcskockánál), így kivágott képkockákat is tartalmaz. Ennek elkerüléséhez kapcsolja be az exportálási beállításokban a „Kezdet áthelyezése a következő kulcskockára” vagy az „Intelligens szerkesztés” lehetőséget.",
   "Existing file was not overwritten": "A meglévő fájl nem lett felülírva",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Kulcskockás vágás: a szakasz eleje {{seconds}} mp-cel előrébb került a következő kulcskockára, mert a kulcskockás vágás csak kulcskockánál kezdődhet. Bármely képkockánál való vágáshoz kapcsolja be az okos vágást az exportálási beállításokban.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "{{segNum}}. szakasz: az okos vágás nem működött ezzel a fájllal, ezért a szakasz helyette veszteségmentesen, kulcskockánál lett vágva."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "{{segNum}}. szakasz: az okos vágás nem működött ezzel a fájllal, ezért a szakasz helyette veszteségmentesen, kulcskockánál lett vágva.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "{{segNum}}/{{total}}. szegmens: kulcskockák elemzése",
+  "Segment {{segNum}} of {{total}}: copying": "{{segNum}}/{{total}}. szegmens: másolás",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "{{segNum}}/{{total}}. szegmens: újrakódolás ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "{{segNum}}/{{total}}. szegmens: az eleje újrakódolása ({{encoder}})"
 }

@@ -1048,5 +1048,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "片段 {{segNum}}：由於關鍵影格切割，輸出比切割點提前 {{seconds}} 秒開始（從上一個關鍵影格開始），因此包含您剪掉的畫面。若要避免此情況，請在匯出選項中啟用「將起點移到下一個關鍵影格」或「智能切割」。",
   "Existing file was not overwritten": "未覆寫現有檔案",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "關鍵影格剪輯：由於關鍵影格剪輯只能從關鍵影格開始，片段起點已往後移動 {{seconds}} 秒到下一個關鍵影格。如需在任意影格剪輯，請在匯出選項中啟用智慧剪輯。",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "片段 {{segNum}}：智慧剪輯不適用於此檔案，因此該片段改為在關鍵影格處無損剪輯。"
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "片段 {{segNum}}：智慧剪輯不適用於此檔案，因此該片段改為在關鍵影格處無損剪輯。",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "片段 {{segNum}}/{{total}}：正在分析關鍵影格",
+  "Segment {{segNum}} of {{total}}: copying": "片段 {{segNum}}/{{total}}：正在複製",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "片段 {{segNum}}/{{total}}：正在重新編碼（{{encoder}}）",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "片段 {{segNum}}/{{total}}：正在重新編碼開頭（{{encoder}}）"
 }

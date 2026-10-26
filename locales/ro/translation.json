@@ -913,5 +913,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmentul {{segNum}}: din cauza decupării la cadre-cheie, ieșirea începe cu {{seconds}} s înainte de punctul de tăiere (la cadrul-cheie anterior), deci conține cadre pe care le-ați eliminat. Pentru a evita acest lucru, activați „Mută începutul la următorul cadru-cheie” sau „Decupare inteligentă” în opțiunile de export.",
   "Existing file was not overwritten": "Fișierul existent nu a fost suprascris",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Tăiere la cadru cheie: începutul segmentului a fost mutat înainte cu {{seconds}} s la următorul cadru cheie, deoarece o tăiere la cadru cheie poate începe doar la un cadru cheie. Activați tăierea inteligentă în opțiunile de export pentru a tăia la orice cadru.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentul {{segNum}}: tăierea inteligentă nu a funcționat cu acest fișier, așa că segmentul a fost tăiat fără pierderi la un cadru cheie."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentul {{segNum}}: tăierea inteligentă nu a funcționat cu acest fișier, așa că segmentul a fost tăiat fără pierderi la un cadru cheie.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segmentul {{segNum}} din {{total}}: analizarea cadrelor cheie",
+  "Segment {{segNum}} of {{total}}: copying": "Segmentul {{segNum}} din {{total}}: copiere",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segmentul {{segNum}} din {{total}}: recodificare ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segmentul {{segNum}} din {{total}}: recodificarea începutului ({{encoder}})"
 }

@@ -697,5 +697,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: door keyframe-knippen begint de uitvoer {{seconds}} s vóór het knippunt (bij het vorige keyframe) en bevat dus beelden die je hebt weggeknipt. Schakel \"Begin naar volgend keyframe verschuiven\" of \"Slim knippen\" in de exportopties in om dit te voorkomen.",
   "Existing file was not overwritten": "Bestaand bestand is niet overschreven",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Keyframe-knip: het begin van het segment is {{seconds}} s naar voren verplaatst naar het volgende keyframe, omdat een keyframe-knip alleen bij een keyframe kan beginnen. Schakel slim knippen in bij de exportopties om bij elk frame te knippen.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: slim knippen werkte niet met dit bestand, daarom is het segment in plaats daarvan verliesvrij bij een keyframe geknipt."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: slim knippen werkte niet met dit bestand, daarom is het segment in plaats daarvan verliesvrij bij een keyframe geknipt.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} van {{total}}: keyframes analyseren",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} van {{total}}: kopiëren",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} van {{total}}: opnieuw coderen ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} van {{total}}: begin opnieuw coderen ({{encoder}})"
 }

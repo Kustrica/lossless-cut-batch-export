@@ -1018,5 +1018,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segmento {{segNum}}: devido ao corte em quadro-chave, a saída começa {{seconds}} s antes do ponto de corte (no quadro-chave anterior), por isso contém quadros que cortou. Para evitar isto, ative \"Avançar o início para o quadro-chave seguinte\" ou o \"Corte inteligente\" nas opções de exportação.",
   "Existing file was not overwritten": "O ficheiro existente não foi substituído",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Corte em fotograma-chave: o início do segmento foi movido {{seconds}} s para a frente, para o fotograma-chave seguinte, porque um corte em fotograma-chave só pode começar num fotograma-chave. Ative o corte inteligente nas opções de exportação para cortar em qualquer fotograma.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: o corte inteligente não funcionou com este ficheiro, por isso o segmento foi cortado sem perdas num fotograma-chave."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmento {{segNum}}: o corte inteligente não funcionou com este ficheiro, por isso o segmento foi cortado sem perdas num fotograma-chave.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segmento {{segNum}} de {{total}}: a analisar fotogramas-chave",
+  "Segment {{segNum}} of {{total}}: copying": "Segmento {{segNum}} de {{total}}: a copiar",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segmento {{segNum}} de {{total}}: a recodificar ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segmento {{segNum}} de {{total}}: a recodificar o início ({{encoder}})"
 }

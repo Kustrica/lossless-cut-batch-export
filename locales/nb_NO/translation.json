@@ -420,5 +420,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: på grunn av nøkkelbildeklipp starter utdata {{seconds}} s før klippepunktet (ved forrige nøkkelbilde) og inneholder derfor bilder du har klippet bort. For å unngå dette, slå på «Flytt starten til neste nøkkelbilde» eller «Smart klipping» i eksportalternativene.",
   "Existing file was not overwritten": "Eksisterende fil ble ikke overskrevet",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Nøkkelbildekutt: starten av segmentet ble flyttet {{seconds}} s fremover til neste nøkkelbilde, fordi et nøkkelbildekutt bare kan starte på et nøkkelbilde. Slå på smartkutt i eksportvalgene for å kutte på et hvilket som helst bilde.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: smartkutt fungerte ikke med denne filen, så segmentet ble i stedet kuttet tapsfritt på et nøkkelbilde."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: smartkutt fungerte ikke med denne filen, så segmentet ble i stedet kuttet tapsfritt på et nøkkelbilde.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} av {{total}}: analyserer nøkkelbilder",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} av {{total}}: kopierer",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} av {{total}}: omkoder ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} av {{total}}: omkoder starten ({{encoder}})"
 }

@@ -1144,5 +1144,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Сегмент {{segNum}}: из-за нарезки по ключевым кадрам файл начинается на {{seconds}} с раньше точки обрезки (с предыдущего ключевого кадра), поэтому в нём есть кадры из вырезанной части. Чтобы этого избежать, включите в настройках экспорта «Сдвигать начало к следующему ключевому кадру» или «Умную обрезку».",
   "Existing file was not overwritten": "Существующий файл не перезаписан",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Обрезка по ключевым кадрам: начало сегмента сдвинуто вперёд на {{seconds}} с, к следующему ключевому кадру, потому что такая обрезка может начинаться только с ключевого кадра. Чтобы резать с любого кадра, включите умную обрезку в параметрах экспорта.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Сегмент {{segNum}}: умная обрезка не сработала с этим файлом, поэтому сегмент обрезан без потерь по ключевому кадру."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Сегмент {{segNum}}: умная обрезка не сработала с этим файлом, поэтому сегмент обрезан без потерь по ключевому кадру.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Сегмент {{segNum}} из {{total}}: анализ ключевых кадров",
+  "Segment {{segNum}} of {{total}}: copying": "Сегмент {{segNum}} из {{total}}: копирование",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Сегмент {{segNum}} из {{total}}: перекодирование ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Сегмент {{segNum}} из {{total}}: перекодирование начала ({{encoder}})"
 }

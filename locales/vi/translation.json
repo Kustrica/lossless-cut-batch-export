@@ -883,5 +883,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Phân đoạn {{segNum}}: do cắt theo khung hình chính, đầu ra bắt đầu sớm hơn điểm cắt {{seconds}} giây (tại khung hình chính trước đó), nên chứa các khung hình bạn đã cắt bỏ. Để tránh điều này, hãy bật \"Dời điểm bắt đầu tới khung hình chính kế tiếp\" hoặc \"Cắt thông minh\" trong tùy chọn xuất.",
   "Existing file was not overwritten": "Tệp hiện có không bị ghi đè",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Cắt theo khung hình chính: điểm đầu đoạn đã được dời lên {{seconds}} giây đến khung hình chính tiếp theo, vì cắt theo khung hình chính chỉ có thể bắt đầu tại một khung hình chính. Bật cắt thông minh trong tùy chọn xuất để cắt tại bất kỳ khung hình nào.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Đoạn {{segNum}}: cắt thông minh không hoạt động với tệp này, nên đoạn đã được cắt không mất dữ liệu tại một khung hình chính."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Đoạn {{segNum}}: cắt thông minh không hoạt động với tệp này, nên đoạn đã được cắt không mất dữ liệu tại một khung hình chính.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Đoạn {{segNum}}/{{total}}: đang phân tích khung hình chính",
+  "Segment {{segNum}} of {{total}}: copying": "Đoạn {{segNum}}/{{total}}: đang sao chép",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Đoạn {{segNum}}/{{total}}: đang mã hóa lại ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Đoạn {{segNum}}/{{total}}: đang mã hóa lại phần đầu ({{encoder}})"
 }

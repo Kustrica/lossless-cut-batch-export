@@ -625,5 +625,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Osio {{segNum}}: avainkuvaleikkauksen vuoksi tuloste alkaa {{seconds}} s ennen leikkauskohtaa (edellisestä avainkuvasta), joten se sisältää kuvia, jotka leikkasit pois. Välttääksesi tämän ota vientiasetuksista käyttöön ”Siirrä alku seuraavaan avainkuvaan” tai ”Älykäs leikkaus”.",
   "Existing file was not overwritten": "Olemassa olevaa tiedostoa ei korvattu",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Avainruutuleikkaus: segmentin alkua siirrettiin {{seconds}} s eteenpäin seuraavaan avainruutuun, koska avainruutuleikkaus voi alkaa vain avainruudusta. Ota älyleikkaus käyttöön vientiasetuksissa, jos haluat leikata mistä tahansa ruudusta.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentti {{segNum}}: älyleikkaus ei toiminut tämän tiedoston kanssa, joten segmentti leikattiin sen sijaan häviöttömästi avainruudusta."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segmentti {{segNum}}: älyleikkaus ei toiminut tämän tiedoston kanssa, joten segmentti leikattiin sen sijaan häviöttömästi avainruudusta.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segmentti {{segNum}}/{{total}}: avainkuvien analysointi",
+  "Segment {{segNum}} of {{total}}: copying": "Segmentti {{segNum}}/{{total}}: kopiointi",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segmentti {{segNum}}/{{total}}: uudelleenkoodaus ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segmentti {{segNum}}/{{total}}: alun uudelleenkoodaus ({{encoder}})"
 }

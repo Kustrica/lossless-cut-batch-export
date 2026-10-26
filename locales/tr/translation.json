@@ -1122,5 +1122,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Bölüm {{segNum}}: ana kare kesme nedeniyle çıktı, kesme noktasından {{seconds}} sn önce (önceki ana karede) başlıyor ve bu yüzden kestiğiniz kareleri içeriyor. Bunu önlemek için dışa aktarma seçeneklerinde \"Başlangıcı sonraki ana kareye kaydır\" veya \"Akıllı kesim\" seçeneğini etkinleştirin.",
   "Existing file was not overwritten": "Mevcut dosyanın üzerine yazılmadı",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Anahtar kare kesimi: anahtar kare kesimi yalnızca bir anahtar karede başlayabildiği için bölümün başlangıcı {{seconds}} sn ileriye, sonraki anahtar kareye taşındı. Herhangi bir karede kesmek için dışa aktarma seçeneklerinde akıllı kesimi etkinleştirin.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Bölüm {{segNum}}: akıllı kesim bu dosyayla çalışmadı, bu yüzden bölüm bunun yerine bir anahtar karede kayıpsız olarak kesildi."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Bölüm {{segNum}}: akıllı kesim bu dosyayla çalışmadı, bu yüzden bölüm bunun yerine bir anahtar karede kayıpsız olarak kesildi.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Bölüm {{segNum}}/{{total}}: anahtar kareler analiz ediliyor",
+  "Segment {{segNum}} of {{total}}: copying": "Bölüm {{segNum}}/{{total}}: kopyalanıyor",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Bölüm {{segNum}}/{{total}}: yeniden kodlanıyor ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Bölüm {{segNum}}/{{total}}: başlangıç yeniden kodlanıyor ({{encoder}})"
 }

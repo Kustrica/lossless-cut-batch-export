@@ -709,5 +709,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "Segment {{segNum}}: zaradi izreza po ključnih sličicah se izhod začne {{seconds}} s pred točko reza (pri prejšnji ključni sličici), zato vsebuje sličice, ki ste jih izrezali. Da se temu izognete, v možnostih izvoza vklopite »Premakni začetek na naslednjo ključno sličico« ali »Pameten rez«.",
   "Existing file was not overwritten": "Obstoječa datoteka ni bila prepisana",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "Rez na ključni sličici: začetek segmenta je bil premaknjen naprej za {{seconds}} s na naslednjo ključno sličico, ker se rez na ključni sličici lahko začne samo na ključni sličici. Za rez na kateri koli sličici v možnostih izvoza vklopite pametni rez.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: pametni rez s to datoteko ni deloval, zato je bil segment namesto tega brez izgub odrezan na ključni sličici."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "Segment {{segNum}}: pametni rez s to datoteko ni deloval, zato je bil segment namesto tega brez izgub odrezan na ključni sličici.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "Segment {{segNum}} od {{total}}: analiza ključnih sličic",
+  "Segment {{segNum}} of {{total}}: copying": "Segment {{segNum}} od {{total}}: kopiranje",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "Segment {{segNum}} od {{total}}: ponovno kodiranje ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "Segment {{segNum}} od {{total}}: ponovno kodiranje začetka ({{encoder}})"
 }

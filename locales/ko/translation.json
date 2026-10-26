@@ -1130,5 +1130,9 @@
   "Segment {{segNum}}: because of keyframe cut, the output starts {{seconds}} s before the cutpoint (at the previous keyframe), so it contains frames that you cut away. To avoid this, enable \"Snap start to next keyframe\" or \"Smart cut\" in the export options.": "구간 {{segNum}}: 키프레임 절단 때문에 출력이 절단 지점보다 {{seconds}}초 앞(이전 키프레임)에서 시작되어 잘라낸 프레임이 포함되어 있습니다. 이를 피하려면 내보내기 옵션에서 \"시작 지점을 다음 키프레임으로 이동\" 또는 \"스마트 절단\"을 켜세요.",
   "Existing file was not overwritten": "기존 파일을 덮어쓰지 않았습니다",
   "Keyframe cut: the segment start was moved forward by {{seconds}} s to the next keyframe, because a keyframe cut can only start at a keyframe. Enable smart cut in the export options to cut at any frame.": "키프레임 자르기: 키프레임 자르기는 키프레임에서만 시작할 수 있으므로 구간 시작이 다음 키프레임으로 {{seconds}}초 앞으로 이동되었습니다. 아무 프레임에서나 자르려면 내보내기 옵션에서 스마트 자르기를 켜세요.",
-  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "구간 {{segNum}}: 이 파일에서는 스마트 자르기가 작동하지 않아 대신 키프레임에서 무손실로 잘랐습니다."
+  "Segment {{segNum}}: smart cut did not work with this file, so the segment was cut losslessly at a keyframe instead.": "구간 {{segNum}}: 이 파일에서는 스마트 자르기가 작동하지 않아 대신 키프레임에서 무손실로 잘랐습니다.",
+  "Segment {{segNum}} of {{total}}: analyzing keyframes": "세그먼트 {{segNum}}/{{total}}: 키프레임 분석 중",
+  "Segment {{segNum}} of {{total}}: copying": "세그먼트 {{segNum}}/{{total}}: 복사 중",
+  "Segment {{segNum}} of {{total}}: re-encoding ({{encoder}})": "세그먼트 {{segNum}}/{{total}}: 재인코딩 중 ({{encoder}})",
+  "Segment {{segNum}} of {{total}}: re-encoding the start ({{encoder}})": "세그먼트 {{segNum}}/{{total}}: 시작 부분 재인코딩 중 ({{encoder}})"
 }
